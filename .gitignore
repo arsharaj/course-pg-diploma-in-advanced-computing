@@ -1,9 +1,17 @@
 .vs/
+.mvn/
+.settings/
+.metadata/
 
 bin/
 obj/
+build/
+target/
 
+.springBeans
+.factorypath
 .classpath
 .project
 
+mvn*
 *.class
