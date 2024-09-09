@@ -8,6 +8,7 @@
 - Lab : Concepts Of Operating Systems
 - Lab : Cpp Programming Language Navendu Sir
 - Lab : Cpp Programming Language Pratik Sir
+- Lab : Cpp Programming Language Tushar Sir
 
 ### License
 
