@@ -1,0 +1,22 @@
+Develop RESTful services for managing appointments in a healthcare system. Users should be able to schedule
+appointments, view their upcoming appointments and cancel appointments.
+
+Endpoints:
+1. Create appointment:
+	- Endpoint: POST /appointments
+	- Request: Schedule a new appointment by providing details like paitent name, doctor, date and time.
+	- Response: Return the confirmation of the schedules appointment.
+2. Get upcoming appointments:
+	- Endpoint: GET /appointments/{userId}/upcoming
+	- Request: Retrive a list of upcoming appointments for a specific user.
+	- Response: Return the details of upcoming appointments in JSON format.
+3. Cancel appointment:
+	- Endpoint: DELETE /appointments/{appointmentId}
+	- Request: Cancel a schedules appointment by providing its unique identifier
+	- Response: Return a success message or confirmation of the canceled appointment
+
+Note:
+- Response codes should by as per REST guidelines.
+- Error handling in case of failures.
+- There should not be conflicting appointments, for example - more than one appointment with same doctor on same date and time.
+- You can create only one table appointments. Creating seperate tables for user/doctor is completely optional.

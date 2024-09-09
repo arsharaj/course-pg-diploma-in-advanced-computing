@@ -1,0 +1,11 @@
+Create a Web Application using Spring MVC/Spring Boot with Hibernate/JPA.
+
+The requirements are as follows:-
+The application works with Student Details.
+The details to be maintained in the table are:Rollno, StudentFirstName, StudentLastName, City, CourseName
+The application should allow a user to:
+1. Add Student details.
+2. View all student details in tabular format.
+3. Accept coursename from user and display all Student Rollno and Student Name enrolled for that course.
+
+Create the necessary POJOS, DAO , Service and Controller classes, JSP pages.
