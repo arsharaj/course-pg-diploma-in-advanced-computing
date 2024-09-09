@@ -1,0 +1,3 @@
+Assignment:
+
+Create a Tomcat and MySQL container inside the same Docker network. In the MySQL container, create a database cdac. Inside it, create a student_tbl and add 3 roes. From the Tomcat container, access this table using a JSP and display all the records on the screen.

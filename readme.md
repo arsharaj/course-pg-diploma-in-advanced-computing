@@ -12,6 +12,7 @@
 - Lab : Database Technologies
 - Lab : Microsoft Dot Net Technologies
 - Lab : Object Oriented Programming With Java
+- Lab : Software Development Methodologies
 
 ### License
 

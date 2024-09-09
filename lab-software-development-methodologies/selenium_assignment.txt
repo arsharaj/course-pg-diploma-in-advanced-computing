@@ -1,0 +1,11 @@
+1. Develop all util functions as mentioned in "UtilMethods.java"
+
+2. Verify Google links
+
+3. Automate the Registration form at https://demo.automationtesting.in/Register.html
+
+4. Install and configure Jenkins as instructed in "Jenkins_Lab.pdf"
+
+5. Create a Repo on GitHub, add WebHook using ngrok.exe
+
+6. Observe the build process triggers on Push event in GitHub
