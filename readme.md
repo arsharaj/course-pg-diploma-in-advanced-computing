@@ -5,6 +5,7 @@
 ### Table of Contents
 
 - Lab : Algorithms And Data Structures Using Java
+- Lab : Concepts Of Operating Systems
 
 ### License
 

@@ -1,0 +1,119 @@
+                          UNIX Assignments : Day 1
+
+Notes :
+1. UNIX is derived from UNICS which stands for Uniplexed Information Computing System.
+2. The Linux Documentation Project : Documentation of Linux
+
+                                 Section 1
+
+Que 1. List all the files and sub directories of the directory /bin.
+Ans 1. ls /bin
+       - /bin contains all the executable files that could be run by every user.
+       - /sbin contains all the system executable files that could only be run by system admin.
+
+Que 2. List all the files including hidden files in your current directory.
+Ans 2. ls -a
+       - here a stands for all including hidden files.
+
+Que 3. List all the files starting with letter ‘r’ in your current directory.
+Ans 3. ls -p r* | grep -v /
+       - lists all the files starting with letter r.
+       - p is for adding / to the directories.
+       - grep is to finding the matching /
+       - v is for inverting the matching /, hence it will ignore all the directories.
+
+Que 4. List all the files having three characters in their names, from your current directory.
+Ans 4. ls ???
+       - ? matches exactly one character.
+
+Que 5. List all the files with extension .doc in your current directory.
+Ans 5. ls *.doc
+       - files with only doc extension not docx.
+
+Que 6. List all the files having the first letter of their name within the range ‘l’ to‘s’, from your current directory.
+Ans 6. ls [l-s]*
+       - [] are used to define the range of characters that can be used.
+
+Que 7. Create a file "Day 1 Text 1" and read its input from keyboard.
+Ans 7. cat > "Day 1 Text 1"
+       - Use Ctrl + D to end the input.
+       - This is called redirection to input.
+
+Que 8. Copy the contents of file "Day 1 Text 1" to another file "Day 1 Text 2".
+Ans 8. cp -i "Day 1 Text 1" "Day 1 Text 2"
+       - Overwrites the file if i is not specified and file already exists.
+       - i flag is for interactivity if file already exists.
+
+Que 9. Append the contents of file "Day 1 Text 2" to file "Day 1 Text 1".
+Ans 9. cat "Day 1 Text 2" >> "Day 1 Text 1"
+       - For appending we use >> operator.
+
+Que 10. Count the number of files in the current directory.
+Ans 10. ls | wc -l
+        - wc is used to print newline, word and byte count for each file.
+        - l is used to only print line numbers.
+
+Que 11. Display the output of command ls –l to a file and on the output screen.
+Ans 11. ls -l | tee "Day 1 Text 3"
+    - tee reads from standard input and write to standard output and files.
+
+Que 12. From file "Day 1 Text 1" print all lines starting from 10th line.
+Ans 12. mawk 'NR >= 10 { print }' "Day 1 Text 1"
+        - mawk is a pattern scanning and text processing language.
+        - Short programs are entered on the command line usually enclosed in ' '.
+        - NR is a built-in variable that holds the number of records.
+
+        sed -n '10,$'p "Day 1 Text 1"
+        - sed is a stream editor for filtering and transforming text.
+        - n is used to suppress automatic printing of pattern space.
+        - p is used to print the current pattern space.
+        - $ represents the last line.
+        - 'start, end' or 'start ~ increment'
+        - Patterns are written inside / /;
+
+Que 13. Find the number of users currently logged on to the system.
+Ans 13. w
+        - show who is logged on and what they are doing.
+
+        who
+        - show who is logged on
+
+        users
+        - show only usernames of the logged in 
+
+Que 14. Delete all the files with their names starting with “temp”.
+Ans 14. rm -i temp*
+        - rm removes files or directories.
+        - i flag is used for interactivity or adding prompts.
+        - shred is also a command to delete files after overwriting its content.
+
+                                     Section 2
+
+Que 1. Count the total number of words in file "Day 1 Text 1".
+Ans 1. wc -w 'Day 1 Text 1'
+       cat 'Day 1 Text 1' | wc -w
+       - first command prints word count and file name.
+       - second command prints only the word count.
+
+Que 2. List the contents of ls command page wise.
+Ans 2. ls | less
+       - less displays the content in page wise format.
+
+Que 3. Create a file "Day 1 Text 2" with some text in it. Increase the no. of hard links to the file "Day 1 Text 2" to 3 and check the inode number and link count for those names.
+Ans 3. cat > "Day 1 Text 2"
+       ln "Day 1 Text 2" "Day 1 Text 2 Hard Link 1"
+       ln "Day 1 Text 2" "Day 1 Text 2 Hard Link 2"
+       ln "Day 1 Text 2" "Day 1 Text 2 Hard Link 3"
+       ls -li
+       find -type f -links +1
+       - cat command is used to take input into the file.
+       - ln command is used to make links between files.
+       - By default, ln makes hard links which means inode numbers of original file and hard links are same.
+       - To make a soft link we have to specify s flag in the command.
+       - Soft links have different inode number than original file.
+       - i flag in ls command is used to display the inode of a file.
+       - find command is used to search for files in a directory hierarchy.
+       - type flag is used to define the type of file.
+       - f specifies a regular file.
+       - links specifies the hard link and +1 is used for greater than 1.
+

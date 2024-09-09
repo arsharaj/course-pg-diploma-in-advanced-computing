@@ -1,0 +1,4 @@
+This is a new file that is created using cat command.
+Here I am taking input from the terminal itself and
+redirecting it into a file. To exit this input you
+have to type Ctrl + D.
