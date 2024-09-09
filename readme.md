@@ -10,6 +10,7 @@
 - Lab : Cpp Programming Language Pratik Sir
 - Lab : Cpp Programming Language Tushar Sir
 - Lab : Database Technologies
+- Lab : Microsoft Dot Net Technologies
 
 ### License
 
