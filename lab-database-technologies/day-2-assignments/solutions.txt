@@ -1,0 +1,89 @@
+			DBMS Assignment 2
+
+Que 1. Create a database named college.
+Ans 1. a) sudo mysql
+       b) create database College;
+       c) show databases;
+Out1. +--------------------+
+      | Database           |
+      +--------------------+
+      | College            |
+      | information_schema |
+      | mysql              |
+      | performance_schema |
+      | pgdac              |
+      | sys                |
+      +--------------------+
+      6 rows in set (0.00 sec)
+
+
+Que 2. Create a table name student in college database with following structure:
+       roll, name, class, marks, age with respective datatypes.
+Ans 2. a) use College;
+       b) create table Student (
+            roll smallint,
+            name varchar(20),
+            class tinyint,
+            marks float,
+            age int
+          );
+
+Que 3. Check the structure of the table.
+Ans 3. a) desc Student;
+Out 3. -------+-------------+------+-----+---------+-------+
+       | Field | Type        | Null | Key | Default | Extra |
+       +-------+-------------+------+-----+---------+-------+
+       | roll  | smallint    | YES  |     | NULL    |       |
+       | name  | varchar(20) | YES  |     | NULL    |       |
+       | class | tinyint     | YES  |     | NULL    |       |
+       | marks | float       | YES  |     | NULL    |       |
+       | age   | int         | YES  |     | NULL    |       |
+       +-------+-------------+------+-----+---------+-------+
+       5 rows in set (0.00 sec)
+
+
+Que 4. Alter the datatype of marks from float to integer.
+Ans 4. a) alter table Student modify marks integer;
+       b) desc Student;
+Out 4. +-------+-------------+------+-----+---------+-------+
+       | Field | Type        | Null | Key | Default | Extra |
+       +-------+-------------+------+-----+---------+-------+
+       | roll  | smallint    | YES  |     | NULL    |       |
+       | name  | varchar(20) | YES  |     | NULL    |       |
+       | class | tinyint     | YES  |     | NULL    |       |
+       | marks | int         | YES  |     | NULL    |       |
+       | age   | int         | YES  |     | NULL    |       |
+       +-------+-------------+------+-----+---------+-------+
+       5 rows in set (0.00 sec)
+
+Que 5. Show all the tables in database college.
+Ans 5. a) show tables;
+Out 5. +-------------------+
+       | Tables_in_College |
+       +-------------------+
+       | Student           |
+       +-------------------+
+       1 row in set (0.00 sec)
+
+Oue 6. Truncate the table student.
+Ans 6. a) truncate Student;
+       b) select * from Student;
+Out 6. Empty set (0.00 sec)
+
+Que 7. Drop the table and database also.
+Ans 7. a) drop table Student;
+       b) show tables;
+Out 7. Empty set (0.00 sec)
+       c) drop database College;
+       d) show databases;
+Out 7. +--------------------+
+       | Database           |
+       +--------------------+
+       | information_schema |
+       | mysql              |
+       | performance_schema |
+       | pgdac              |
+       | sys                |
+       +--------------------+
+       5 rows in set (0.00 sec)
+

@@ -1,0 +1,153 @@
+			DBMS Assignment 4
+
+Que 1. Create a database named college.
+Ans 1. a) sudo mysql
+       b) create database College;
+       c) show databases;
+Out 1. +--------------------+
+      | Database           |
+      +--------------------+
+      | College            |
+      | information_schema |
+      | mysql              |
+      | performance_schema |
+      | pgdac              |
+      | sys                |
+      +--------------------+
+      6 rows in set (0.00 sec)
+
+Que 2. Create a table name student in college database with following structure:
+       roll, name, class, marks, age with respective datatypes.
+Ans 2. a) use College;
+       b) create table Student (
+            roll smallint,
+            name varchar(20),
+            class tinyint,
+            marks float,
+            age int
+          );
+
+Que 3. Creating, Altering, Dropping Constraints.
+Ans 3. a) alter table Student add constraint primary key (roll);
+       b) alter table Student add constraint unique(name);
+       c) alter table Student modify column class int not null;
+       d) alter table Student modify column age int default(0);
+       e) alter table Student modify column roll smallint auto_increment;
+       f) create index class_index on Student(class);
+       g) alter table Student add column roman enum("XII","XIII","XIV","XV");
+       h) alter table Student drop column roman;
+Out 3. +-------+-------------+------+-----+---------+-------------------+
+       | Field | Type        | Null | Key | Default | Extra             |
+       +-------+-------------+------+-----+---------+-------------------+
+       | roll  | smallint    | NO   | PRI | NULL    | auto_increment    |
+       | name  | varchar(20) | YES  | UNI | NULL    |                   |
+       | class | int         | NO   | MUL | NULL    |                   |
+       | marks | float       | YES  |     | NULL    |                   |
+       | age   | int         | YES  |     | 0       | DEFAULT_GENERATED |
+       +-------+-------------+------+-----+---------+-------------------+
+       5 rows in set (0.00 sec)
+
+Que 4. Aggregate Functions: SUM(), AVG(), COUNT(), MAX(), MIN(), COUNT(), Group By, Having Clause.
+Ans 4. a) select class, sum(marks) as sum from Student group by class having class = 14;
+       b) select class, avg(marks) as avg from Student group by class having class = 14;
+       c) select class, count(marks) as count from Student group by class having class = 14;
+       d) select class, max(marks) as max from Student group by class having class = 14;
+       e) select class, min(marks) as min from Student group by class having class = 14;
+       f) select class, 
+            sum(marks) as sum, 
+            avg(marks) as average, 
+            count(marks) as count, 
+            max(marks) as max, 
+            min(marks) as min 
+         from Student group by class having class = 14;
+Out 4. +-------+-------------------+------------------+-------+------+-------+
+       | class | sum               | average          | count | max  | min   |
+       +-------+-------------------+------------------+-------+------+-------+
+       |    14 | 132.7400016784668 | 66.3700008392334 |     2 | 75.4 | 57.34 |
+       +-------+-------------------+------------------+-------+------+-------+
+       1 row in set (0.00 sec)
+
+Que 5. Using Like, Distinct, Order By, Between...And
+Ans 5. a) select name from Student where name like "%j"
+       b) select name from Student where name like "R__";
+       c) select distinct class from Student;
+       d) select * from Student order by marks;
+       e) select * from Student where marks between 70 and 90;
+Out 5. a) +----------+
+          | name     |
+          +----------+
+          | Arsharaj |
+          | Raj      |
+          +----------+
+          2 rows in set (0.00 sec)
+       b) +------+
+          | name |
+          +------+
+          | Raj  |
+          +------+
+          1 row in set (0.01 sec)
+       c) +-------+
+          | class |
+          +-------+
+          |    12 |
+          |    13 |
+          |    14 |
+          |    15 |
+          +-------+
+          4 rows in set (0.00 sec)
+       d) +------+----------+-------+-------+------+
+          | roll | name     | class | marks | age  |
+          +------+----------+-------+-------+------+
+          |    4 | Shivam   |    15 |  45.3 |   22 |
+          |    5 | Shiv     |    14 | 57.34 |   22 |
+          |    3 | Raj      |    14 |  75.4 |   20 |
+          |    2 | Rahul    |    13 | 83.95 |   19 |
+          |    1 | Arsharaj |    12 | 100.5 |   18 |
+          +------+----------+-------+-------+------+
+          5 rows in set (0.00 sec)
+       e) +------+-------+-------+-------+------+
+          | roll | name  | class | marks | age  |
+          +------+-------+-------+-------+------+
+          |    2 | Rahul |    13 | 83.95 |   19 |
+          |    3 | Raj   |    14 |  75.4 |   20 |
+          +------+-------+-------+-------+------+
+          2 rows in set (0.00 sec)
+
+Que 6. Comparing Nulls, Using IN/Not-In
+Ans 6. a) select * from Student where roll is not null;
+       b) select * from Student where marks is null;
+       c) select * from Student where age not in (18, 19);
+       d) select * from Student where age in (18, 19);
+Out 6. a) +------+----------+-------+-------+------+
+          | roll | name     | class | marks | age  |
+          +------+----------+-------+-------+------+
+          |    1 | Arsharaj |    12 | 100.5 |   18 |
+          |    2 | Rahul    |    13 | 83.95 |   19 |
+          |    3 | Raj      |    14 |  75.4 |   20 |
+          |    4 | Shivam   |    15 |  45.3 |   22 |
+          |    5 | Shiv     |    14 | 57.34 |   22 |
+          +------+----------+-------+-------+------+
+          5 rows in set (0.00 sec)
+      b) +------+------+-------+-------+------+
+         | roll | name | class | marks | age  |
+         +------+------+-------+-------+------+
+         |    6 | Yash |    12 |  NULL |   22 |
+         +------+------+-------+-------+------+
+         1 row in set (0.00 sec)
+      c) +------+--------+-------+-------+------+
+         | roll | name   | class | marks | age  |
+         +------+--------+-------+-------+------+
+         |    3 | Raj    |    14 |  75.4 |   20 |
+         |    4 | Shivam |    15 |  45.3 |   22 |
+         |    5 | Shiv   |    14 | 57.34 |   22 |
+         |    6 | Yash   |    12 |  NULL |   22 |
+         +------+--------+-------+-------+------+
+         4 rows in set (0.00 sec)
+      d) +------+----------+-------+-------+------+
+         | roll | name     | class | marks | age  |
+         +------+----------+-------+-------+------+
+         |    1 | Arsharaj |    12 | 100.5 |   18 |
+         |    2 | Rahul    |    13 | 83.95 |   19 |
+         +------+----------+-------+-------+------+
+         2 rows in set (0.00 sec)
+

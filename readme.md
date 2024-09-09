@@ -9,6 +9,7 @@
 - Lab : Cpp Programming Language Navendu Sir
 - Lab : Cpp Programming Language Pratik Sir
 - Lab : Cpp Programming Language Tushar Sir
+- Lab : Database Technologies
 
 ### License
 

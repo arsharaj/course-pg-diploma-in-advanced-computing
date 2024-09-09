@@ -1,0 +1,109 @@
+			DBMS Assignment 3
+
+Que 1. Create a database named college.
+Ans 1. a) sudo mysql
+       b) create database College;
+       c) show databases;
+Out1. +--------------------+
+      | Database           |
+      +--------------------+
+      | College            |
+      | information_schema |
+      | mysql              |
+      | performance_schema |
+      | pgdac              |
+      | sys                |
+      +--------------------+
+      6 rows in set (0.00 sec)
+
+Que 2. Create a table name student in college database with following structure:
+       roll, name, class, marks, age with respective datatypes.
+Ans 2. a) use College;
+       b) create table Student (
+            roll smallint,
+            name varchar(20),
+            class tinyint,
+            marks float,
+            age int
+          );
+
+Que 3. Insert at least 5 rows in the table.
+Ans 3. a) insert into Student values (1, "Arsharaj", 12, 100.0, 18);
+       b) insert into Student values (2, "Rahul", 13, 83.45, 19);
+       c) insert into Student values (3, "Raj", 14, 53.25, 20);
+       d) insert into Student values (4, "Shivam", 11, 23.6, 16);
+       e) insert into Student values (5, "Saurav", 10, 72.3, 15);
+       f) select * from Student;
+Out 3. +------+----------+-------+-------+------+
+       | roll | name     | class | marks | age  |
+       +------+----------+-------+-------+------+
+       |    1 | Arsharaj |    12 |   100 |   18 |
+       |    2 | Rahul    |    13 | 83.45 |   19 |
+       |    3 | Raj      |    14 | 53.25 |   20 |
+       |    4 | Shivam   |    11 |  23.6 |   16 |
+       |    5 | Saurav   |    10 |  72.3 |   15 |
+       +------+----------+-------+-------+------+
+       5 rows in set (0.00 sec)
+
+Que 4. Delete the entry of roll number 4.
+Ans 4. a) delete from Student where roll = 4;
+       b) select * from Student;
+Out 4. +------+----------+-------+-------+------+
+       | roll | name     | class | marks | age  |
+       +------+----------+-------+-------+------+
+       |    1 | Arsharaj |    12 |   100 |   18 |
+       |    2 | Rahul    |    13 | 83.45 |   19 |
+       |    3 | Raj      |    14 | 53.25 |   20 |
+       |    5 | Saurav   |    10 |  72.3 |   15 |
+       +------+----------+-------+-------+------+
+       4 rows in set (0.00 sec)
+
+Que 5. Update the marks of roll number 3.
+Ans 5. a) update Student set marks = 50.23 where roll = 3;
+       b) select * from Student;
+Out 5. ------+----------+-------+-------+------+
+       | roll | name     | class | marks | age  |
+       +------+----------+-------+-------+------+
+       |    1 | Arsharaj |    12 |   100 |   18 |
+       |    2 | Rahul    |    13 | 83.45 |   19 |
+       |    3 | Raj      |    14 | 50.23 |   20 |
+       |    5 | Saurav   |    10 |  72.3 |   15 |
+       +------+----------+-------+-------+------+
+
+Que 6. Give additional grace marks of 0.5 to all students.
+Ans 6. a) update Student set marks = marks + 0.5;
+       b) select * from Student;
+Out 6. +------+----------+-------+-------+------+
+       | roll | name     | class | marks | age  |
+       +------+----------+-------+-------+------+
+       |    1 | Arsharaj |    12 | 100.5 |   18 |
+       |    2 | Rahul    |    13 | 83.95 |   19 |
+       |    3 | Raj      |    14 | 50.73 |   20 |
+       |    5 | Saurav   |    10 |  72.8 |   15 |
+       +------+----------+-------+-------+------+
+       4 rows in set (0.00 sec)
+
+Que 7. Truncate the table.
+Ans 7. a) truncate Student;
+       b) select * from Student;
+Out 7. Empty set (0.00 sec)
+
+
+Que 8. Insert the data again using multi-insert statement.
+Ans 8. a) insert into Student values
+       -> (1, "Arsharaj", 12, 100.5, 18),
+       -> (2, "Rahul", 13, 83.95, 19),
+       -> (3, "Raj", 14, 75.4, 20),
+       -> (4, "Shivam", 15, 45.3, 22);
+       b) select * from Student;
+Out 8. +------+----------+-------+-------+------+
+       | roll | name     | class | marks | age  |
+       +------+----------+-------+-------+------+
+       |    1 | Arsharaj |    12 | 100.5 |   18 |
+       |    2 | Rahul    |    13 | 83.95 |   19 |
+       |    3 | Raj      |    14 |  75.4 |   20 |
+       |    4 | Shivam   |    15 |  45.3 |   22 |
+       +------+----------+-------+-------+------+
+       4 rows in set (0.00 sec)
+
+
