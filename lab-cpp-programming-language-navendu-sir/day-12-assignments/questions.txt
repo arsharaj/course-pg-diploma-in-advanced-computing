@@ -1,0 +1,6 @@
+Assignment: 
+
+For String, Date and Array classes do following:
+- Identify member functions that should be made constant member function and convert them to constant member functions.
+- Identify where all objects should be passed by reference and make the changes.
+  Also, make changes at appropriate places, to pass them as reference to constant objects.

@@ -1,0 +1,21 @@
+Assignment: 
+
+1. Finish the implementation of BigInt class by overloading remaining relational operators to compare two BigInt objects.
+   Also write a small program to demonstrate the use of BigInt class and overloaded relational operators.
+
+2. Implement a Date class with following member functions. Also overload remaining relational operators to compare two dates.
+   Also write a small program to demonstrate the use of Date class and overloaded relational operators.
+class Date {
+	int day;
+	int month;
+	int year;
+public:
+	Date();
+	Date(int d, int m, int y);
+	void Read();
+	void Write();
+	bool operator==(Date obj2);
+};
+
+3. Design (define what all constructors, member functions and operator functions to overload relational operators) and implement them.
+   Also write a small program to demonstrate the use of String class and overloaded relational operators.

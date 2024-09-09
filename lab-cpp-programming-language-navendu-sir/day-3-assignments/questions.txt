@@ -1,0 +1,116 @@
+Exercise:
+For following. write algorithm/flow chart/pseudo code for following problems.
+Test their correctness by doing dry run with given sample inputs.
+
+Assignment:
+Implement them as Cpp program.
+
+
+1. Given a positive integer N, find all factors of N.
+For example:
+N = 12
+Factors = 1 2 3 4 6 12
+N = 5
+Factors = 1 5
+
+
+2. Given a positive integer N, find its reverse.
+For example:
+N = 534
+Reverse = 435
+N = 5
+Reverse = 5
+
+
+3. Find sum of all numbers between two positive integers N and M, including N and M.
+For example:
+N = 3
+M = 7
+Sum = 25 (3 + 4 + 5 + 6 + 7)
+
+
+4. Find prime numbers between two positive integers N and M, including N and M.
+For example:
+N = 3
+M = 10
+Prime Numbers = 3 5 7
+
+
+5. Find the first digit in a positive integer.
+For example:
+Number = 32
+First Digit = 3
+
+
+6. Find the sum of all digit of a positive integer.
+For example:
+Number = 3245
+Sum of digits = 14 (3 + 2 + 4 + 5)
+
+
+7. Find the sum of all digit of a integer (both positive and negative).
+For example:
+Number = -3245
+Sum of digits = 14 (3 + 2 + 4 + 5)
+Number = 12
+Sum of digits = 3 (1 + 2)
+
+
+8. Find the product of all digit of a positive integer.
+For example:
+Number = 312
+Sum of digits = 6 (3 x 1 x 2)
+
+
+9. Given a positive integer N, check if its palindrome or not. A palindrome number is a number that is same as its reverse.
+For example:
+Number = 32
+Not a palindrome. (Reverse is 23 and not same as 32)
+Number = 545
+A palindrome. (Reverse is 545 and not same as 545)
+
+
+10. Given a positive integer N, check if it is a perfect number or not.
+Perfect number is a positive integer that is equal to the sum of its factors (excluding the number itself).
+For example:
+N = 12
+Factors = 1 2 3 4 6 (we do not consider 12)
+Sum of factors = 1 + 2 + 3 + 4 + 6 = 16
+As Sum of factors is not equal to the Number 12, 12 is not a perfect number.
+N = 6
+Factors = 1 2 3 (we do not consider 6)
+Sum of factors = 1 + 2 + 3 = 6
+As Sum of factors is equal to the Number 6, 6 is a perfect number.
+
+
+11. Given a positive integer N, check if it is an armstrong number or not.
+An armstrong number is a number that is the sum of its own digits each raised to the power of the number of digits.
+For example:
+N = 153
+Number of digits in number = 3
+Sum of its own digits each raised to the power of the number of digits = (1 x 1 x 1) + (5 x 5 x 5) + (3 x 3 x 3) = 1 + 125 + 27 = 153
+153 is armstrong number.
+
+N = 15
+Number of digits in number = 2
+Sum of its own digits each raised to the power of the number of digits = (1 x 1) + (5 x 5) = 1 + 25 = 26
+15 is not an armstrong number.
+
+
+12. Find the count of a digit in a given positive integer.
+For example:
+Number = 12123
+Digit = 1
+Count of digit 1 in 12123 = 2 (as 1 appears twice in the number)
+
+
+13. Given a positive integer N, print the digits in the number as words.
+For example:
+N = 231
+Result = Two Three One
+
+
+14. Given a positive integer N, print the number in words.
+For example:
+N = 5312
+Result = Five Thousand Three Hundred Twelve

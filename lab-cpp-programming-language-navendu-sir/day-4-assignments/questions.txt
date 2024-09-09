@@ -1,0 +1,4 @@
+1. Add input validation to all assignments, in which its required, mentioned in "2023-09-13 Cpp Programming - Day 3 Assignment.txt".
+Hint: Can do the implementation using do-while loop.
+
+2. Rewrite assignments mentioned in "2023-09-13 Cpp Programming - Day 3 Assignment.txt" that can be better implemented using for loop.

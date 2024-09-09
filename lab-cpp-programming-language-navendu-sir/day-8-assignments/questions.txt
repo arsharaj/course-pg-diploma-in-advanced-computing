@@ -1,0 +1,16 @@
+Assignment: Implement following functions. Implement them using [] operator and also using pointer operations. Do not use any library functions.
+
+1. Given a string, return its length.
+int Strlen(char s[]);
+
+2. Copy the source string "src" into destination string "dest".
+void StrCpy(char dest[], char src[]);
+
+3. Compare the two strings and return true if they are same else return false.
+bool Compare(char s1[], char s2[]);
+
+4. In the given string, convert all lower case chanracters to upper case.
+void ToUpper(char s[]);
+
+5. In the given string, convert all upper case chanracters to lower case.
+void ToLower(char s[]);

@@ -1,0 +1,16 @@
+Assignment: Implement following functions:
+
+1. Given an array of n integers, find the largest element and return if from function.
+int findMax(int nums[], int n);
+
+2. Given an array of n integers, find the smallest element and return if from function.
+int findMin(int nums[], int n);
+
+3. Given an array of n integers, find the second largest element and return if from function.
+int findSecondLargest(int nums[], int n);
+
+4. Given an array of n integers, find the second smallest element and return if from function.
+int findSecondSmallest(int nums[], int n);
+
+5. Given an array of n integers, find the given element. Return true if element is present in the array else return false.
+bool search(int nums[], int n, int element);

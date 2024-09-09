@@ -1,0 +1,5 @@
+Assignment: 
+
+1. In String class, implement following:
+   - Copy constructor to perform deep copy.
+   - Overload assignment operator, to perform deep copy.

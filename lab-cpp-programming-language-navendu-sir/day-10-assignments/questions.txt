@@ -1,0 +1,17 @@
+Assignment: 
+
+1. In BigInt class overload following operators:
+   Binary operators + - * / to work with
+   - both operands of type BigInt
+   - one BigInt operand and one int
+   Unary operators ++ and -- in both pre and post form.
+   Also write a small program to demonstrate the use of BigInt class and overloaded operators.
+
+2. For the Date class overload following operators.
+   Binary operator + to work with
+   - one Date operand and one int
+   Binary operator - to work with
+   - both operands of type Date
+   - one Date operand and one int
+   Unary operators ++ and -- in both pre and post form.
+   Also write a small program to demonstrate the use of Date class and overloaded relational operators.
