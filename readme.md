@@ -7,6 +7,7 @@
 - Lab : Algorithms And Data Structures Using Java
 - Lab : Concepts Of Operating Systems
 - Lab : Cpp Programming Language Navendu Sir
+- Lab : Cpp Programming Language Pratik Sir
 
 ### License
 

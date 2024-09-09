@@ -1,0 +1,11 @@
+
+OOP Concepts
+
+C++ program to find greatest b/w 3 nos. by defining the functions inside class
+C++ program to find reverse of number by defining functions outside class
+C++ program to add two time by Call by reference
+C++ program to add two time by Call by address
+C++ program to find factorial by defining functions outside the class
+C++ program to find how many times function called by objects
+C++ program to find square of float and integer using inline function
+C++ program to add two complex number passing objects as arguments

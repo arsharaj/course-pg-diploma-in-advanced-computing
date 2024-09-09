@@ -1,0 +1,9 @@
+POinters Assignmnet
+
+Write C++ program to swap two numbers using pointers
+Write C++ program to add two numbers using pointers
+Write C++ program to Sum of Array Elements using Pointers
+Write C++ program to find length of string using pointer
+Write C++ program to copy one string to another string using pointer
+Write C++ program to concatenate two strings using pointer
+Write C++ program to print the elements of the array in reverse order using a pointer
