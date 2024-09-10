@@ -1,0 +1,17 @@
+Steps for Spring Boot based project to develop backend
+
+1. Create spring boot app : using spring boot starter project (choose packaging as JAR)
+
+2. Use same spring boot starters as earlier.
+Spring web , Mysql driver , Spring data JPA , Lombok , Spring Dev Tools,validation
+
+3. NO additional dependencies for view layer(i.e no jstl n no tomcat-embeded jasper  dependencies , in pom.xml
+
+4. Copy application.properties from earlier spring boot project
+(Do not add view resolver related properties)
+Edit username n password.
+
+5. Build the layers .
+RestController --Service --DAO (Spring Data JPA based) --Hibernate managed Entities/Embeddables --DB
+(Refer to a diagram : "Full Stack Overview.png")
+

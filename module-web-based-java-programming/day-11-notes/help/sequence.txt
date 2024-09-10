@@ -1,0 +1,205 @@
+﻿Revise
+
+eg : Bi dir association between Author n Book
+Author 1<---->*  Book
+
+Describe using terms (one/many , parent/child , owning/inverse)
+Author : one , parent , inverse
+Book : many, child , owning(containing FK)
+
+MANDATORY in one-many : Child(many) MUST be : owning side(the side containing FK : mapping info) , for normalization
+
+Author :id, first name ,last name , email(unique) , pwd + 
+private List<Book> books=new AL<>();
+
+Book : id,title(unique), price,noOfPages  +
+private Author bookAuthor; 
+
+
+
+What will happen if you don't add any annotations ? : hib throws MappingException
+
+Author :id, first name ,last name , email(unique) , pwd + 
+@OneToMany
+private List<Book> books=new AL<>();
+
+Book : id,title(unique), price,noOfPages  +
+@ManyToOne
+private Author bookAuthor; 
+
+What will happen if you don't add mappedBy n why ?
+Since hib DOES NOT know about owning n inverse side , it will create additional asso table(join table) containing author_id n book_id
+
+What is it ? : element of @OneToMany 
+When mappedBy mandatory ? : bi dir asso
+Where should it appear ? inverse(=non owning)
+What should be it's value  ? the name of the prop appearing in the owning side
+In a bi dir relationship , where(in which layer?) should you esatblish it n how ?
+
+Author :id, first name ,last name , email(unique) , pwd + 
+@OneToMany(mappedBy="bookAuthor")
+private List<Book> books=new AL<>();
+
+Book : id,title(unique), price,noOfPages  +
+@ManyToOne
+private Author bookAuthor; 
+
+
+In the web app :
+Suppose you want add book to the author or remove book :
+
+
+
+
+
+What will happen if you don't add any cascading ?
+Cascading refers to the ability to automatically propagate the state of an entity  across associations between entities. Typically it happens from parent entity ---> child entity
+
+Objectives 
+1. Add new department
+
+2. Add emp to the existing dept
+i/p : emp details , dept id
+
+3. Add new dept + 3 emps
+(cascade on save)
+
+4. Delete dept details (lab work)
+i/p : dept name
+(cascade on delete)
+Steps in DAO layer : JPQL -- get persistent dept --session.delete(dept)
+
+5. Remove an emp from specific dept
+i/p : dept name , emp email
+Steps in DAO layer : JPQLs-- get persistent dept , get persistent emp --helper method : removeEmp
+
+
+
+(important point : orphanRemoval)
+
+
+6. Display Department details
+i/p : dept name
+
+7. Try to display dept n emp details
+i/p : dept name
+Problem n solutions
+
+7.5 Lab work
+Display all dept's details along with emps , in a SINGLE select query
+
+
+8. get vs load
+Use case : AddNewEmpToExistingDept --later !!!!
+
+3. Resume with LazyInitializationException
+
+When will hibernate throw LazyInitExc?
+Any time , while accessing un fetched data from DB , outside the session scope.
+Triggers :
+1. 
+one-many : LAZY 
+OR
+many-many
+OR
+load
+
+eg : JPQL : "select c from Author c where c.title=:title"
+Author Author=.....
+tx.commit();
+Author : DETACHED
+sop(Author.getDesc());
+Author.getBooks().forEach(sop);//???
+
+
+Discuss different  solutions
+The best one : 
+Use join fetch , to avoid select n+1 issue
+
+
+Objective :  get all departments (lab work !)
+Problem n solutions
+
+Proceed to one-to-one 
+(Refer : JPA Entity Association Mappings)
+
+
+How will you configure a bi dir one to one association between Emp n Address
+Emp 1<----->1 Address
+
+Emp : one , parent , inverse
+Address : one , child , owning
+Which additional property in Emp class ?
+@OneToOne(mappedBy="emp",cascade=CascadeType.ALL,orphanRemoval=true)
+private Address empAdr;
+//additional helper methods : addAddress,removeAddress
+
+Which additional property in Address  class ?
+@OneToOne
+@JoinColumn(name="emp_id",nullable=false)
+private Employee emp;
+
+In a uni dir asso 
+Emp 1 <----- 1 Address
+
+Which additional property in Address  class ?
+@OneToOne
+@JoinColumn(name="emp_id",nullable=false,fetch=FetchType.LAZY)
+private Employee emp;
+
+Shared PK approach for uni dir one-one mapping
+
+
+Lab work :
+1. Assign emp address
+i/p : emp id n address details
+
+DAO : AddressDao
+String assignEmpAddress(Long empId,Address adr);
+Steps : get emp from it's id(get) --null chking --not null  => emp : persistent
+adr.setEmp(emp);
+session.persist(adr);
+
+2. Get emp address
+i/p : emp id (adr id)
+Address adr=session.get(Address.class,empId);
+
+If u want to fetch adr +emp details in a single join query
+jpql ="select a from Address a join fetch a.emp where a.emp.id=:id"
+
+
+
+4. Employee 1<-----1 Address association mapping
+Desc : Uni dir one to one mapping between Emp n Address (USING Shared PK approach)
+Objective :
+4.1 Assign address to the existing employee
+i/p : adr details , emp id
+o/p : mesg
+Hint : get emp details from it's id (session.get) , form uni dir link adr --> emp , persist
+Problems n solutions
+If you don's assign emp ref to address , Hibernate throws : ID generationException (why : null id !!!)
+So MUST set up uni dir association from adr ---> emp (using a setter) n then persist adr details
+
+4.2 Display address details of a specific emp 
+i/p : emp id
+o/p : in case of success : adr details or null(err mesg)
+Hint : Simply use emp id itself as adr id (Thanks to @MapsId : shared PK approach) n use session.get(adr class , emp id)
+BUT since one-to-one , behaves by def in eager manner : if you DON't want to lift emp details , but ONLY adr details , use fetch type : LAZY 
+
+
+
+(Refer : JPA Entity Association Mappings)
+5. Employee ------ Project association mapping
+
+Ref : JPA Entity Association Mappings.txt
+
+
+Excellent links for understanding Entity association mappings :
+1. https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/
+
+2. https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/
+
+
+
+
+

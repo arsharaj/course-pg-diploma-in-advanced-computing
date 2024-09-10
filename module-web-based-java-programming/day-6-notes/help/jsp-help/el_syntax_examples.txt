@@ -1,0 +1,40 @@
+1. ${sessionScope.team_dtls}
+sessionScope.get("team_dtls") --> to string --> sent to clnt
+OR
+session.getAttribute("team_dtls") --> to string --> sent to clnt
+
+2. Suppose you have added offer(sale) info under the app scope
+How ?
+<%
+  application.setAttribute("sale_info",new Sale(....));
+%>
+Equivalent servlet code
+doGet(rq,rs) ....
+{
+  getServletContext().setAttribute("sale_info",new Sale(....));
+}
+How to display sale info to the clnts,  in JSP using EL syntax ?
+${applicationScope.sale_info}
+WC : getServletContext().getAttribute("sale_info").toString() --sent to clnt
+
+${sale_info} : WC searches under pageScope --> requestScope--> sessionScope --> applicationScope --result sent to clnt
+Works BUT slower
+
+Suppose you have added a page scoped attribute , how ?
+eg : one.jsp
+<%
+ pageContext.setAttribute(nm,val);
+%>
+How to display ?
+${pageContext.nm}
+${pageScope.nm}
+${page.nm}
+${nm}
+Options : 2 , 4
+
+
+
+
+
+
+

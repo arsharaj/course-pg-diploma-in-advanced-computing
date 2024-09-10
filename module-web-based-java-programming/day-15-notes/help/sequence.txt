@@ -1,0 +1,71 @@
+Have you imported  spring boot MVC template project  as existing Maven project?
+Maven force update  , Maven clean(if required Maven install)  n Project clean ?
+
+
+
+Today's topics
+Revision of Spring MVC flow 
+Understanding ModelAttributes , ModelAndView n Model i/f
+Spring MVC integration with Hibernate
+Enter Spring Boot.
+Port existing web app to spring boot.
+Enter Spring Data JPA
+
+
+Revise 
+Spring MVC Flow 
+1. Refer : spring MVC flow diagram
+
+2. Deliver index page from SC
+Clnt req : http://host:port/ctx_path/
+
+Write a Handler(=Req handling controller) : mapped to /
+
+
+2. Spring MVC hibernate Integration without Spring boot
+Walk through the code.
+Refer to diagram
+
+
+Modifications
+
+Use Model Map
+
+Objective : Display all emp details
+
+
+
+
+
+-------------------------------
+Today's topics : 
+
+Understand the pain points of extensive configuration ....
+Any solution : YES !
+
+1. Enter Spring Boot
+Readmes to refer 
+1."day15-data\day15_help\spring boot\spring-boot-steps.txt"
+2. "day15-data\day15_help\spring boot\Why n What is spring boot.txt"
+
+2. Port earlier app to spring boot n continue
+Any problems noticed ?
+
+
+3. Replace hibernate native APIs by JPA
+Refer : "day13-data\day13_help\spring boot\diagrams\jpa-entitymgr-session-layers.png"
+Reference project : day13_boot
+
+4. BUT if you notice , in all DAO layers (JDBC / Hibernate / JPA) , you are solving common problems : CRUD 
+So is there any out of box (ready made) solution ?
+YES
+
+Enter Spring Data JPA
+Refer : "day13-data\day13_help\Spring Data JPA\regarding spring data JPA.txt"
+
+-------------------------
+Revise this (from Java SE api docs)
+
+java.util.Optional class Method
+public  T orElseThrow​(Supplier exceptionSupplier) throws Throwable
+If a value is present, returns the value, otherwise throws an exception produced by the exception supplying function.

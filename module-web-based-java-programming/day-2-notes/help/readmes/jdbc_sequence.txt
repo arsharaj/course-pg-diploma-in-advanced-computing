@@ -1,0 +1,159 @@
+Revise
+
+What is JDBC ?
+- JDBC is the specification for connecting to the underlying database. JDBC stands for Java Database Connectivity. JDBC related specifications are provided by java.sql package in the form of interfaces whereas its implementation is handled by jdbc driver vendors. Currently we are using Type 4 JDBC i.e. Native Protocol All Java Driver.
+- This API is used for connectivity to DB and to perform CRUD operations.
+
+Why ?
+1. JDBC provides platform independence since it is written in Java Programming Language meaning it runs on every machine supporting Java Runtime Environment.
+2. JDBC provides Database vendor independence since java.sql package only provides the specification and the implementation details is left to the JDBC vendors. But it is only partially independent since the Sql query could change from DB to another DB.
+
+How ?
+1. JDBC driver provided by different DB vendors or third parties.
+2. JDBC api consist of interfaces so we can change the underlying database without making any changes to the codebase. We just have to change the JDBC connector.
+In summary JDBC have a clear cut seperation of Interfaces (Specifications) and Classes (Implementation) providing DB independence.
+
+JDBC Steps
+
+All the steps involved in JDBC:
+1. Add the JDBC connector jar in Runtime classpath.
+2. <Optional> Load the JDBC driver.
+3. Get the fixed connection
+4. Prepare statements
+5. Execute statements
+6. Process Resultset if required.
+
+Object Relational Mapping (ORM): 
+1. Tables - POJO Class (Plain Old Java Object)
+2. Rows - POJO Instances or POJOS
+3. Columns - POJO Properties
+4. Unique ID property - Primary Key
+
+Layered Architecture : 
+- Spring uses the MVC pattern of modularity for seperation of concerns.
+
+Tables -> ORM -> DAO -> DBUtils -> Tester.
+
+Solve
+1. Sign up (Voter Registration)
+i/p : all user details (excluding id,role,status)
+Layers
+1. Table  : users
+2. POJO/Model/Entity layer : ORM
+Table --- POJO class
+Rows -- POJOs
+Cols --POJO props
+eg : User --props , def ctor , overloaded ctor/s , g/s , toString
+3. DBUtils 
+openCn
+closeCn
+4. DAO 
+4.1 i/f 
+eg UserDao
+String registerNewVoter(User newUser) throws SQLExc
+
+4.2 UserDaoImpl
+state --cn , psts,csts
+def ctor : open cn , create psts/csts
+clean up : psts/csts : close , close cn
+CRUD 
+
+2. Delete User details
+i/p : user id 
+Table : users
+POJO : User
+UserDao :
+String deleteUserDetails(int userId) throws SE
+UserDaoImpl
+Tester 
+
+
+3. Change password 
+i/p : email , old password , new password
+
+
+4. Execute stored procedure to transfer funds from src to dest account
+
+Steps
+1. Create a Stored proc/func in DB
+
+2. Create CST(CallableStatement) from DB connection. => pre-parsed , pre compiled statement
+API of Connection i/f
+public CST prepareCall(String sql) throws SQLExc.
+sql : proc : "{call procName(?,?,?,?....)}"
+sql : func : "{?=call funcName(?,?,?,?....)}"
+{} : esc sequence meant for JDBC driver , to translate invocation syntax into DB specific invocation of a proc/function.
+
+3. Register OUT params => Informing JVM about JDBC data type (generic SQL type : DB independent )  of OUT param.
+API of  CST 
+public void registerOutParameter(int paramPos,int jdbcType) throws SQLException
+Use java.sql.Types class constants to specify : jdbcType
+eg : Types.DOUBLE , Types.DECIMAL,....
+
+
+4. IN : set it's value : public void setType(int paramIndex,Type value) throws SE
+OUT :  public void registerOutParamter((int paramIndex,int jdbcType) throws SE
+IN OUT :set it's value + registerOutParamter
+
+5. Execute the proc/func
+public boolean execute() throws SQLException
+Ret value is not required.
+
+6. Retrieve the results stored in OUT param
+API of CST
+public Type getType(int paramIndex) throws SQLException
+
+
+
+
+
+DB Transactions 
+Functionally grouped SQL stmts : representing a B.L.
+Tx => all the stmts from a Tx either fail or succeed.
+i.e If any stmt fails : entire Tx has to be discarded. 
+The changes made by the Tx will be made permanent : IFF all the stmts succeed.
+eg : Purchase a product
+Involves 1. Checking availability of the product
+2. Customer credit/debit limit & updating the same
+3. Updating stock .
+
+How to do it from JDBC API?
+
+1. Start a Tx
+Connection i/f method 
+void setAutoCommit(boolean flag:false)
+ie. unset the auto-commit flag.
+eg : cn.setAutoCommit(false);
+2. Wrap entire Tx within a separate try-catch block.
+3. If the entire try block succeds (i.e at the end of try) ---> commit the Tx
+API : public void commit() throws SQLException
+eg : cn.commit();
+4.But if you reach inside the catch clause(due to system exc or custom exc) : rollback the Tx
+API : public void rollback() throws SQLException
+eg : cn.rollback();
+5. To continue , in a non transactional manner  : set auto-commit to true again.
+
+6. To rollback a transaction partially , there exists additional method for setting save points.
+Connection i/f method
+public Savepoint setSavepoint() throws SQLException
+
+7. How to restore the DB state to a savepoint ?
+Connection i/f method
+void rollback(Savepoint savepoint) throws SQLException
+It will undo all changes made after the given Savepoint object was set.
+
+
+Default nature of ResultSet (i/f) object
+is TYPE_FORWARD (i.e can use only next() methods)
+READ_ONLY
+BUT with additional APIs(while creating ST/PST) you can modify nature of ResultSet
+to the scrollable type
+n updates can be made.
+(For details : refer -readme_jdbc.txt)
+
+
+
+
+
+
+

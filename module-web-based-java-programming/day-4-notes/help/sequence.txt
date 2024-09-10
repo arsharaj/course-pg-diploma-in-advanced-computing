@@ -1,0 +1,118 @@
+Today's topics
+
+Revise Servlet life cycle , learnt so far.
+Revise Page Navigation(redirect) API n internals
+Session Tracking
+Cookie based
+HttpSession i/f based
+Continue with the case study(Voter flow)
+
+
+Tried n tested servlet deployment with annotation n xml tags ?
+Tried voter registration?
+
+
+1. Suppose you have added VoterRegistrationServlet in your web app 
+@WebServlet(value="/signup",loadOnStartUp=2)
+public class VoterRegistrationServlet extends HttpServlet {....}
+1.1 What will WC do @ web app deployment time
+Applies reflection --WEB-INF/classes --looks for info from web.xml | annotation
+Prepares a map to store request mappings
+key : /signup
+value : pages.VoterRegistrationServlet
+Checks for loadOnStartUp --> >= 0, => eager loading
+WC starts life cycle of servlet @ web app dep time
+servlet cls loaded in meta space : server side
+SINGLETON instance of servlet created n stored in server side heap
+invokes init (of GenericServlet or VoterRegistrationServlet)
+success : servlet is marked rdy for servicing the clnts
+
+failed(ServletExc) => WC DOES NOT continue with servlet life cycle
+
+
+1.2 What will WC do , after registration form(register.html) is submitted ?
+What should be the form action ? : signup , method =post
+
+WC ---> invokes public service(rq,rs) of HttpServlet --> protected service(hsrq,hsresp)  --> dispatches request ---doPost
+--->set cont type(text/html) , get PW : to send buf. text resp
+-->B.L , validations , DAO invocation , page nav....send dyn resp to clnt 
+
+
+1.3 Triggers for ending life cycle of the servlet
+server shut down / un deploying web app / re dep(reloading) web app
+WC invokes destroy (of G.S or overriding form: dao 's clean up)
+--marks servlet instance for G.C --ending life cycle
+
+2. Revise page navigation with sendRedirect
+eg : Suppose voter has logged in successfully, who has not yet voted (LoginServlet)
+What wil happen internally when you write this ?
+resp.sendRedirect("candidate_list");
+
+What will happen if you commit the response(pw.close/pw.flush) n then call sendRedirect ?
+WC throws IllegalStateExc : root cause : you CAN NOT call sendRedirect after sending the resp.
+=> redirection failed!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+3. Do you see any problems after redirect while accessing req params from list page? YES : null values!
+
+Problem cause : HTTP is stateless (i.e can't remember clnt's conversational state across multiple requests)
+
+
+Solution : Session Tracking
+
+
+4.  Enter : Session Tracking
+4.1 Cookie Based
+4.2 HttpSession based
+
+
+2.HttpSession with API steps n diagram
+HttpSession i/f based session management
+(Refer to code , API n draw the diagram)
+
+1. HttpServletRequest getSession methods (refer to a diag : "day4-data\day4_help\session tracking\request.getSession details.png")
+1.1 HttpSession getSession() : WC will create a new Session if it doesn't exist OR rets the existing one 
+
+1.2 HttpSession getSession(boolean create) : Reading H.W
+
+
+2. Session Tracking with HttpSession i/f
+
+2.1 Get HttpSession from WC
+HttpSession session=request.getSession();
+
+
+2.2 How to save validated user details under session scope?
+HttpSession API 
+public void setAttribute(String attrName,Object attrValue)
+
+2.3 How to retrieve ?
+public Object getAttribute(String attrName)
+
+2.4 How to remove attribute from the session scope ?
+public void removeAttribute(String attrName)
+
+2.5 How to get all attr names bound to HttpSession ?
+Enumeration<String> getAttributeNames()
+
+2.6 How to get session creation date n time
+long getCreationTime();
+
+
+2.7 How to invalidate session ?
+session.invalidate(); => WC marks HS object for GC , unbinds all session scoped attributes.
+
+
+
+3. Complete Voter flow
+Completed till casting a vote.
+

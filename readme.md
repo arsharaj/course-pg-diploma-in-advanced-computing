@@ -24,6 +24,7 @@
 - Module : Microsoft Dot Net Technologies
 - Module : Object Oriented Programming With Java
 - Module : Software Development Methodologies
+- Module : Web Based Java Programming
 
 ### License
 

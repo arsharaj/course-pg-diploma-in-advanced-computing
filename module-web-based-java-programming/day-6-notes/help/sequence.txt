@@ -1,0 +1,73 @@
+Assignment status (IPL assignement)
+
+
+Tomorrow's topics
+Revise server pull
+Complete Servlet Life cycle with  Concurrency(Executor framework)
+Web app listeners
+JSP Introduction n life cycle
+JSP syntax (Scripting elements , EL , Directives)
+
+------------------------------
+Revise server pull
+eg : In servlet1 (/s1 : doPost) ---> servlet2(/s2) : forward
+RD rd=request.getRD("s2");
+rd.forward(request,resp);
+WC : clrs resp buffer,suspends exec of s1 --> Servlet2's doPost --can generate dyn resp --s2' doPost rets--> control comes back --s1 (CAN'T genearte dyn resp) --s1's doPost rets ---resp content 
+SC 200 | headers ..| body : non empty (resp from last page in the chain)
+Use case : In MVC based web app frmworks  (JSF,Struts,Spring MVC,Apache Camel)
+RD's forward tech. is used to forward clnt from Controller --> View layer
+
+RD's include
+In servlet1 (/s1 : doPost) ---> servlet2(/s2) : forward
+RD rd=request.getRD("s2");
+rd.include(request,resp);
+WC : retains resp buffer,suspends exec of s1 --> Servlet2's doPost --can generate dyn resp --s2' doPost rets--> control comes back --s1 (can continue to  genearte dyn resp) --s1's doPost rets ---resp content(s1+s2) 
+SC 200 | headers ..| body : non empty (resp from s1+s2)
+
+1. Solve
+eg : remote web server IP address is  --ip1 
+In web app(/day5.1) --- /s1(is a servlet) ---
+Creates a  cookie  --- name --"clnt_info" , value --"details1234"  & sends it to a clnt.
+
+clnt IP adr--  ip2
+
+Q Will Clnt browser of ip2  send the cookie in request header ?
+
+1. clnt sends the URL --- http://ip3:8080/day5.1 : NO , different host 
+2. clnt sends the URL --- http://ip1:8080/day2/s1 : NO , different web app
+3. clnt sends the URL --- http://ip1:8080/day5.1/s2 : YES
+4. clnt sends the URL --- http://ip1:8080/day5.1/s10 : YES
+
+
+
+What is the Default behaviour : cookies are by default sent to the SAME web app of origin(i.e the web site which has generated cookies)
+
+
+Can it be modified by Cookie class methods??? YES
+
+Which ones ?
+
+setPath : allows the cookie/s to be shared across multiple web apps hosted on the same server.
+setDomain : allows the cookie/s to be shared across multiple hosts from the same domain
+
+2. Complete Servlet Life cycle (including thread pool)
+Executor Framework (used by WC to support concurrent handling of multiple client requests)
+CGI Vs Servlets :(reading H.W)
+
+
+3. Web app listeners
+Add a listener in the existing web app n test it.
+
+4. Enter JSP
+(refer : readme_jsp.txt)
+What is it ?
+Why ?
+Life cycle n API
+JSP Syntax
+JSP comments
+Scripting elements
+
+
+
+

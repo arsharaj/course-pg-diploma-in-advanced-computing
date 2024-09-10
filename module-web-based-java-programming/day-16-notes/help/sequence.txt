@@ -1,0 +1,54 @@
+Today's topics
+
+Tx management internals 
+Revise in detail Spring Boot MVC , with IPL 
+Add Player to the team , using data binding 
+Enter Spring Data JPA (Replace JPA by it's abstraction)
+Enter REST
+Create Spring Boot application for backend of Full Stack application.
+
+
+
+(Refer to Spring java docs)
+Link : https://docs.spring.io/spring-framework/docs/5.3.26/javadoc-api/
+
+1. Revise Spring MVC flow diagram , with spring boot
+Prepare request resp flow , for BEST clarity 
+index.jsp(rendered by SC)  --> A link to Add Player  --> Add Player Form --> Process Form --> Validate n add Player details in the DB.
+1.1 http://host:port/ctx_path/
+--D.S -- H.M --HomeController.showHomePage --> /index --> index.jsp sent to clnt
+1.2 After clnt click the link
+Next req :http://host:port/ctx_path /teams/abbrs
+(if cookies are disabled : appended bu JSESSIONID)
+--> TeamController.getAllTeamsAbbreviations --> LVN --> 
+add_player_form.jsp : sent to the clnt
+1.3 After clnt submits form
+Next req :http://host:port/ctx_path/players/add
+
+One way of handling request params sent from clnt --> server
+@RequestParam String abbr, 
+			@RequestParam String fn, 
+			@RequestParam String ln,
+			@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dob, @RequestParam double avg,
+			@RequestParam int wickets
+
+OR 
+BUT if there are larger no of request params  : USE data binding technique
+(view --> Model)
+Refer : "day16_help\regarding form binding.txt"
+
+2. Replace JPA based DAO layer by it's abstraction : Spring Data JPA
+Spring Data JPA Links (Bookmark them!)
+1. API Docs : https://docs.spring.io/spring-data/jpa/docs/2.7.14/api/
+2. Ref docs : https://docs.spring.io/spring-data/jpa/docs/2.7.14/reference/html/
+
+
+3. Enter Spring boot REST
+Understand RESTful web services n it's architecture , which sits on the top of Spring MVC
+(Draw a comparison , with existing Spring MVC Flow Diagram)
+Ref : Full Stack Overview.png
+
+refer to : REST Simplified
+Diag : web app vs web service
+Diag : Full Stack Development , Full Stack overview
+Readme : RestController vs MVC Controller n Annotations.txt

@@ -1,0 +1,95 @@
+0. Can you configure one-to-one in a bi dir manner? YES !
+Emp 1<---->1 Address
+Emp : one , parent , inverse
+Address :one , child , owning
+
+JPA annotations
+@OneToOne
+In Emp POJO
+....
+@OneToOne(mappedBy="emp",cascade={CascadeType.PERSIST,CascadeType.REMOVE},orphanRemoval=true,fetch=FetchType.LAZY)
+private Address empAddress;
+
+
+In Address POJO
+... +
+@OneToOne
+@JoinColumn(name="emp_id",nullable=false,fetch=FetchType.LAZY)
+private Employee emp;
+
+
+Any limitations ?
+1. In one-to-one mapping  , LAZY fetch type will work ONLY in OWNING side.
+(i.e if you call : session.get(Emp.class,empId) => hib will fire the queries on emps n address table)
+2 . Too many keys (emp_id , adr_id , FK in adr table ---> PK of emps table)
+
+1. Revise uni dir one to one association with shared PK approach
+
+eg : Employee 1<-----1 Address association mapping
+Desc : Uni dir one to one mapping between Emp n Address (USING Shared PK approach)
+
+Which additional fields / annotations in Employee POJO ?
+NONE
+
+Which fields / annotations in Address POJO ?
+public class Address extends BaseEntity
+{
+ private String city,state,zipCode;
++
+@OneToOne
+@JoinColumn(name="emp_id",nullable=false)
+@MapsId
+private Employee emp;
+//ALL setters n getters
+
+}
+In DB , address table , which cols : emp_id(PK n FK), city,state,zipCode ....
+
+
+2. Employee *<------>* Project association mapping
+Ref : readme
+
+
+3. Uni dir association : many-one only
+(Project Tip : Instead of configuring bi dir one-many n many-one , if you don't need bi dir data navigation or cascading , choose simpler configuration : uni dir association)
+
+4. Enter Value types
+
+Till Now , we were looking at association(HAS-A) relationship between multiple entities.
+Entities have a standalone existence(typically a separate table) , it's own PK.
+It's life cycle(transient, persistent,detached,removed) is independent of any other entity
+
+So this represents : weak association (aggregation)
+
+Can there be a strong association between hibernate managed POJOs ? 
+
+eg : 
+
+Employee HAS-A Adhar Card : demo of entity n value type (composite value type)
+
+Employee HAS-A PaymentCard (can have multiple credit/debit cards) : Collection of embeddable
+
+Employee HAS-A Skill : string (can have multiple skills eg : java,python,react...)
+: collection of basic value type
+
+
+Adhar Card : embeddable : @Embeddable
+field : cardNo , date , loc
+
+
+(collection of basic types)
+Annotations : @ElementCollection n @CollectionTable
+
+eg : to get all emps whose adhaar card created after specific date
+select e from Employee e where e.card.createdOn > :dt
+
+
+5. get vs load
+
+6. Reagrding Maven 
+
+7. Enter Spring
+Have you imported test_spring , to download spring dependencies ?????
+
+
+

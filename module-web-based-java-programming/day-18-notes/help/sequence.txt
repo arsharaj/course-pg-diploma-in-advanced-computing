@@ -1,0 +1,144 @@
+Today's topics
+Revision of server side validations , global exceptoin handling
+Spring Data JPA more practice
+Image Handling 
+Spring Boot AOP
+Spring Security
+Spring boot internal working
+
+
+1. Revise REST Server side Validations (using day17_REST2 , emp signin)
+(Refer to readme : templates.txt & "regarding spring boot exc handling n validations.txt") 
+
+2. More Practice of Spring Data JPA along with Unit testing with spring boot.
+(refer : regarding Spring Data JPA)
+Ref : https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
+2.1 Inherited APIs (eg : findAll , findById,save, deleteAll,count ....)
+2.2 Derived Query methods(derived finder methods)
+
+2.3 Custom Query Methods
+If you can't solve the requirement using inherited methods or finder methods , you can use custom query methods
+How  ?
+Can inject JPQL using @Query annotations n can pass named IN param using @Param .
+Simpler replacement of named IN param , will be positional IN params.
+eg : day18_demo
+Add new dept
+Add emp to dept
+Get All Emps (pagination)
+Get Dept and emps
+Code walk through : http://host:port/departments/{deptId}/emps 
+
+3. Image Handling
+"spring boot image handling.txt"
+Eclipse Project : day17_demo
+
+4. Spring Boot AOP
+Ref : readme
+Ref : spring_boot_aop (It's a monolithic web app , containing JSP based view Layer)
+Steps
+4.1 Run JUnit Test case , to set up DB
+TestUserDao.java
+(It will add 1 customer n 1 admin)
+4.2 Run the project as Spring Boot app
+User Login : as customer / admin 
+Check if it's working 
+
+4.3 Now if you want to intercept all the requests sent to this application n maintain a server side log , how will you do it ?
+Refer : "day18_help\Regarding logging framework in Java.txt"
+Refer : "day17_help\AOP\readme_aop.txt"
+
+
+5. Enter Spring Security
+Enter Spring security
+
+Understand spring security architecture
+1."day18_help\spring security\regarding spring security.txt"
+2."day18_help\spring security\diagrams\spring security architecture.jpeg"
+3."day18_help\spring security\diagrams\Ultimate Details of Spring Security Architecture.png"
+4."day18_help\spring security\Spring Security Flow.txt"
+5. import "spring_boot_backend_security_jwt_template" , in your workspace.
+(It will download spring security related dependencies)
+
+Steps
+1. Create spring boot application , w/o adding spring security dependencies
+Try to access some end points (eg : view products , add / delete products ..)
+Observation : all end points were un protected !
+
+2. Add spring security starter dependency in pom.xml , update maven project
+Observations
+2.1  : All end points are automatically PROTECTED (SECURED)
+i.e entire web app is under a lock (authentication lock).
+Un authenticated user CAN NOT access any of the APIs.
+2.2 It supplies def user name : user
+generate 128 bit randomly generated password on server console 
+You can test it using a browser. It will give you a ready made signin n signout form
+Understand this : By def spring security offers : form login n also authentication mechanism = Basic Authentication.
+
+What is Basic Authentication scheme of HTTP?
+
+1. Any time clnt sends a req to protected resource --spring sec uses def : basic auth
+Server sends resp header : WWW-Autheticate --- Basic 
+2. clnt has to send username:password --- base64 encoding
+auto sent by postman , using Basic Authentication scheme.
+3. Continue to in mem based authentication(InMemory User Details)
+Ref eclipse project : day18.1
+
+4. Replace it by DB based authentication (DB based  User Details , accessed using JPA)
+Ref eclipse project : day18.2
+
+5. Continue to JWT based authentication
+(Replace Basic Authentication scheme by JWT based authentication)
+For the understanding of JWT n steps , 
+Refer : "day18_help\spring security\JWT\JWT Details.txt"
+Refer : "day18_help\spring security\JWT\JWT Steps Upgraded.txt"
+Ref eclipse project : spring_boot_security_jwt
+After importing the project , edit DB properties .
+Run the test class : src\test\java\com\app\repository\UserEntityRepositoryTest.java
+It will create 3 different users  with 3 different type of roles.
+How will you test from postman ?
+1. URL : http://localhost:8080/products/view
+NO authentication required , you should get SC 200 , since it's permit all.
+2. URL : http://localhost:8080/products/purchase
+SC 401 , Authentication required n customer role is mandatory.
+3. First authenticate (In the project , refer to : UserAuthController)
+URL : http://localhost:8080/users/signin , method = POST , Body --raw --json 
+{
+"email" : "a2@gmail.com",
+"password" : "2345"
+}
+These are the correct credentials for the customer role.
+
+In the response , SC 200 n in the resp body , you will get this
+{
+    "jwt": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhMkBnbWFpbC5jb20iLCJpYXQiOjE3MDE3OTI4MzgsImV4cCI6MTcwMTg3OTIzOCwiYXV0aG9yaXRpZXMiOiJST0xFX0NVU1RPTUVSIn0.3XzhKJ0WPkra5b4-BkOfA7rbXWHSgzOcO_MDDJOdyplESTGcG6FMCfXwzvs6Qa5ao7PUQ8dCxQazbHUQzeKxhQ",
+    "mesg": "User authentication success!!!"
+}
+The value of JWT may differ.
+
+
+4. Now for accessing the secured end point , 
+URL : URL : http://localhost:8080/products/purchase , method=GET
+Instead of choosing "Basic Auth" , choose "Bearer Token" , from Auth 
+n paste the JWT(Json web token)
+You should get : SC 200 
+Resp body : customer should be able to purchase products
+
+5. Similarly , you can test other endpoints.
+
+
+6. Understand Internal working of spring boot
+Ref : "day18_help\Why n What is spring boot.txt"
+
+
+--------------------------
+Project Tips : 
+
+1. If you see json response of a user who has not yet  linked his Aadhar card , you will see aadhar card : null , or empty collection : []
+Currently for testing : set location : null 
+How to exclude null or absent values ?
+You can add at the POJO class level ,
+@JsonInclude(Include.NON_EMPTY)
+
+
+
