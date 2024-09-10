@@ -19,6 +19,7 @@
 - Module : Concepts Of Operating Systems
 - Module : Cpp Programming Language
 - Module : Database Technologies
+- Module : Effective Communication
 
 ### License
 
