@@ -14,6 +14,7 @@
 - Lab : Object Oriented Programming With Java
 - Lab : Software Development Methodologies
 - Lab : Web Based Java Programming
+- Lab : Web Programming Technologies
 
 ### License
 

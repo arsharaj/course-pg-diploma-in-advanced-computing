@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduler</title>
+    <style>
+        button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Appointment Scheduler
+    </h1>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name"> Name</label><br>
+        <input name="name" type="text"><br>
+        <label for="tele"> Telephone Number</label><br>
+        <input name="tele" type="tel"><br>
+        <label for="email"> Email Address </label><br>
+        <input name="email" type="email"><br>
+        <label for="dob"> Date of Birth</label><br>
+        <input name="dob" type="date">
+    </fieldset>
+    <fieldset>
+        <legend>Appointment Request</legend>
+        <label for="reason"> What is the reason for your visit? </label><br>
+        <input name="reason" type="text"><br>
+        <label for="painval"> Current Pain Value</label><br>
+        <input name="painval" type="range" min="1" max="10"><br>
+        <label for="date"> Prefered Date </label><br>
+        <input name="date" type="date"><br>
+        <label for="time"> Prefered Time</label><br>
+        <input name="time" type="time">
+    </fieldset>
+    <button type="submit">Submit</button>
+</body>
+</html>

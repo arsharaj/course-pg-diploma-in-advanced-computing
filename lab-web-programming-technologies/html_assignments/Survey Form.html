@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        div{
+            border: solid;
+            border-color: aqua;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div border="1">
+    <h1>
+        Internet Usage Survey</h1>
+        <p>This suirvey is being conducted to help identify the internet usage pattern of our customer. please take a few moments to complete and submit this shortform. Thank you for your cooperation.</p>
+        <table>
+            <tr>
+                <td>What type of internet connection do you have?<br>Select one. </td>
+                <td>
+                    <select size="4">
+                        <option>Dial Up</option>
+                        <option>DSL</option>
+                        <option>High Speed Cable</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>What type of computer do you use most at home? 
+
+                </td>
+                <td>
+                    <input type="radio" name="comp"><label for="desktop">Desktop</label>
+                    <input type="radio" name="comp"><label for="laptop">Laptop</label>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>How would you describe your main reason for using the Internet?
+
+                </td>
+                <td>
+                    <input type="radio" name="comp"><label for="">Desktop</label><br>
+                    <input type="radio" name="comp"><label for="">Laptop</label><br>
+                    <input type="radio" name="comp"><label for="">Desktop</label><br>
+                    <input type="radio" name="comp"><label for="">Laptop</label><br><br>
+                </td>
+                
+            </tr>
+            <tr>
+               
+                <td> <fieldset>
+                    <legend>Types of sites visited</legend>
+                What types of web sited do you access most often?<br>
+                Check all that apply.    <br><br>
+                <input type="radio" name="selfimprove"><label for="selfimprove">Self Improvement</label><br>
+                <input type="radio" name="entertainment"><label for="entertainment">Entertainment</label><br>
+                <input type="radio" name="newsnsport"><label for="newsnsport">News and Sports</label><br>
+                <input type="radio" name="reference"><label for="reference">Reference</label><br>
+                <input type="radio" name="email"><label for="email">Email</label><br>
+                </fieldset>
+                    
+
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>Time spent using Internet
+                        </legend>
+                        During an average week , how long do you spend online?<br><br>
+                        <input type="radio" name="hours"><label>0 - 3 Hours</label><br>
+                        <input type="radio" name="hours"><label>4 - 6 Hours</label><br>
+                        <input type="radio" name="hours"><label>7 - 10 Hours</label><br>
+                        <input type="radio" name="hours"><label>11 - 14 Hours</label><br>
+                        <input type="radio" name="hours"><label>15+  Hours</label><br>
+                        
+                        
+                        </fieldset>
+                </td>
+                
+            </tr>
+        </table>
+
+        Please comment on your opinions concerning Internet privacy and safety:
+        <br>
+        <textarea cols="60" rows="6"></textarea>
+        <table>
+            <tr>
+                <td>
+                    <label>First Name: </label>
+                    <input type="text" size="30">
+                </td>
+                <td>
+                    <label>Last Name: </label>
+                    <input type="text" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Age: </label>
+                    <input type="text" size="30">
+                </td>
+                <td>
+                    <label>Zip Code: </label>
+
+                    <input type="text" size="30">
+                </td>
+            </tr>
+           
+                
+        </table><br><br>
+         <center>
+            <button type="submit">Click to Submit</button>
+            <button type="submit">Clear Form</button></center>
+  
+       
+    </div>
+</body>
+</html>

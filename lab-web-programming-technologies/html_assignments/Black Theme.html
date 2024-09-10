@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <style>
+        body{
+            color: white;
+            background-color: black;
+        }
+       
+        legend,.btn{
+            background-color: rgb(63, 46, 158);
+            color: white;
+        }
+        fieldset{
+            border-color: rgb(63, 46, 158);
+        }
+        .input {
+            background-color: black;
+
+            border-radius: 3px;
+            border: 1px solid grey;
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+        }
+        table tr td:first-child {
+            text-align: right;
+            padding-right: 20px;
+        }
+        .register{
+            margin-left: 30px;
+        }
+
+     
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            Name and Address
+        </legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="ssn">SSN: </label>
+                </td>
+                <td>
+                    <input type="text" name="ssn" class="input" id="ssn"> <button type="button" class="btn" >fill in name and address</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="fname">Full Name: </label>
+                </td>
+                <td>
+                    <input type="text" name="fname" class="input" id="fname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="street">Street and Number: </label>
+                </td>
+                <td>
+                    <input type="text" name="street" class="input" id="street">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="code">Postal Code: </label>
+                </td>
+                <td>
+                    <input type="text" name="code" class="input" id="code">
+                    </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="city">City: </label>
+                </td>
+                <td>
+                    <input type="text" name="city" class="input" id="city">
+                </td>
+            </tr>
+          
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>
+           Username and Password
+        </legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="uname">Username: </label>
+                </td>
+                <td>
+                    <input type="text" name="uname" class="input" id="uname">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="pass">Password : </label>
+                </td>
+                <td>
+                    <input type="password" name="pass" class="input" id="pass">
+                    <br>
+                    <input type="checkbox" value="show" name="show"> show password
+                </td>
+            </tr>
+          
+        </table>
+    </fieldset>
+    <br>
+    <button type="button" class="btn register">Register</button>
+    
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Program Regisration Form </title>
+    <style>
+        table{
+          border-spacing: 0;
+          width: 100%;
+    background-color: pink;
+        }
+      
+    </style>
+</head>
+<body>
+    <h2>Training Program Form</h2>
+    <table border="1">
+        <tr>
+            <td>
+                <Label  for="name"> Name:</Label>
+            </td>      
+            <td>
+                <input type="text" placeholder="Surname Firstname Middlename" name="name" id="name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="empcode"> Employee Code</Label>
+            </td>      
+            <td>
+                <input type="text" name="empcode" id="name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="dept">Department: </Label>
+            </td>      
+            <td>
+                <input type="radio" name="dept" id="dept"  value="admin"/>
+                <label for="dept">Admin</label><br>
+                
+                <input type="radio" name="dept" id="dept"  value="hr"/>
+                <label for="dept">Hr</label><br>
+                <input type="radio" name="dept" id="dept"  value="technical"/>
+                <label for="dept">Technical</label><br>
+
+                <input type="radio" name="dept" id="dept"  value="account"/>
+                <label for="dept">Accounts</label><br>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="doj"> Date of joining</Label>
+            </td>      
+            <td>
+                <input type="date" name="doj" id="doj"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="address"> Address</Label>
+            </td>      
+            <td>
+               <textarea name="address"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="training1"> Training Program attended</Label>
+            </td>      
+            <td>
+                <input type="checkbox" id="training1" name="training1" value="html">
+                <label for="training1"> HTML/ DHTML</label><br>
+                <input type="checkbox" id="training2" name="training2" value="java">
+                <label for="training2"> JAVA</label><br>
+                <input type="checkbox" id="training3" name="training3" value="client">
+                <label for="training3"> Client / Server</label><br>
+                <input type="checkbox" id="training4" name="training4" value="dotnet">
+                <label for="training4"> Dot net</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="training"> Training Programs need to attend</Label>
+            </td>      
+            <td>
+              <select name="trainingprog" size="2" >
+                <option>
+                    Javascript
+                </option>
+                <option>
+                    JSTRUTS
+                </option>
+              </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Label  for="sendinfo"> Send the information at</Label>
+            </td>      
+            <td>
+                <input type="email"  name="sendinfo" placeholder="enter your email" id="email"/>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

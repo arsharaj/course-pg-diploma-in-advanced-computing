@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+</head>
+<body>
+
+    <script>
+        var emp = []
+        for (var i = 0; i < 6; i++) {
+            var name = prompt("Enter " + (i + 1) + " employee")
+            emp.push(name);
+        }
+        emp.sort();
+        for (var i = 0; i < 6; i++) {
+            document.write("Employee " + (i + 1) + " : " + emp[i] + "<br>");
+        }
+    </script>
+</body>
+</html>

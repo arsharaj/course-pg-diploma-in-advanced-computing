@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+<body>
+    <script>
+        class Employee {
+            constructor(name, dept, sal) {
+                this.name = name;
+                this.dept = dept;
+                this.sal = sal;
+            }
+        }
+
+        var emps = []
+        emps.push(new Employee("Tim", "Marketing", 12300));
+        emps.push(new Employee("Eric", "Development", 13212));
+        emps.push(new Employee("Sam", "Sales", 20002));
+        emps.push(new Employee("John", "Marketing", 12324));
+        emps.push(new Employee("Michael", "Development", 124342));
+        emps.push(new Employee("Rex", "Sales", 5132));
+        emps.sort((a, b) => a.name < b.name);
+
+        document.write("")
+        for (var i = 0; i < emps.length; i++) {
+            document.writeln("<tr> <td>" + emps[i].name + "</td> <td>" + emps[i].dept + "</td> <td>" + emps[i].sal + "</td> </tr>");
+        }
+    </script>
+</body>
+</html>

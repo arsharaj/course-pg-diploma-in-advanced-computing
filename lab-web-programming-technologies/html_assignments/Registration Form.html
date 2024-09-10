@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: rgb(41, 108, 196);
+            color: white;
+        }
+
+        .input {
+            border-radius: 3px;
+            border: 0px;
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table tr td {
+
+            width: 50%;
+        }
+
+        table tr td:first-child {
+            text-align: right;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <center> Registration Form</center>
+    </h1>
+
+    <fieldset>
+        <legend>
+            Registration Details
+        </legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="university">University: </label>
+                </td>
+                <td>
+                    <input type="text" name="university" class="input" id="university">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="institute">Institute: </label>
+                </td>
+                <td>
+                    <input type="text" name="institute" class="input" id="institute">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="branch">Branch: </label>
+                </td>
+                <td>
+                    <select class="input" name="branch">
+                        <option>Computer Science</option>
+                        <option>Information Technology</option>
+                        <option>Bio Technology</option>
+
+
+
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="degree">Degree: </label>
+                </td>
+                <td>
+                    <select name="degree">
+                        <option>
+                            --select--
+                        </option>
+                        <option>
+                            BSC
+                        </option>
+                        <option>
+                            MSC
+                        </option>
+                    </select>
+                    <input type="radio" value="pursuing" name="status"><label for="pursuing">Pursuing</label>
+                    <input type="radio" value="completed" name="status"><label for="completed">Completed</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cpi">Average CPI: </label>
+                </td>
+                <td>
+                    <input type="number" name="cpi" class="input" id="cpi1" min="1" max="6" style="width: 70px;"> Upto
+                    <input type="number" name="cpi" min="1" max="6" class="input" style="width: 70px;" id="cpi2">
+                    Th Semester
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="exp">Experience: </label>
+                </td>
+                <td>
+                    <input type="number" name="exp" class="input" id="exp"> &nbsp;Years
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Website">Your Website Or Blog: </label>
+                </td>
+                <td>
+                    <input type="url" name="Website" class="input" placeholder="https://" id="Website">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+
+</html>

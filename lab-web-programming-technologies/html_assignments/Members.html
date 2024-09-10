@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Members of the group
+    </h2>
+  <table>
+    <tr>
+        <td>
+            <label for="problemtype"> Type of the problem</label>
+        </td>
+        <td>
+            <select name="problems" id="problems">
+                <option>Technical (Website is down)</option>
+                <option>Product don not available </option>
+                <option>Missing information about the product</option>
+                <option>Other</option>
+                
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="uname"> Username : </label><span>*</span>
+        </td>
+        <td>
+           <input name="uname" type="text" placeholder="Enter Your Username" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="location"> Location : </label><span>*</span>
+        </td>
+        <td>
+           <input name="location" type="text" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="phone"> Phone : </label><span></span>
+        </td>
+        <td>
+           <input name="phone" type="tel" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="desc"> Description : </label><span>*</span>
+        </td>
+        <td>
+           <textarea></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="desc"> Notification of problem solved : </label><span></span>
+        </td>
+        <td>
+           <textarea></textarea>
+        </td>
+    </tr>
+<tr>
+    <td>
+
+    </td><td>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </td>
+</tr>
+  </table>
+</body>
+</html>
