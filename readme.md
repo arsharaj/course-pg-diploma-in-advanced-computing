@@ -23,6 +23,7 @@
 - Module : General Aptitude
 - Module : Microsoft Dot Net Technologies
 - Module : Object Oriented Programming With Java
+- Module : Software Development Methodologies
 
 ### License
 

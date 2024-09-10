@@ -1,0 +1,78 @@
+Operations team: Deploy the software
+Take the code from the Developers and push it to the Production servers
+
+
+"0 down time"
+"No stopping of the application for maintenance/upgrade"
+"Easy rollback if we have failuers"
+
+Synchronous/Stateful: If microservice A calls microservice B, microservice A must wait till it gets a response from microservice B
+
+Docker image ~ Program
+Docker container ~ Process
+Stop a process -> Program
+
+Docker build => Image
+Image, run => Container
+Stop a container -> Image
+
+
+
+
+Docker = VM + Linux (Kernel)
+Docker will not have shell/bash
+
+OS = Kernel area + User area
+
+Tomcat 
+Alpine (Linux User Area)
+Docker (VM + Linux Kernel)
+Host OS (Windows)
+Hardware
+
+Docker images and containers:
+1. Ready (Others have created)
+2. New (We create)
+
+(1) docker pull and docker run
+(2) docker run
+
+
+
+
+
+1) docker run <image name> => Run the image as a container
+2) docker image list => Show all the local images
+3) docker rmi <Image id> => Remove an image
+4) docker container list => List of running local containers
+5) docker container list -a => List of all local containers
+6) docker container rm <container id> => Remove a container
+7) docker login => Link your local Docker instance with Docker Hub
+8) docker run -p 9999:8080 tomcat:8.0   => Start a tomcat server on our local machine, which can be accessed using localhost:9999
+9) docker container stop <container id>  => Stop a running container
+10) docker run -d -p 9999:8080 tomcat:8.0  => Start Tomcat in the background (detatched mode)
+11) docker exec -it dac-tomcat-1 /bin/bash  => Start an interactive terminal inside a running container
+
+================
+Building a Docker image:
+
+C:\lectures\CDAC\Cloud\docker\java-hello-world>docker build -t cdac-dac-hello-world .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
