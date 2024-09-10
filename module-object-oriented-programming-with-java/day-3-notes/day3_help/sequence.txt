@@ -1,0 +1,117 @@
+Today's Topics
+Revision
+
+Complete pending sequence of yesterday.
+Packages , classpath , access specifiers
+Enter IDE
+Arrays
+static keyword
+
+-----------------------------
+
+Revise through code 
+
+Consider day2's Box class 
+What will happen , if you write below code in main(...) method ?
+
+Box b1;//desc mem pic
+b1=new Box(1,2,3); //desc mem pic
+Box b2=new Box(4,5,6);//desc mem pic
+b2=b1;//Are there any objs marked for GC ? Yes : 2nd box
+b1=null;//Are there any additional objs marked for GC ? no
+b2=null;//Are there any additional objs marked for GC ? 
+Box b3=new Box(10,20,30);
+b3=new Box(11,21,31);//Are there any objs marked for GC ? YES : 10,20,30
+
+
+Continue with day2's pending sequence
+
+1. Create Cubes
+eg : In TestBox 
+sop("Enter side of a cube");
+Box cube=new Box(sc.nextDouble());
+
+In Box class :
+Add overloaded ctor n use ctor chaining
+
+2. Add a method to Box class to compare equality of 2 boxes & test it
+Meaning : 2 boxes are same : iff dims are same
+
+eg : In TestBox : 
+sop("Enter box 1 dims") //10 20 30
+Box b1=new Box(....);
+sop("Enter box 2 dims") //20 10 30
+Box b2=new Box(....);
+sop(b1.isEqual(b2)); //invoker : b1    arg  : b2
+//sop(b2.isEqual(b1));
+
+3. Add a method to Box class to return a new Box with modified offset dims & test it with the tester.
+eg : Box b1=new Box(...);//10 20 30
+sop("enter offsets in dim for creating new box w.r.t earlier box : wOff doff hoff");
+If user supplies these offsets :  3 -4 5 
+A new box object should be created with dims : 13 16 35
+Box earlierBox=new Box(...);//10 20 30
+How will you call this method from the tester ?
+Box newBox=earlierBox.createNewBox(wOff ,doff, hoff);
+
+Add a method in Box class
+Box createNewBox(double wOff ,double doff, double hoff)
+{
+  //this : earlierBox
+  Box myBox=new Box(this.width+wOff,this.width+dOff,this.width+dOff);
+  return myBox;
+}
+
+In the code below , are there any objs marked for GC ?
+
+earlierBox.createNewBox(wOff ,doff, hoff);
+
+Add a method in Box class
+void createNewBox(double wOff ,double doff, double hoff)
+{
+  //this : earlierBox
+  Box myBox=new Box(this.width+wOff,this.width+dOff,this.width+dOff);
+ }
+
+
+4. Enter Packages , classpath n  access specifiers 
+Refer to readme : regarding packages.txt
+refer : diagrams\Access specifiers.png 
+ diagrams\understanding access specifiers
+
+Solve : Modify Box scenario
+Add Box class under : com.cdac.core package.
+Add TestBox class under : com.cdac.tester package , compile n test it.  
+
+
+5. Arrays 
+Regarding Arrays
+refer -- Java Tut slides(shared in day1 help) No  29
+
+In Java, arrays are full-fledged objects. Like objects, arrays are dynamically created & stored on the heap. 
+
+Arrays (like any other object) are  associated with the class. All arrays of the same dimension and type have the same class. 
+The length of an array does not play any role in establishing the array's class. 
+
+For example, an array of three ints has the same class as an array of three hundred ints.([I) The length of an array is considered part of its instance data.
+
+eg : The class name for single dimension array of ints is "[I". The class name for a three-dimensional array of bytes is "[[[B". The class name for single dimension array of booleans is "[Z"
+
+Array size(length) is fixed. 
+
+Implicit super class of array is java.lang.Object.
+
+
+5.1 Create Array of primitive types
+
+Objective -- Accept no of data samples(of type double) from User(using scanner)
+Create suitable array & display it using for-loop , to confirm default values.
+
+
+
+
+
+Accept data from User(scanner) & store it in the array.
+Display array data using  for loop.
+
+

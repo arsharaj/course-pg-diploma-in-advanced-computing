@@ -1,0 +1,149 @@
+Revision
+Enter Sets
+Set Implementation classes
+Hashing algorithm in Java
+Enter Maps
+Map implementation classes
+
+
+0. Student's interesting question
+Given : Fruit class is not abstract.
+What will happen ?
+ArrayList<Fruit> fruits=new AL<>();
+fruits.add(new Mango());
+fruits.add(new Fruit());
+fruits.add(new Apple());
+fruits.add(new Alphonso());
+fruits.add(new Date());//javac err
+fruits.add(new Emp(...));//javac err
+
+
+1. Solve : 
+If you have a customer list , how will you sort customer details as per email ?
+Natural Ordering
+eg : public class Customer imple Comparable<Customer> 
+{
+ ......
+
+@Override
+public int compareTo(Customer anotherCust)
+{
+   return this.email.compareTo(anotherCust.email);
+}
+}
+Tester :
+AL<Customer> customers=new AL<>();
+......: populated AL
+Collections.sort(customers);
+
+If you have a customer list , how will you sort customer details as per DoB n reg amount?
+public class CustomerDoBRegAmountComparator imple Comparator<Customer>
+{
+ @Override
+  public int compare(Customer c1,Customer c2)
+ {
+    int ret=c1.getDate().compareTo(c2.getDate());
+    if(ret==0) {
+      if(c1.getRegAmount() < c2.getRegAmount())
+        return -1;
+      .......
+    }
+    return ret;
+ }
+}
+
+In Tester :
+Collections.sort(customers , new CustomerDoBRegAmountComparator());
+Using TimSort -->  JVM invokes : CustomerDoBRegAmountComparator 's compare
+
+
+As an admin , how will you find out the complete names of the customers , who have not paid the subscription (reg amount) , for last 3 months ?
+Add instance field in Customer : lastSubscriptionPaidDate : LocalDate
+init : to reg date (LocalDate.now())
+Add option in tester(customer) : to pay reg / subscription
+
+Add another option (admin) : display complete names of the customers , who have not paid the subscription (reg amount) , for last 3 months ?
+for-each : 
+API hint : java.time.Period , between(...) , toTotalMonths()
+
+
+How will you remove all those customer details whose subscription is pending for last 6 months?
+Iterator : remove 
+API hint : java.time.Period , between(...) , toTotalMonths()
+
+
+2. Solve :
+What will happen ?
+LinkedList<Integer> list=new LinkedList<>();
+list.add(1);list.add(2);.....list.add(20);
+Iterator<Integer> itr=list.iterator();
+//itr.remove();//IllegalStateExc
+list.add(21);//structural modi
+sop(itr.next());//ConcModiExc
+
+
+3. Solve :
+What will happen ?
+Vector<Integer> list=new Vector<>();
+list.add(1);list.add(2);.....list.add(20);
+Iterator<Integer> itr=list.iterator();
+itr.next();
+itr.remove();
+itr.next();
+itr.remove();
+sop(list);//[3,....20]
+
+4. Solve
+String[] names= {"one","two","three","four","five"};
+ArrayList<String> strings=new ArrayList<>();
+for(String s : names)
+ strings.add(s);
+for(int i=0;i<strings.size();i++)
+ strings.remove(i);
+System.out.println(strings); //[two,four]
+Point : 
+- Typically use Iterator's remove() to remove elems because the string class iterator is automatically incrementing the value of the iterator. So if you have used custom increment (Eg. i++)then it would skip elements like in above case.
+
+5. Solve TestLinkedList
+
+
+
+
+Enter Sets
+Refer to diagrams n readme
+Understand Hashing algorithm
+
+
+Enter Maps
+Refer to diagrams n readme
+
+Objective :
+Either port earlier showroom management system to HashMap
+
+OR
+Start with a fresh scenario
+Banking System
+BankAccount : acctNo, customer name , type , balance , creation date , last tx date , isActive
+Ctor , toString : for acct summary
+withdraw , deposit, funds transfer
+
+Business  Rules 
+min balance condition
+valid acct type 
+In case of no txs (withdraw , deposit, funds transfer) , in 1 year ,  disable a/c status
+
+
+
+Example of strings having same hashcode
+Aa BB
+Ba CB 
+Ca DB
+Da EB
+BBBB AaBB AaAa BBAa
+FB Ea
+
+
+Red and Black Tree : 
+https://www.geeksforgeeks.org/introduction-to-red-black-tree/
+
+

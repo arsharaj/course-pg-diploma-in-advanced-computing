@@ -1,0 +1,108 @@
+Revise Hashing algorithm using HashMap
+Map API for conversion to Collection view
+HashMap implementation for Banking system
+More Details about generic syntax
+
+
+NOTE : Hashing algo in HashSet or HashMap is same
+HashSet internally maintains HashMap instance (HashSet HAS-A HashMap)
+eg : HashSet<Emp> --> HashMap <Emp,Object>
+i.e when u call hs.add(e1) --> hm.put(e1,new Object());
+hs.remove(e1) ---> hm.remove(e1);
+
+
+
+
+For revision of Hashing algo with HashMap : 
+HashMap<K,V> hm=new HM<>();
+hm.put(k1,v1);//1st entry added
+hm.put(k2,v2);//Given : k1 n k2 have different hashcode => different bucket id
+hm.put(k3,v3); //Given : k1 n k3 have same hashcode => same bucket id
+hm.put(k1,v4); 
+hm.put(k5,v5); //Given : k1 n k5 have same hashcode => same bucket id
+hm.put(null,v6);
+
+How will you explain it ? (With mem diagram)
+
+
+
+
+
+1. Start with a fresh scenario
+Banking System
+BankAccount : acctNo, customer name , type(enum :SAVING(10000),CURRENT(5000),FD(50000))  , balance , creation date , last tx date , isActive
+(Later can add HAS-A relationship ,  BankAccount HAS-A KYC => association
+In KYC : customer email , phone no , Aadhar Card No ...) n link KYC info to BakAccount
+)
+
+Ctor , toString : for acct summary
+withdraw , deposit, funds transfer
+
+Business  Rules 
+valid acct type should be chosen
+check min balance condition(it's going to differ as per a/c type) 
+In case of no txs (withdraw , deposit, funds transfer) , in 1 year ,  disable a/c active status(dormant/inactive account)
+If a/c is disabled , bank customer should not be allowed any txs
+
+Options
+1. Open new account
+2. Get Account summary
+3. Withdraw/deposit
+4. Transfer Funds
+5. Close Account
+
+Assuming BankManager has logged in(later actual authentication n authorization logic can be added)
+
+6. Display all account details
+7. Update a/c status of all accounts
+8. Sort accounts as per acct no
+Try n solve below requirements in the lab (if possible !)
+9. Sort a/cs as per account balance
+10. Sort a/cs as per a/c type n creation date.
+
+
+
+
+
+2. More advanced Generic Syntax 
+Generic methods
+eg : Arrays.asList
+(? , extends , super )
+
+Refer to generic sequence
+
+
+
+Solve : 
+Create Utils class --Add static method
+1. Add a method to print all elements from any of the following
+ Test cases : AL<String> , LL<Integer> , Vector<LocalDate> , HS<Double> , LHS,TS
+
+
+
+1.5 Add a method to count the number of occurrences of elem in any List
+(lab work )
+
+	
+2. Add a method to find sum of salary of emps from any List 
+Test cases : AL<Mgr> ,LL<Worker> , Vector<SM> ....
+
+Explain :
+public ArrayList​(Collection<? extends E> c)
+E : Emp 
+=>This ctor  creates  : a populated AL , populated from ANY Collection (AL,LL,Vector : no err
+HS,LHS,TS : no err
+HM,LHM ,TM : err)
+having generic type : Emp or it's subtype(eg : Mgr,Worker.....)
+
+----------------------Pending----------------------
+
+	
+3. Add a method to hire a sales mgr to the list
+What should be the type of the List ?
+
+4. Add a method to hire a temp worker to the list
+What should be the type of the List ?
+
+
+

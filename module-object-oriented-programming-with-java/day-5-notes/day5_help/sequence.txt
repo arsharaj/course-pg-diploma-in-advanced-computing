@@ -1,0 +1,210 @@
+Today's Topics
+
+1. Solve : "\day3-data\params_passing\TestParamPassing3.java"
+(with mem pics)
+
+2. Revision of inheritance
+
+3. Enter Polymorphism
+3.1 Compile time polymorphism
+3.2 Run time polymorphism
+
+4. Object class Method
+public String toString()
+Need of it's overriding
+
+5. Java Annotation
+
+6. Complete Event organizer app
+6.1 Up casting , downcasting , instanceof 
+
+Application of above
+Event Organizer App
+overriding of equals method(tomorrow !)
+
+-----------------------------
+Revise
+Why Inheritance  : reduces redundancy n incs re usability
+
+Which relationship via Inheritance : IS-A
+As you go down  the inheritance  hierarchy :  generalization ---> specialization 
+upper hierarchy classes : Base/ parent /super class
+lower : Derived / child / sub class
+keyword : extends
+universal super class : java.lang.Object
+Supported Types of inheritance 
+single level eg  : Person <---- Emp
+multi level  : Emp <--- Mgr <---SalesMgr
+hierarchial : Person <---- Student,Faculty, CenterHead,CourseCord....
+
+not supported : multiple inheritance via classes 
+why : avoids ambiguity
+Better alternative : interfaces 
+
+constr invocation in inheritance hierarchy : refer to diag.
+
+super --keyword in java
+
+super keyword usages
+1. To invoke IMMEDIATE super cls' s MATCHING ctor
+eg : In Faculty class ctor 
+public Faculty(String fn,String ln,.....)
+{
+ super(fn,ln);
+.....
+}
+2. To access ACCESSIBLE members of the super class
+eg : Person : getDetails : String (fn ln)
+Student : getDetails : String (fn ln, student specific details)
+super.getDetails();
+
+
+Important Summary statement for inheritance n polymorphism
+Sub class IS-A super class n optionally additional state n additional behavior
+n modified behavior
+
+
+Refer : to readme
+
+eg of overloaded method
+Dynamic init of array
+double[] values= {10,20.1,34,5.67,2.5};
+javac implicitly adds : new double[]
+Use Arrays toString to display array contents
+sop(Arrays.toString(values));
+
+Overriding of toString
+Super class version 
+java.lang.Object class Method
+public String toString() : Rets the string containing Fully Qualified(F.Q) className@hashCode
+Not useful in a practical scenario.
+So instead of adding new functionality in sub classes (eg : getDetails() in Person , Student,Faculty) can we override toString itself ?
+YESS!
+
+
+
+
+
+Apply above concepts in event organizer app
+
+Objective : Arrange an event to invite students n faculties
+
+Prompt user for event capacity.
+Create suitable data structure to hold the participant details
+Person[] members=new Person[sc.nextInt()];
+
+Options 
+1. Register Student : 
+if(....)
+{
+  sop("Enter student details .....");
+ members[counter] =new Student(...);
+counter++;
+ sop(...);
+break;
+}
+2. Register Faculty : 
+3. Display participant details : for-each 
+//eg : {s1,s2,f1,s3,s4,f2,null,.......null}
+for(Person p : members) //p=members[0],p=members[1],....
+if(p != nul)
+  sop(p);
+ 
+0. Exit
+
+
+
+
+
+Add a new method "study" in Student class & "teach" in Faculty class
+Option 5 : User i/p : seat no
+Check if seat no is valid .
+In case of valid seat no  --- If it's a Student , invoke study method , if it's a Faculty invoke teach method
+
+
+When is downcasting required ?
+Iff you are invoking sub class specific functionality (eg : study or teach), using super class reference .
+eg : Person p=new Student(....);//up casting : done impl by javac : no err
+sop(p);//p.toString() : no javac err : since Person class has toString method.
+p.study();//javac err ! , javac checks it by : Type of the ref (it chks for study in Person class)
+Soln : to satisfy javac -- down casting(equivalent to : narrowing)
+((Student)p).study();//no javac n no run time err
+p=new Faculty(...);//no javac err : up casting !
+p.teach();//javac err 
+((Faculty)p).teach(); //works !
+((Student)p).study();//run time err : java.lang.ClassCastException :Faculty CAN NOT be cast into a Student!
+
+Solution : instanceof : keyword in java
+refer to : readme 
+eg : Object <----Emp <---Mgr <---SalesMgr, HRMgr
+Object <---- Emp <--- Worker <--TempWorker
+
+Emp e=new SalesMgr(......);//up casting
+e instanceof SalesMgr : t
+e instanceof HRMgr : f
+e instanceof Worker : f
+e instanceof Mgr : t
+e instanceof TempWorker : f
+e instanceof Emp : t
+e instanceof Object : t
+e=null
+e instanceof SalesMgr : f
+e instanceof HRMgr
+e instanceof WorkerMgr
+e instanceof Mgr
+e instanceof TempWorker
+e instanceof Emp
+e instanceof Object : f
+
+
+Object class Method
+public boolean equals(Object anotherObj)
+Returns true : iff invoker n anotherObj : referring to the SAME instance
+(i.e checks by reference equality)
+Otherwise : false.
+Need of overriding equals :
+To replace reference equality by contents equality (Identity based)
+To be continued tomorrow....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10. Exit
+
+
+
+
+
+
+Important readmes to go through from day4 help (for tomorrow's better understanding)
+
+readme_inheritance_polymorphism.txt (only the inheritance part)
+regarding static
+regarding private members n inheritance.txt

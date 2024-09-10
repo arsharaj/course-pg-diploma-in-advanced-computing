@@ -1,0 +1,181 @@
+Today's Topics
+
+1. Revise data types in java
+
+1.5 java API docs
+
+2. JVM Architecture : overview (mainly memory areas)
+
+
+3. Class Programming , object creation ,reference types : with memory pics
+
+4. Intro to GC
+
+----------------------------------
+Revision : 
+
+Revise data types in java
+Java Data Types : which are 2 categories n details 
+primitive type n reference type
+
+Types of conversions in primitive data types
+1. Widening conversion : auto performed by javac
+Rule : src n dest type : compatible
+Dest type must be able to hold larger range of values than src type
+eg : byte --> short 
+short --> int
+byte --> int
+int --> long ....
+long --> float 
+long --> double
+.....
+2. Narrowing Conversion : explicitly by prog
+eg : double --> float
+float --> long
+....
+Answer this 
+What will data type of result of
+1. byte & byte : int
+2. byte & short : int
+3. short & short : int
+4. int & long : long
+5. float & long : float
+6. float & double : double
+7. byte/short/int....& double : double
+
+
+
+1. JVM Architecture overview
+1.1 Draw a diagram to understand How it works ?
+
+1.2 refer : day2-data\day2_help\diagrams\JVM Architecture
+Readme : About JVM.txt
+
+2. Enter OOP
+refer to "regarding class n object"
+
+2.1 Encapsulation -- Class Programming 
+
+Objective --
+Create a class to represent 3D Box 
+class Box ---tight encapsulation(achieved by making all non static data members:instance vars private)
+state -- width,height , depth --- double : private 
+
+paramterized constr --3 arg constr.
+
+Instance Methods(=non static methods)
+1. To return Box details in String form (dimensions of Box)
+
+method declaration --- access specifier(private/default/protected/public) , ret type , name , args , throws clause
+
+method definition --body
+
+2. To return computed volume of the box.
+
+
+
+this --keyword in java
+"this" represents => current object reference
+Usages
+1. To un-hide instance variable from local variable.
+eg : this.width=width;
+
+2. To invoke constructor of the same class , from some other constructor of the same class(Constructor chaining)
+(Will be discussed later)
+
+
+Before starting with Java ref type of variables : 
+
+Consider CPP code
+Given : Suppose Employee is a class.
+int main() {
+    Employee emp1("Mayank", 1001);
+    Employee emp2("Mihir", 1002);
+
+    // Define a reference variable to an Employee object
+    Employee& empRef = emp1;
+
+    // Access and modify the object using the reference
+    empRef.name = "MAYANK";
+
+    // Print the updated information
+    std::cout << "Employee 1: " << emp1.name << ", " << emp1.employeeId << std::endl;
+    std::cout << "Employee 2: " << emp2.name << ", " << emp2.employeeId << std::endl;
+
+    return 0;
+
+}
+
+Discuss it !
+
+Now you look at another sample code : 
+int main() {
+    // Create an Employee object dynamically with the new keyword
+    Employee* empPtr = new Employee("Rama",100);
+
+    // Access the name member using the arrow operator
+    std::cout << "Employee name: " << empPtr->name << std::endl;
+
+    // Deallocate the dynamically allocated object to avoid memory leaks
+    delete empPtr;
+
+    return 0;
+}
+
+
+What will happen if you use , operator instead of -> (arrow) operator ?
+
+Now re enter Java : 
+Create another class(for the purpose of separation)  : TestBox --for  UI. 
+Add psvmain(..){...}
+Use scanner --to accept box dims from user, create box instance.
+display its details & volume.
+
+
+
+2.2 Regarding Garbage Collection : 
+refer to readme.
+
+
+solve :
+Box b1=new Box(1,2,3);
+Box b2=b1;
+Box b3=b1;
+b1=b2=b3=null;//How many objects are marked GC ? 
+System.gc();
+
+2.3 Pointers vs java references
+
+Similarity -- Pointer & reference --hold an address to the object created on heap.
+Difference -- To add robustness to the language ,
+pointer arithmatic is not allowed in java.
+
+reference --- holds internal representation of address --
+
+eg : 
+int data =100;
+data++;
+Box b1=new Box(1,2,3);
+b1++;  //javac err
+b1 += 10; //javac err
+String s=new String("hello");
+s++;//javac err
+
+
+Box b1;
+b1=new Emp(.....);
+
+
+-----------------------------Pending------------------------
+
+
+
+Add more functionality : (for additional business logic)
+
+1. Create Cubes
+
+
+2. Add a method to Box class to compare equality of 2 boxes & test it
+
+
+3. Add a method to Box class to return a new Box with modified offset dims & test it with the tester.

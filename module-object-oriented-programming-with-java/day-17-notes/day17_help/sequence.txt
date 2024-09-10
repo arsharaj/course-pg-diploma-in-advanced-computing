@@ -1,0 +1,68 @@
+Revise Multi threading (Thread state transitions n Threads API)
+Apply threads to Collections n I/O
+Synchronization
+Thread un safe collections
+Inter Thread communication(if time permits !)
+
+
+Important Questions
+
+1. What will happen if you don't implement run() method in implements scenario
+javac err
+2. What will happen if you don't override run() method in extends scenario
+no err , ineffective(do nothing!) thread will be created --strted --dead!
+3. What will happen if you invoke run() method instead of start ?
+no err , BUT exec logic of the thread will be called by main thread(i.e single threaded app , no concurrency!!!!)
+
+4. What will happen if you call start() on a runnable thread?
+Run time err : invoker thrd will get : IllegalThreadStateExc 
+5. What will happen if you call start() on a dead thread?
+Run time err : invoker thrd will get : IllegalThreadStateExc 
+
+6. Name the un blocking triggers for a thread blocked on sleep?
+sleep duration over | interrupt
+7. Name the un blocking triggers for a thread blocked on read (using java.io)?
+Data being available
+8. What will happen if another thread sends interrupt to a thread blocked on read (using java.io)?
+Thread blocked on i/o : stays blocked!
+
+9. Name the un blocking triggers for a thread blocked on join?
+eg : t1 n t2
+In t1' s run()
+t2.join(10000);
+Un blocking triggers : t2 over |  interrupt | tm out
+
+
+
+----------------------Revision over ----------------------------
+
+
+1. Apply threads to Collections n I/O
+(Refer : whiteboard1)
+
+
+
+
+
+2. Refer to join account scenario , complete it n test !
+refer : whiteboard2
+
+Write a multi threaded application to share a joint account among multiple bank customers . 
+Services : update balance
+check balance
+Ensure no orphans .
+Refer to synchronization readme
+
+
+eg code for getting random no
+Random r1=new Random();
+int nextRandomInt=r1.nextInt();
+
+
+More examples(practice1 n practice2 code)
+
+
+Producer Consumer scenario(ITC)
+
+
+

@@ -1,0 +1,164 @@
+Today's topics :
+toString
+Revise polymorphism , upcasting , downcasting , instanceof with code samples
+Overriding of equals method
+Abstraction (Abstract methods n classes n Interfaces)
+--------------------
+0. When you invoke System.out.println(Object ref) , how it auto calls ref.toString ?
+Hint : refer Java docs
+Ans : System.out.println(Object ref) ---> String.valueOf(ref)
+ref==null => prints null
+o.w ref.toString()
+
+1. Revision
+Answer this
+Can a super class reference DIRECTLY refer to ANY sub class instance ? YES
+eg : Person p=new Student(...);
+p=new Faculty(...);
+
+If yes , can it access the complete details DIRECTLY(w/o type casting) ? NO
+It can only access the members present in super class
+
+
+
+Given : 
+Fruit <---Apple,Orange,Mango<---Alphonso
+Suppose 
+taste() exists in a Fruit class , it's overridden in all sub classes
+toString() is overridden  in Fruit class , also in all sub classes
+
+Solve
+1. What will happen ?
+Fruit f=new Mango(....);//no javac err : up casting
+f.taste();//no javac err, JVM : invokes : Mango's taste() : DMD(=run time poly)
+sop(f);//calls : Mango's toString : DMD(=run time poly)
+f=new Orange(...);//no javac err : up casting
+f.taste();//JVM : invokes : Orange's  taste() : DMD(=run time poly)
+sop(f); //calls : Orange's  toString : DMD(=run time poly)
+
+
+
+Solve
+Suppose : juicyPulp() is an additional method on Alphonso 
+
+2. Fruit f=new Alphonso();//no err
+//f.juicyPulp(); //javac err , juicyPulp() : not found type Fruit
+soln : down casting : explicit
+((Alphonso)f).juicyPulp();//no javac err , no run time , simply calls the method from Alphonso
+
+f=new Orange(...);//no err
+((Alphonso)f).juicyPulp();//no javac err , BUT run time err : java.lang.ClassCastException : Orange can't be cast Alphonso!
+
+
+Is there any guard or any way to perform RTTI(run time type info) checking ? 
+i.e How to avoid class cast exc : instanceof : keyword (run time operator)
+=> type comparison in run time
+
+Solution ???
+
+Given : Alphonso : juicyPulp(), Apple --jam()
+Orange : juice()
+
+f=new Orange(...);//no err
+if(f instanceof Orange)
+ ((Orange)f).juice();
+else if(f instance Apple)
+((Apple)f).jam();
+else
+ ((Alphonso)f).juicyPulp();
+
+Important Statements: 
+When will you need to apply downcasting?
+In indirect referencing(i.e super cls ref---> sub class object) , while trying to access sub class specific functionality (eg : Fruit f=new Orange(..); then trying to call it's juice())
+
+Any probable run time error ?? java.lan.ClassCastException
+
+Any Checks required ?? : instanceof
+
+
+Why Java does not support multiple inheritance through classes ?
+to avoid ambiguity
+
+
+2. Override equals method in Person class
+Regarding equals
+Object class :
+public boolean equals(Object anotherObject)
+ref1.equals(ref2) : true iff ref1==ref2(i.e iff ref1 n ref2 are both referring to very SAME object)
+=> Object's equals method : ref equality!
+
+Like how many java classes (eg : Integer,String ...) have alrdy overridden equals method , inherited from Object class , a prog has to do the same!
+Meaning : identify PK (UID) n override equals
+
+eg : Person class 
+PK : complete name (fn n ln) 
+i.e identify 2 persons as same iff their complete name is same.
+
+
+
+3. Consider bounded shapes scenario
+
+1. BoundedShape -- x,y (state) : tight encapsulation
+ctor : 2 args 
+@Override
+public String toString(){...}
+Since area() : common func. across all bounded shapes : add it in the BoundedShape class
+
+Can you compute area of ANY bounded shape ? NO
+eg : public double area()
+{
+ return -1;
+}
+2. Circle -- x,y,radius
+Method --public double area()
+public String toString()
+
+3. Rectangle -- x,y,w,h
+Method --public double area()
+public String toString()
+
+
+eg : In a Tester 
+Create bounded shapes using dynamic init of array
+
+
+
+
+
+
+
+Display it's information n area using for-each
+
+
+
+
+
+
+
+4. Abstraction : Refer to readme
+Abstract methods 
+Abstract classes
+
+Final keyword
+
+5. Enter interfaces
+Refer to readme
+Refer to whiteboard (from interfaces_help)
+
+Objectives
+1. Create different type of Printers(ConsolePrinter, FilePrinter ,NetworkPrinter) n access it's common functionality n specific functionality in a single for-each loop.
+
+2. Why Java does not allow multiple inheritance through classes ?
+ambiguity (diamond problem)
+
+What will happen with i/fs ?
+Demo : Create a class implementing multiple i/fs .with duplicate behaviour ? : 
+What about duplicate data members ?
+
+3. Demo : 1 i/f extending multiple super i/fs , n then write imple class
+In order to create concrete imple class : MUST imple all abstract functionality inherited from all of i/fs
+
+
+
+
+

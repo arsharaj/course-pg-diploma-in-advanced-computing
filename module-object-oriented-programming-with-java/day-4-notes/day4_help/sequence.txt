@@ -1,0 +1,111 @@
+Today's Topics
+Revision
+Arrays
+static keyword
+Enter Inheritance n polymorphism
+-----------------------------
+eg : 
+int[] data;//array type of a ref , mem allocated on stack(since it's a local var) , bytes as per JVM
+
+data=new int[10];
+//class loading : [I , array : CP--> loaded cls info , length: 10,
+index 0 ---9 : 0
+
+
+for(int i=0;i<data.length;i++)
+  sop(data[i]);
+
+
+
+
+1 Create Array of primitive types
+
+Objective -- Accept no of data samples(of type double) from User(using scanner)
+Create suitable array & display it using for-loop , to confirm default values.
+
+Accept data from User(scanner) & store it in the array.
+Display array data using  for loop.
+
+Display array data using for-each loop
+
+for-each loop(enhanced for loop)
+syntax
+eg : Display array data using for-each loop
+for(int i : data) //i=data[0] ,i=data[1],.....i=data[data.length-1]
+ sop(i);
+
+Important statement
+for-each loop Works on a copy of array element.
+
+for-each limitations
+1. Can only iterate from 1st elem to last elem , with step size +1
+2. Works on a copy of array elems
+(can't be used for modifying array elems).
+
+Objective 
+Create array for storing double values (size taken from user)
+Display def values in array (for-each)
+Accept data from user n store the same in the array(for loop)
+Display : for-each
+
+1.2 Array of references
+
+Add Box class into "com.cdac.core"
+Create a tester class  : TestBoxArray in package  "tester"
+
+Objective 1 : Ask user(client) , to place the order size (i.e how many boxes to make )
+Accept individual Box dims n display box dims n volume from single for-each loop.
+
+eg : sop("how many boxes to make");
+Box[] boxes=new Box[sc.nextInt()];//4
+//display array
+for(Box b : boxes) //b=boxes[0].....b=boxes[boxes.length-1]
+ sop(b);// 4 nulls
+//accept box dims
+for(...)
+{
+  sop("enter box dims");
+  boxes[i]=new Box(sc.nextDouble(),...);
+}
+//display dims n vol
+for(Box b : boxes) //b=boxes[0]
+ sop(b.getDims());
+//how many objs marked for GC ? 0
+boxes=null;//5 (array + 4 boxes)
+
+
+
+2. Double box width for all boxes having volume > 100.(Can you use for-each & solve this) : YESS!
+(lab work)
+
+2.Regarding static keyword
+
+3.
+Enter Inheritance 
+refer to "readme inheritance.txt" from today's help.
+
+(Test constructor invocation in inheritance hierarchy)
+
+Person-Student-Faculty scenario 
+
+
+Objective : Arrange an event to invite students n faculties
+
+(eg : EventOrganizer app : tester --main / scanner)
+Prompt user for event capacity.
+Create suitable data structure to hold the participant details
+Options 
+1. Register Student : 
+2. Register Faculty : 
+3. Display participant details : for-each 
+10. Exit
+
+Steps
+1. Identify inheritance hierarchy
+classes : Person , Student , Faculty
+
+2. Add suitable constructors , to init complete state
+(using super(....))
+
+3. Add a method in the super class , to return details of Person/Student/Faculty ....
+(using method overriding)

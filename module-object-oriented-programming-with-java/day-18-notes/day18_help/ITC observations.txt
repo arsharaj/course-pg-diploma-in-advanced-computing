@@ -1,0 +1,58 @@
+ITC with sleep
+
+started thrd  -- Producer
+w entered --- Producer
+Write Data Emp [id=1, sal=100.0]
+w exited --- Producer
+Press enter to exit , main : Blocked on i/p , after pressing enter : join
+started thrd  -- Consumer
+r entered --- Consumer
+Read  Data Emp [id=1, sal=100.0]
+r exited --- Consumer
+w entered --- Producer
+Write Data Emp [id=2, sal=200.0]
+w exited --- Producer : dataReady : true
+w entered --- Producer : Blocked on sleep :inside the monitor
+ consumer : Blocked on monitor : outside
+DEADLOCK !
+-------------------------------
+ITC with wait 
+started thrd  -- Producer
+w entered --- Producer
+Write Data Emp [id=1, sal=100.0]
+w exited --- Producer , dataReady : true
+w entered --- Producer : Blocked on wait , outside
+Press enter to exit , main : blocked on i/p , after pressing enter : Blocked on join
+started thrd  -- Consumer
+r entered --- Consumer
+Read  Data Emp [id=1, sal=100.0]
+r exited --- Consumer , dataReady : false
+r entered --- Consumer -- Blocked on wait , outside
+DEADLOCK : circular dependency
+----------------------
+ITC with wait n notify
+w entered --- Producer
+r entered --- Consumer
+Read  Data Emp [id=239, sal=23900.0]
+r exited --- Consumer
+Write Data Emp [id=240, sal=24000.0]
+w exited --- Producer
+w entered --- Producer
+r entered --- Consumer
+Read  Data Emp [id=240, sal=24000.0]
+r exited --- Consumer
+Write Data Emp [id=241, sal=24100.0]
+w exited --- Producer
+w entered --- Producer
+r entered --- Consumer
+Read  Data Emp [id=241, sal=24100.0]
+r exited --- Consumer
+
+App DOES not terminate
+Write Data Emp [id=808, sal=80800.0]
+w exited --- Producer
+w entered --- Producer : Blocked on wait
+
+thrd over -- Consumer : dead
+main : blocked on join
+

@@ -1,0 +1,25 @@
+Desc of FileInputStream --- java.io.FileInputStream 
+Desc of FileOutputStream --- java.io.FileOutputStream 
+--- Stream class to represent unbuffered char data reading from a text file.
+String readLine() --- reads data from a buffer in line by line manner-- & rets null at end of Stream condition.
+But Scanner is not Buffered Stream
+...attach FileInputStream or FileReader
+PrintWriter(OutputStream  w) --- can wrap binary o/p stream -- buffering +conversion(char-->binary),no auto-flush option
+PrintWriter(OutputStream w , boolean flushOnNewLine) --- 
+API Methods----print/println/printf same as in PrintStream class(same type as System.out)
+Stream class which represents --- Char o/p stream connected to Text file. --- java.io.FileWriter
+Classes --- FileInputStream -- unbuffered bin i/p stream connected to bin file device.
+FileOutputStream --unbuffered bin o/p stream connected to bin file device.
+API of InputStream class
+Important  API of OutputStream
+Using BIS(BufferedInputStream) -- enables buffering BUT doesn't provide any advanced API(ie. read(), read(byte[]), read(byte[] b,int off,int len) . Same is true with BOS.(BufferedOutputStream)
+java.io.DataOutputStream ---implements DataOutput i/f
+Constructor -- DataOutputStream (OutputStream out)
+Stream class --- java.io.DataInputStream -- implements DataInput
+DataInputStream(InputStream in)
+Stream Class for writing Objects to bin. stream
+java.io.ObjectOutputStream implements DataOutput,ObjectOutput
+Description --- ObjectOutputStream class performs serialization.
+ObjectOutputStream(OutputStream out) 
+java.io.ObjectInputStream  --- performs de-serialization.--- implements DataInput,ObjectInput
+Constructor --- ObjectInputStream(InputStream in) 

@@ -22,6 +22,7 @@
 - Module : Effective Communication
 - Module : General Aptitude
 - Module : Microsoft Dot Net Technologies
+- Module : Object Oriented Programming With Java
 
 ### License
 

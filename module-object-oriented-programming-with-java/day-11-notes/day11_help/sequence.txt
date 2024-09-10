@@ -1,0 +1,101 @@
+Revise List Handling Showroom Management example
+Iterator , ListIterator , exceptions associated with them 
+Searching , sorting
+ArrayList vs LinkedList
+Enter Sets
+Set Implementation classes
+Hashing algorithm in Java
+
+
+
+HashSet<Emp> emps=new HS<>();
+hs.add(emp1).......hs.add(emp100);
+Can you create a populated AL from this Set ? Yes !
+AL<Emp> list1=new AL<>();
+list1.addAll(hs);
+OR
+AL<Emp> list1=new AL<>(hs);
+sop(list1);
+
+
+
+
+Options
+1. Add Vehicle to the showroom.
+Accept data --validate all i/ps --in case of success -- add vehicle , to the showroom.
+o.w : throw custom exception
+
+2. Display all vehicle details
+Can you use : for loop | for-each | Iterator | ListIterator | toString ?
+
+
+3. Option : get specific vehicle details
+i/p : chasis no
+o/p : either vehicle details (in case of vehicle found) or err mesg via custom exc!
+eg : sop("Enter ch no");
+String chNo=sc.next();
+Vehicle newVehicle=new Vehicle(chNo);
+int index=list.indexOf(newVehicle);
+if(...)
+ throw ...
+sop(list.get(index));
+
+
+
+4. Apply discount on a particular vehicle
+i/p : ch no , discount
+o/p : mesg
+
+
+4.5 
+Apply discount on all vehicles produced before a specific date
+i/p : date , discount
+
+
+5. Objective : Avoid creating vehicles n populating all the time , instead start with sample data)
+Add a method in  ShowroomUtils
+ Add a static method to return populated list(sample hardcoded data) of vehicles
+
+
+6. Objective :
+Remove specific vehicle details
+i/p : chasis no
+o/p : valid ch no : del details o.w throw custom exc
+
+
+7. Objective :
+Remove all vehicle details by a specific color
+i/p : color
+
+
+
+8. Objective :
+Sort the vehicles as per asc ch no(using natural ordering)
+
+9. Objective :
+Sort the vehicles as per price no(using custom ordering)
+
+
+
+
+
+
+ArrayList vs LinkedList
+
+------------------------Pending-----------------------------
+Enter Sets
+Refer to diagrams n readme
+
+Example of strings having same hashcode
+Aa BB
+Ba CB 
+Ca DB
+Da EB
+BBBB AaBB AaAa BBAa
+FB Ea
+
+
+Red and Black Tree : 
+https://www.geeksforgeeks.org/introduction-to-red-black-tree/
+
+

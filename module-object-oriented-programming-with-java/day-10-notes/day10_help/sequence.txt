@@ -1,0 +1,134 @@
+Revision of Collection Framework Overview
+List Handling (Revise using IntegerList)
+Iterator , ListIterator , exceptions associated with them : IntegerList
+Start with Case study based upon ArrayList (CRUD ,searching , sorting)
+Discuss Java 8 (Modern Java ) Data Time API
+More details about Enum
+Time permitting : 
+ArrayList vs Vector
+ArrayList vs LinkedList
+
+
+Solve 
+
+Iterable <--- Collection <--- List : AL , LL,Vector
+Iterable <--- Collection <--- Set : HS, LHS,TS
+Map<---HM,LHM,TM
+Q : Will you be able to populate an ArrayList<Emp>  , using addAll , from
+1. AL, LL,Vector
+2. HS,LHS,TS
+3. HM,LHM,TM
+Ans : 1,2
+
+Q. list1 : 1,2,3,4,5
+list2 : 3 ,4,5
+After list1.removeAll(list2)
+list1 : 1,2
+
+Q. list1 : 1,2,3,4,5
+list2 : 3 ,4,5
+After list1.retainAll(list2)
+list1 : 3,4,5
+
+
+Start with a Case study 
+Objective : Showroom Management system , which will keep track of vehicles added in the showroom.
+
+1. Vehicle details : chasisNo(string) : Unique ID, color(enum) , basePrice(double) , manufactureDate(Date),company,isAvailable
+
+2. Are there any disadvantages with legacy Date API ?
+For parsing n formatting: SDF
+Date : insufficient ctors (largely deprecated ctors)
+Date : date n time 
+mutable
+If you guve : invalid month/day no : rolls over (adjusts) the date !
+Till Java 8 : java.util.Date, java.text.SimpleDateFormat , java.util.Calendar, java.util.GregorianCalendar....
+
+
+Any solution  : In modern Java (Java 8 onwards)
+Mainly added a new pkg : java.time
+LocalDate : represent Date(def pattern : yyyy-MM-dd) , immutable , directly supports : statuc parse .
+LocalTime: represents time (hh:mm:ss) , immutable
+LocalDateTime : represnts date n time , immutable
+
+
+3. eg : Suppose vehicle's base price increases as per the chosen color
+
+How will you implement it ?
+eg : enum Color
+{WHITE(5000), BLACK(10000), GREY(7000), SILVER(8500)}
+
+4. Add  validation rules
+4.1 No dup vehicles should be added in the showroom 
+4.2 manufactureDate : must be after 1st Jan 2020
+4.3 Vehicle color must be valid
+
+5. Create a suitable data structure to store vehicle details
+
+Options
+1. Add Vehicle to the showroom.
+Accept data --validate all i/ps --in case of success -- add vehicle , to the showroom.
+o.w : throw custom exception
+
+2. Display all vehicle details
+Can you use : for loop | for-each | Iterator | ListIterator | toString ?
+
+0. Exit
+
+
+
+
+
+ 
+
+New Options : 
+
+3. Option : get specific vehicle details
+i/p : chasis no
+o/p : either vehicle details (in case of vehicle found) or err mesg via custom exc!
+eg : sop("Enter ch no");
+String chNo=sc.next();
+Vehicle newVehicle=new Vehicle(chNo);
+int index=list.indexOf(newVehicle);
+if(...)
+ throw ...
+sop(list.get(index));
+
+
+
+4. Apply discount on a particular vehicle
+i/p : ch no , discount
+o/p : mesg
+
+
+
+
+4.5 
+Apply discount on all vehicles produced before a specific date
+i/p : date , discount
+
+
+5. Objective : Avoid creating vehicles n populating all the time , instead start with sample data)
+Create a new class : ShowroomUtils
+1. Add a static method to return populated list(sample hardcoded data) of vehicles
+
+
+6. Objective :
+Remove specific vehicle details
+i/p : chasis no
+o/p : valid ch no : del details o.w throw custom exc
+
+
+
+7. Objective :
+Remove all vehicle details by a specific color
+i/p : color
+
+
+
+8. Objective :
+Sort the vehicles as per asc ch no(using natural ordering)
+
+9. Objective :
+Sort the vehicles as per price no(using custom ordering)
+

@@ -1,0 +1,41 @@
+Regarding garbage collection
+
+Garbage Collection is a process to identify and delete the objects from Heap memory which are not in use. GC frees the space after removing unreferenced objects.
+
+Garbage= un -referencable object.(no of refs =0)
+
+Automatic Gargabe Collection --- to avoid memory. leaks/holes
+
+JVM creates 2 system thrds --- main thrd(to exec main() sequentially) -- foreground thrd
+G.C --- daemon thrd ---background thrd --- JVM activates it periodically(only if required)  --- GC releases the memory occupied by un-referenced objects allocated on the heap(the objects whose no. of ref=0) 
+
+How to explicitly request for GC ?
+API of System class
+public static void gc()
+eg : System.gc();//it's simply a REQUEST to JVM , for running GC htread.
+
+Object class API
+protected void finalize() throws Throwable
+Automatically called by the garbage collector on an object before garbage collection of the object takes place.
+
+Releasing of  non- Java resources.(eg - closing of DB connection, closing file handles,closing socket connections)   is NOT done automatically by GC
+
+Triggers for marking the object for GC(candidate for GC)
+
+1. Nullifying all valid refs.
+eg : Box b1=new Box(1,2,3);
+Box b2=b1;
+b1=b2=null;//how many objs are marked for GC : 1
+
+
+2. re-assigning the reference to another object
+eg : Box b1=new Box(10,20,30);
+b1=new Box(2,3,4);
+
+
+
+
+3. Object created within a method & its ref NOT returned to the caller.
+4. Island of isolation
+
+

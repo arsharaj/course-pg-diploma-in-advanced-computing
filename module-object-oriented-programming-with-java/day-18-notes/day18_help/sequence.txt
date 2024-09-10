@@ -1,0 +1,9 @@
+Regarding Cloning
+Object class method
+protected Object clone() throws CloneNotSupportedExc
+JVM throws CloneNotSupportedException : if the class has NOT implemented java.lang.Cloneable i/f
+java.lang.Cloneable i/f
+Marker i/f(no fields , no methods)
+Job : To provide a run time marker for the JVM to allow cloning.
+Default working of clone => shallow copy(field by field copy)
+

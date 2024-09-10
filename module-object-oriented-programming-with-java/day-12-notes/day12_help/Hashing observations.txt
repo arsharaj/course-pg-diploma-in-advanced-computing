@@ -1,0 +1,78 @@
+1. When none of the parts of the contract fulfilled
+(overridden equals but not hashCode)
+Added true
+Added true
+Added true
+size 3
+Emps : 
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-001, name=abc1, salary=10000]
+
+-> The size of the hashed data structure is 3.
+-> This happened because we have not overridden the hashcode method. So the contract between the equals and hashcode is not fulfilled.
+-----------------------------------------------------------
+2. Mandatory : equal objects MUST produce same hashCode 
+
+Detects dups , BUT offers O(n) : performance degrades.....
+
+in hashCode
+Added true
+in hashCode
+in equals
+Added false
+in hashCode
+in equals
+Added false
+in hashCode
+in equals
+Added true
+in hashCode
+in equals
+in equals
+Added true
+in hashCode
+in equals
+in equals
+in equals
+Added true
+in hashCode
+in equals
+in equals
+in equals
+in equals
+Added true
+size 5
+Emps : 
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-006, name=abc1, salary=10000]
+Employee [empId=rnd-005, name=abc1, salary=10000]
+Employee [empId=rnd-004, name=abc1, salary=10000]
+Employee [empId=rnd-002, name=abc1, salary=10000]
+-------------------------
+After following mandatory n optional
+in hashCode
+Added true
+in hashCode
+in equals
+Added false
+in hashCode
+in equals
+Added false
+in hashCode
+Added true
+in hashCode
+Added true
+in hashCode
+Added true
+in hashCode
+Added true
+size 5
+Emps : 
+Employee [empId=rnd-006, name=abc1, salary=10000]
+Employee [empId=rnd-005, name=abc1, salary=10000]
+Employee [empId=rnd-002, name=abc1, salary=10000]
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-004, name=abc1, salary=10000]
+
+-> Here since we have fulfilled the contract between equals and hashcode i.e equal method is checking equality based on the primary key and hashcode is returning the unique equal value for every same object (Eg. empid)

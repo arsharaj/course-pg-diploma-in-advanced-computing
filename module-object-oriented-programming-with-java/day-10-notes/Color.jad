@@ -1,0 +1,64 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Color.java
+
+package enums;
+
+
+public final class Color extends Enum
+{
+
+    private Color(String s, int i, int additionalCost)
+    {
+        super(s, i);
+        this.additionalCost = additionalCost;
+    }
+
+    public int getAdditionalCost()
+    {
+        return additionalCost;
+    }
+
+    public void setAdditionalCost(int additionalCost)
+    {
+        this.additionalCost = additionalCost;
+    }
+
+    public String toString()
+    {
+        return (new StringBuilder(String.valueOf(name()))).append("with additional cost ").append(additionalCost).toString();
+    }
+
+    public static Color[] values()
+    {
+        Color acolor[];
+        int i;
+        Color acolor1[];
+        System.arraycopy(acolor = ENUM$VALUES, 0, acolor1 = new Color[i = acolor.length], 0, i);
+        return acolor1;
+    }
+
+    public static Color valueOf(String s)
+    {
+        return (Color)Enum.valueOf(enums/Color, s);
+    }
+
+    public static final Color WHITE;
+    public static final Color BLACK;
+    public static final Color GREY;
+    public static final Color SILVER;
+    private int additionalCost;
+    private static final Color ENUM$VALUES[];
+
+    static 
+    {
+        WHITE = new Color("WHITE", 0, 5000);
+        BLACK = new Color("BLACK", 1, 10000);
+        GREY = new Color("GREY", 2, 6500);
+        SILVER = new Color("SILVER", 3, 8000);
+        ENUM$VALUES = (new Color[] {
+            WHITE, BLACK, GREY, SILVER
+        });
+    }
+}

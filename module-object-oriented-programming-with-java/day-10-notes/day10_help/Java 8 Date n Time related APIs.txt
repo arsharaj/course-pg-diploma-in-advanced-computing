@@ -1,0 +1,33 @@
+ Java 8 Date n Time related APIs
+
+Java 8 New Features 
+java.time : new package is introduced
+
+LocalDate :A class that represents  Date 
+ (immutable)(yr-mon-day)  : inherently thrd safe.
+API 
+1. public static LocalDate now()
+Obtains the current date from the system clock in the default time-zone.
+eg : sop("curnt date "+LocalDate.now());
+
+LocalTime class : Time (immutable)(hr:min:sec)  : inherently thrd safe.
+LocalDateTime class : Date n Time :  inherently thrd safe.
+2. public static LocalDate of(int year,int month,int dayOfMonth)
+Obtains an instance of LocalDate from specified year, month and day.
+
+3. public static LocalDate parse(CharSequence text)
+Obtains an instance of LocalDate from a text string such as 2007-12-03.
+Method throws : DateTimeParseException , in case of un-parseable dates
+DateTimeException : in case of invalid values for mon/days
+
+
+eg : LocalDate dt=LocalDate.parse(sc.next());//0 based dates
+4. non static (instance) Methods :
+isBefore,isAfter,isEqual,compareTo
+
+
+3. Can you change default Date format ? : YES
+
+6. Computing Age
+
+7. plus / minus methods

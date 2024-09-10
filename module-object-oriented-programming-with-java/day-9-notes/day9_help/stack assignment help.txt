@@ -1,0 +1,54 @@
+Customer : class
+Stack : i/f
+SIZE 
+void push(Customer ref);
+Customer pop();
+
+FS imple Stack
+protected : top :
+Customer[] customers;
+Def Ctor : top=-1,
+ customers=new Customer[SIZE];//nulls 
+
+push(Customer c)
+if(not full) 
+ customers[++top]=c;
+else 
+ sop / throw 
+
+pop
+
+
+GS extends FS
+push 
+if(full) 
+{
+ create new array of double size , array copy ,re-assign(customers=tmpArray)
+}
+customers[++top]=c;
+
+Tester : 
+Stack ref=null;
+case 1 : if(ref == null)
+    ref=new FS();
+else : sop err mesg / throw 
+
+
+case 2 : if(ref == null)
+    ref=new GS();
+else : sop err mesg / throw
+
+case 3 : if(ref != null)
+{
+ accept cust details : Customer c=new Customer(...);
+  ref.push(c);
+} else : err mesg / mesg
+
+case 4 :
+ref.pop();
+
+
+
+
+
+

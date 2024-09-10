@@ -1,0 +1,19 @@
+Mysql DB related instructions 
+
+1. login to mysql db (either using workbench or cmd line client)
+
+1.5 From cmd line client , type : status 
+confirm user name n TCP port no
+
+2. From cmd line client : type
+show databases
+
+3. create database advjava
+(a new DB please)
+
+4. DB specific details : 
+4.1 JDBC Driver class : com.mysql.cj.jdbc.Driver
+
+4.2 String dbURL = "jdbc:mysql://localhost:3306/advjava?useSSL=false&allowPublicKeyRetrieval=true";
+
+5. Create JDBC application to test DB connection 

@@ -1,0 +1,253 @@
+Have you tested Banking solution implemented in Maps ?
+Have you tested CMS , that we started in extra session ?
+Will be continued in today's extra practice session.
+
+
+Revise generic syntax
+Enter functional programming in Java 
+Java 8 more new features
+Lambda expression
+Functional Streams
+Enter I/O (If time permits !)
+
+
+Revise
+1. Generic methods 
+eg : Arrays.asList , sort...
+2. ? => wild card in generic syntax , represents un known type (meant for providing inheritance in generics) , un bounded !
+3. ? extends E => E or it's sub type
+4. ? super E => E or it's super type
+
+
+
+
+MUST Solve (What will happen)
+Object o=new Mgr(....);
+((Mgr)o).computeNetSal();
+
+Mgr m=new Object();//javac err
+
+Mgr m=(Mgr)new Object();//classcastexc 
+m.computeNetSal();
+
+
+
+
+
+
+Solve (What will happen)
+Given : Emp hierarchy
+Emp e =new Mgr(...);
+e=new Worker(...);
+Emp e=new Mgr(1000);//no javac err !
+List<Emp> emps=new ArrayList<>();//no err
+ emps.add(new Mgr(...));//no err
+emps.add(new TempWorker(...));//no err
+		emps=new ArrayList<Mgr>();//err : since List<Emp> IS NOT a super type AL<Mgr>
+		emps=new Vector<Worker>();//err
+		emps=new LinkedList<SalesMgr>();//err
+		List<?> anyList=new ArrayList<>();// no err ,deduced generic type of RHS : Object
+		anyList=new ArrayList<Mgr>();//no err
+		anyList=new Vector<Worker>();//no err
+		anyList=new HashSet<>();//err , HS IS NOT a List !
+		anyList=new Vector<LocalDate>();//no err
+		anyList=new Vector<String>();//no err
+
+
+		Set<? extends Emp> empSet=new HashSet<Mgr>();//no err
+		empSet=new TreeSet<HRMgr>();//no err
+		empSet=new LinkedHashSet<TempWorker>();//no err
+		empSet=new HashSet<String>();//err !
+
+
+
+
+Solve : 
+Create Utils class --Add static method
+1. Add a method to print all elements from any of the following
+ Test cases : AL<String> , LL<Integer> , Vector<LocalDate> , HS<Double> , LHS,TS
+eg : method arg : Collection<?>
+
+
+1.5 Add a method to count the number of occurrences of elem in any List
+(lab work )
+
+	
+2. Add a method to find sum of salary of emps from any List 
+Test cases : AL<Mgr> ,LL<Worker> , Vector<SM> ....
+
+OR 
+display taste() of all the fruits from the basket : any List
+public static void displayTaste(List<? extends Fruit> basket)
+{
+  for (Fruit f : basket)
+   sop(f.taste());
+}
+
+
+Explain :
+public ArrayList​(Collection<? extends E> c)
+E : Emp 
+=>This ctor  creates  : a populated AL , populated from ANY Collection (AL,LL,Vector : no err
+HS,LHS,TS : no err
+HM,LHM ,TM : err)
+having generic type : Emp or it's subtype(eg : Mgr,Worker.....)
+
+
+
+2.5 Conside this method :
+public static double sumOfSalaries(List<? extends Emp> list) {
+		double sum=0;
+		for (Emp e : list)
+			sum += e.computeSalary();
+		return sum;
+}
+For calling this method from the Tester , You will be able to pass ANY List (AL | LL | Vector) of generic type : choose incorrect from below options
+1. Emp
+2. Mgr
+3. SalesMgr
+4. Object
+5. Worker
+6. HRMgr
+7. TempWorker
+8. Date
+9. LocalDate
+10. PermanentWorker
+
+Ans : 4 ,8  , 9
+
+Now answer this : 
+public static double sumOfSalaries(List<? extends Emp> list) {
+		double sum=0;
+		for (Emp e : list)
+			sum += e.computeSalary();
+		list.add(...);//what can be the legal replacement ?
+		return sum;
+}
+
+1. Emp
+2. Mgr
+3. SalesMgr
+4. Object
+5. Worker
+6. HRMgr
+7. TempWorker
+8. Date
+9. LocalDate
+10. PermanentWorker
+
+Ans : none of above !
+
+Why ? : Since the method arg : List<? extends Emp> => caller can pass ANY List of Emp or any of it's sub types (eg : arg : List<Mgr> : u can't add a worker, Emp , Object  to this list 
+List<PermanentWorker> " u can't pass Emp , Mgr , Worker....
+
+So what's the bottom line ? 
+
+When the argument : uses extends (upper bound)  : Collection<? extends E>
+The Collection acts as read only . You CANT add any elems to it !
+o.w : javac err! 
+
+PECS : Producer extends Consumer supers
+Producer(Reader) => Collection acting as a producer of data  ,i.e you can only access(Read) data
+extends 
+
+Consumer(Writer) => Collection acting as a consumer of data  ,i.e you can only add elems
+super
+
+
+
+
+eg : Java API eg :
+Collections.addAll
+public static <T> boolean addAll​(Collection<? super T> c, T... elements)
+=> Collection : consumer (super)
+T : Orange
+ boolean addAll​(Collection<? super Orange> c, Orange... elements)
+Legal method arg : Any Collection(any List / any Set) of generic type : Orange | Fruit | Object 
+To such a Collection : what all can u add ? Orange or it's subtypes (eg : Mandarine)
+
+eg : MUST Collections.copy(Collection<? super T> dest ,Collection<? extends T> src)
+
+
+
+
+
+	
+3. Add a method to add a sales mgr to the list
+What should be the type of the List ?
+
+4. Add a method to add any worker to the list (i.e TempWorker | PermWorker)
+What should be the type of the List ?
+public static void addWorker(List<? super Worker> list)
+{
+   list.add(new Worker(..);//no err
+   list.add(new TempWorker(..);//no err
+   list.add(new PermWorker(..);//no err
+    list.add(new Object();//err
+list.add(new Emp(..); // emp : concrete class : err
+list.add(new SalesMgr(....)); //err
+}
+-------------------------
+
+3. Functional programming 
+
+3.1 Java 8 new features
+refer : readme
+
+3.3 Lambda expressions
+3.3 Higher order functions
+
+1. Create your own functional interface , higher order function/method n pass lambda expression
+
+eg : Perform ANY arithmetic operation on 2 double values & return the result
+eg --add/multiply/subtract/divide....  ANY such operation !
+
+
+
+Explore Existing higher order functions/methods
+
+Copy ready code first.
+
+Solve :  
+1.
+Display all products (from a product list)
+
+2. 
+Remove all the products of a specific category
+
+3. 
+Display all products (from a product map)
+Ans this 
+Is Map Iterable ?
+Can u attach DIRECTLY a for-each loop to the map ? 
+
+Imperative style
+
+Any Declarative (Functional prog solution ?)
+
+
+4. Sort the products from the list , as per date : custom ordering
+How ?
+
+5. Sort the products from the Map , as per price : custom ordering
+How ?
+
+
+6 Use Function literal
+
+
+7. Using above API(higher order funcs) , can you chain multiple operations like sorting & displaying the sorted data ? 
+
+OR
+Filter the elements n display filtered list.  : 
+
+Objective : Accept product category from user
+remove all products from specified category n display remaining list : multiple ops can't be chained !
+
+
+3. Enter Java 8 Functional Streams
+
+Refer to "streams_sequence.txt"
+Refer to <streams> : diagrams
+collections vs streams 
+streams basics

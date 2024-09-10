@@ -1,0 +1,98 @@
+Today's topics
+
+Revise 
+String Handling(Solve some questions here n then in the lab)
+Refer to method overriding n exc handling related questions n solve for more practice
+How will you parse n format Date ?
+
+Java Enumeration
+Wrapper classes
+Introduction to Generics
+Collection Framework overview.
+
+
+
+1. What's enum : keyword in java (declares a type)
+Refer : "day9_help\enums\regarding enums.txt"
+
+Why Enum ?
+1. Supports  set of related self typed constants
+2. applies type safety to the constants
+3. can iterate over enum constants easily
+4. supplying addtional info to enum constants is easy
+
+Which are legal access specifiers for enum ? : default / public 
+eg : public enum Color {
+RED,YELLOW,GREEN,BLUE
+}
+Javac generated code for any enum 
+
+1. class : implicit super class : java.lang.Enum
+eg : public final class Color extends Enum {...}
+
+2. implicit constr : private 
+private Color(String name,int ordinal) {super (name,ordinal);}
+3. 2  static important methods : values , valueOf :
+public static  Color[] values ()
+To parse a string ---> Enum
+public static Color valueOf(String clr) throws IllegalArgumentException(un chked exception)
+4. data members : public static final Color : RED,YELLOW, GREEN  : null
+5. static init block : will be implicitly added by javac
+RED=new Color("RED",0);
+...
+GREEN=new Color("GREEN",2);
+
+Inherited methods from super class (java.lang.Enum)
+1. public String name()
+2. public int ordinal()
+3. public String toString()
+equals ,compareTo ....
+
+6. Can you override toString method ? YES
+BUT can't override : equals , compareTo
+
+
+2. Wrapper classes 
+Refer : readme n inheritance hierarchy
+
+3. Generics
+refer to readme , undestand why generics 
+Generic classes.
+
+4. Collection framework overview
+
+----------------------Pending ------------------
+
+Case study 
+Objective : Showroom Management system , which will keep track of vehicles added in the showroom.
+
+Objective : Accept vehicle details : chasisNo(string) : Unique ID, color(enum) , basePrice(double) , manufactureDate(LocalDate),company,isAvailable
+
+eg : Suppose vehicle's base price increases as per the chosen color
+
+How will you implement it ?
+enum Color
+{RED(5000),GREEN(8000),BLUE(4500)}
+
+Add  validation rules
+4.1 No dup vehicles should be added in the showroom 
+4.2 manufactureDate : must be after 1st Jan 2020
+4.3 Vehicle color must be valid
+
+Create a suitable data structure to store vehicle details
+
+Options
+1. Add Vehicle to the showroom.
+Accept data --validate all i/ps --in case of success -- add vehicle , to the showroom.
+o.w : throw custom exception
+
+2. Display all vehicle details
+
+0. Exit
+
+
+
+
+
+
+

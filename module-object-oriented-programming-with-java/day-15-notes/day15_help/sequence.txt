@@ -1,0 +1,125 @@
+Revise Functional programming through examples
+Java 8 Functional Streams
+I/O handling
+
+
+Revise
+Functional Streams
+
+Refer to "streams_sequence.txt"
+Refer to <streams> : diagrams
+collections vs streams 
+streams basics
+
+
+ Solve with higher order functions 
+
+1. Display all products (from a product list)
+using internal iteration
+eg : productList.forEach(p -> sop(p));
+
+2.Display all products (from a product map)
+eg : productMap.forEach((k,v) -> sop("PID "+k+":"+v));
+
+3. Apply discount to all the products from the products map
+i/p : discount
+double discount=sc.nextDouble();
+eg : productMap.forEach((k,v) -> v.setPrice(v.getPrice()-discount));
+
+4. Sort the products as per category n display the list.
+eg : Comparator<Product> comp=(p1,p2) -> p1.getCategory().name().compareTo(p2.getCategory().name());
+Collections.sort(productList,comp);
+productList.forEach(p -> sop(p));
+
+5. Remove all expired products n then display the remaining products from map
+eg : productMap.values().removeIf(p -> p.getExpDate().isBefore(LocalDate.now()));
+productMap.forEach((k,v) -> sop("PID "+k+":"+v));
+
+
+Refer :  streams_sequence
+
+
+6 Accept date from user , display no of products(list) manufactured after specified date.
+LocalDate date=LocalDate.parse(sc.next());
+Can you solve it in imperative (conventional) style ? Yes 
+But better alternative : Functional Streams
+
+8. Display name of the cheapest product
+
+9. Solve : findFirst, Optional : get , isPresent , anyMatch
+Accept product category from user
+Check if there any products for the specified catgeory
+
+
+
+
+
+What will happen ?
+Stream<Product> productStrm=productList.stream();
+long count=productStrm.count();
+productStrm.forEach(System.out::println);
+
+
+
+Enter I/O(Input / Output)
+
+Java supports handling of different devices
+eg : Keyboard(System.in), Console(System.out), File(text file n bin files) ,networking Sockets(end point of communication in distributed computing) , Pipes(virtual data pipe existing between multiple threads)
+.....
+
+I/O Streams
+Stream : represents data transfer to/fro Java app n device
+Input stream : Reads data from device --> Java App
+Output stream : Writes data from Java App --> device
+
+The packages used for handling devices in Java : java.io, java.nio
+
+java.io : In case of any errs in read/write operation ---JVM throws : java.io.IOException
+(checked exc)
+
+read/write methods :blocking or non blocking ? : Represnts blocking API
+Meaning : It causes the blocking of invoker thread , until read/write operation is complete.
+
+Inheritance hierarchy of classes in java.io
+refer : to a diagram
+
+Java 8 Streams(Functional streams ) : represents pipeline of big data ops(aggregate ops) to be perfromed on seq. of elems derived from : arrays / collection /file....
+eg : java.util.stream.Stream<T>,IntStream,LongStream,DoubleStream
+eg of higher order funs : intermediate ops --filter,map,mapToDouble,sorted,flatMap
+forEach,collect,count,sum,average : terminal ops
+eg : empList.stream().filter(e.getDept() == dept) .count() --> no of emps from a specific dept
+
+I/O Stream -- represent data transfer (bytes/chars) from/to java app to/from device(eg : file , pipe,socket,memory,console...)
+For  reading data from data src into java  app : input stream
+For  writing data to data sink from java  app :output stream
+
+java.io --2 types of strms
+1. Binary strms
+2. char strms
+
+Name 4 abstract super classes in I/O hierarchy :  InputStream,OutputStream,Reader,Writer
+
+Node streams : device handling strms
+File Handling strms : FIS,FOS,FR,FW
+Buffering strms : BIS,BOS,BR,BW(PW)
+
+Objective : 
+1. Text files 
+1.1 copy text files using buffered streams
+i/p : src n dest file names
+
+1.2 Suppose you have product details in a map. Can you store these details sorted as per price in a text file , in a buffered manner ?
+
+eg : try(PW pw=.....) {
+productMap.values()
+.stream() 
+.sorted(comp) //Stream<Product> : sorted as per price
+.forEach(p -> pw.println(p));
+}
+Try it Out !
+
+
+
+https://stackoverflow.com/questions/2723397/what-is-pecs-producer-extends-consumer-super
+
+https://howtodoinjava.com/java/generics/java-generics-what-is-pecs-producer-extends-consumer-super/
