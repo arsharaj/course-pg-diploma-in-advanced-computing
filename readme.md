@@ -21,6 +21,7 @@
 - Module : Database Technologies
 - Module : Effective Communication
 - Module : General Aptitude
+- Module : Microsoft Dot Net Technologies
 
 ### License
 

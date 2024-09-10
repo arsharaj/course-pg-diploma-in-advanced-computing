@@ -1,0 +1,15 @@
+create table [dbo].[Departments] (
+    [DeptNo]   int          not null,
+    [DeptName] varchar (50) not null,
+    primary key clustured ([DeptNo] asc)
+);
+
+create table [dbo].[Employees] (
+    [EmpNo]  int             not null,
+    [Name]   varchar (50)    not null,
+    [Basic]  decimal (18, 2) not null,
+    [DeptNo] int             not null,
+    primary key clustured ([EmpNo] asc),
+    constraint [FK_Employees_Departments] foreign key ([DeptNo]) references [dbo].[Departments] ([DeptNo])
+);
+
