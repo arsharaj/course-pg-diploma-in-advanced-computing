@@ -7,6 +7,7 @@ bin/
 obj/
 build/
 target/
+node_modules/
 
 .springBeans
 .factorypath
