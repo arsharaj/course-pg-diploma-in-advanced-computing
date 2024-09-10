@@ -15,6 +15,7 @@
 - Lab : Software Development Methodologies
 - Lab : Web Based Java Programming
 - Lab : Web Programming Technologies
+- Module : Algorithms And Data Structures Using Java
 
 ### License
 
