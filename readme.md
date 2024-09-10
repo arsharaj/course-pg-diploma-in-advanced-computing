@@ -16,6 +16,7 @@
 - Lab : Web Based Java Programming
 - Lab : Web Programming Technologies
 - Module : Algorithms And Data Structures Using Java
+- Module : Concepts Of Operating Systems
 
 ### License
 
