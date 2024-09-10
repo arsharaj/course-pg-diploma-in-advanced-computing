@@ -18,6 +18,7 @@
 - Module : Algorithms And Data Structures Using Java
 - Module : Concepts Of Operating Systems
 - Module : Cpp Programming Language
+- Module : Database Technologies
 
 ### License
 
