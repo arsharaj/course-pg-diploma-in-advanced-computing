@@ -8,6 +8,7 @@ obj/
 build/
 target/
 node_modules/
+lecture-videos/
 
 .springBeans
 .factorypath
