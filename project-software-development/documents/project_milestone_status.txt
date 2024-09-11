@@ -1,0 +1,8 @@
+----- Project Milestone Status -----
+
+1. Project Planning : Requirements specification, objectives, etc.
+2. System Design : Describes screen layouts, business rules, process diagrams, pseudo code and other documentation.
+3. Implementation : Coding.
+4. Integration and Testing : Checking for interoperability and error notification.
+5. Acceptance, Installation and Deployment : The final error correction upon deployment.
+6. Report Generation and Verification : Project Closure

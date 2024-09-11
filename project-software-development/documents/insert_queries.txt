@@ -1,0 +1,32 @@
+insert into state values(default,"Maharashtra");
+insert into state values(default, "Delhi NCR");
+insert into city values(default,"Mumbai",1);
+insert into city values(default,"Pune",1);
+insert into city values(default,"Nagpur",1);
+insert into city values(default,"Delhi",2);
+insert into category values(default,"Fashion");
+insert into category values(default,"Electronics");
+insert into category values(default,"Sports");
+insert into category values(default,"Fitness");
+insert into category values(default,"Household");
+insert into category values(default,"Books");
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "emailId": "john@gmail.com",
+  "password": "Ss@123",
+  "mobile": 1234567890,
+  "rating": 5,
+  "cityId": 1
+}
+
+{
+  "productName": "Sample Product",
+  "productDescription": "This is a sample product description.",
+  "productBrand": "Sample Brand",
+  "price": 100,
+  "postedDate": "2024-02-11", 
+  "categoryId": 1,
+  "userId": 1
+}

@@ -1,0 +1,17 @@
+----- Project Related Discussion -----
+- Technologies used :
+	1. User Interface - HTML, CSS, JS, JQ, Bootstrap, React
+	2. Business Logic - Spring
+	3. Databases - MySql, MongoDB
+	
+- Application Name
+	• Task 1
+	• Task 2
+	• Task 3
+- You can follow this template to get different tasks.
+
+Ex. Movie Review, Food Delivery, Sprint Manager, Property Listing, Split Pay, Wealth Management, Car Rental
+
+Steps to be followed : 
+1. List down all the functionalities.
+2. Create the database schema in simple excel.

@@ -1,0 +1,20 @@
+Objective :
+Describe the category table along with all attributes and constraints
+
+Database Table : category
+Description :
+1. This table contains various categories of products like : Electronics, Fashions, Sports, Fitness, Household, Books.
+2. According to categories, products are divided.
+3. This table is in one to many relationship with user_product table.
+4. The category table should contain two attributes : category_id, category_name.
+
+Attributes :
+1. category_id - int
+2. category_name - varchar(15)
+
+Constraints :
+1. category_id is the primary key with the datatype as int.
+2. category_name should be of max 15 characters.
+3. category_id is a foreign key in user_product table.
+
+Note : Followed the same naming convention in database.

@@ -1,0 +1,41 @@
+Objective :
+Describe the user_product table along with all attributes and constraints.
+
+Database Table : user_product
+Description :
+1. user_product table is going to store all the products that are listed by any specific user.
+2. This table would be used by other table such as universal_product table.
+3. user_product table would use the user_table to get user_id of the user who is listing the product.
+4. When a user adds a new product in his list then a new entry add in the user_product table would be created with that user_id as a foreign key.
+5. This table is in one to one relationship with universal_product table.
+6. This table is in many to one relationship with category table.
+
+Attributes :
+1. product_id - int
+2. product_name - varchar(25)
+3. product_description - varchar(150)
+4. product_brand - varchar(50)
+5. price - int
+6. first_image - blob
+7. second_image - blob
+8. third_image - blob
+9. posted_date - date
+10. category_id - int
+11. user_id - int
+
+Constraints :
+1. product_id should be unique to each user so we can use product_id and user_id as compound
+primary key. product_id would be incremented automatically.
+2. product_name should be of max 25 characters containing only alphabets.
+3. product_description should be of max 150 characters.
+4. product_brand should be of max 50 characters.
+5. price would be of integer type and should not be negative.
+6. first_image is of blob type.
+7. second_image is of blob type.
+8. third_image is of blob type.
+9. posted_date would be the date on which the product is listed by the user.
+10. category_id is a foreign key referring to category_id in category table.
+11. user_id is the referred key from user table and would be used to find out who listed this
+product.
+
+Note : Followed the same naming convention in database.

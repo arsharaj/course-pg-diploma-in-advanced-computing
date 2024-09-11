@@ -1,0 +1,65 @@
+- context-name : swapkart
+
+1. Registration and Login Feature : UserController
+	- Shreyas
+	- /signup : for registration
+		- success status code : 201 for new entity code
+		- error status code : 400 for bad request
+		- success message : "user successfully created"
+		- error message : "user could not be created"
+	- /signin : for logging in
+		- success status code : 200
+		- error status code : 404
+		- success message : "user successfully logged in"
+		- error message : "user not found"
+		- return the user detail as well as response entity
+
+2. Get all the products : HomeController
+	- Vishwajeet
+	- /home : for getting all the products
+		- success code : 200 with UserResponseEntity
+		- error code : 400 for bad request
+
+3. Edit the user profile : UserController
+	- Himanshu
+	- /edit  : for editing the user profile
+		- put mapping
+		- delete mapping
+		- success : 200
+		- message : as per response and mapping
+
+4. Get products by user id : ProductController
+	- Arsharaj Chauhan
+	- /products/{user_id} : for fetching details of a particular user
+		- get mapping
+	- /products/{user_id}/{product_id} : for deleting the product
+		- delete mapping
+	- /products/{user_id}/{product_id} : for adding a new product
+		- post mapping
+	- /products/{user_id}/{product_id} : for updating the added product
+		- put mapping
+
+5. Get products by category id : CategoryController
+	- Pratik
+	- /category/{category_id} : for fetching the product by category_id
+
+6. Adding products to the wishlist : WishlistController
+	- Dipak
+	- /wishlist/{user_id} : add new product to the wishlist
+	- /wishlist/{user_id} : get all the wishlist products
+	- /wishlist/{user_id} : delete all the products
+	- /wishlist/{user_id}/{product_id} : delete a single product
+
+7. Contacting the owner : 
+	- Get the user product details from the UserController
+	- Get the owner product details from the UserController
+	- Get the Exchange Product from Redux
+	- Get the message from MessageController
+
+8. Handling the all the messages : MessageController
+	- /chat/new_message
+		- contains user_id, user_product_id, owner_id, owner_product_id in request body
+		- post mapping
+	- /chat/new_message?user_id=1&user_product_id=2&owner_id=3&owner_product_id=4
+		- contains user_id, user_product_id, owner_id, owner_product_id in query string
+		- get mapping
