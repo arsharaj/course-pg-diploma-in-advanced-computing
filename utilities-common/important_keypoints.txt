@@ -1,0 +1,754 @@
+----- CCEE : Web Based Java Programming -----
+
+1. In Log4j, the first object you need to create for logging is Logger.
+2. web.xml comes in context of web application in context of JEE.
+3. get and post are primary terminologies of http.
+4. Model and controller are used to provide data to the view.
+5. request.getAttribute("key","value"), is used during reading data from request scope variables used on server side.
+6. Application scope, stores information over multiple requests for all clients.
+7. To handle a 404 error gracefully in a web application we need to configure things in web.xml
+8. Custom tags are primarily used in JSP.
+9. The MVC terminology predominantly comes in the context of Presentation.
+10. To create an XML, you can use both DOM (Document Object Model) and SAX (Simple API for XML).
+11. Class.forName("someClass") returns the object of type Class class.
+12. HTML in web technology of JEE is client side view component.
+13. Threading issues are handled by component.
+14. Spring MVC is an example of Front Controller Framework.
+15. In REST based services, primary protocol used is HTTP.
+16. Client invokes a method on the Proxy class during distributed computing.
+17. init-param in servlet is specific to the servlet.
+18. When a constraint is violated during JDBC operations, it typically results in an SQLException.
+19. <%! init I = 3; %> This is an example of declaration.
+20. session is an implicit object in JSP.
+21. Servlets uses request/response model.
+22. Distributed computing is program to program interaction.
+23. To describe a web service to the client in SOAP, we need both SOAP envelope and WSDL file.
+24. doGet and doPost methods are called by JEE container (Tomcat).
+25. Both HttpServletRequest and HttpSession are interfaces in Java.
+26. Web services are typically created in the service layer.
+27. Web services which uses standard methods of http and achieves is REST.
+28. The response in REST-based services can be in both XML and JSON formats.
+29. In Spring MVC @RestController can provide model.
+30. When we use Spring, we can inject dependencies using both setters and constructors.
+31. <bean id="xyz" class="org.springframework.jdc.core.JdbcTemplate" <property name="dataSource" ref="ds"/></bean> : JDBC template object is created and some object with id datasource is wired into JDBCTemplate.
+32. @Controller annotation, above a function f1, this function f1 typically is called by Spring Framework.
+33. The RestTemplate class in Spring is used in both web applications and standalone applications.
+34. @Bean in Spring ensures object is created and injected by Spring.
+35. @Repository in Spring is used in dao layer.
+36. @Transactional is used in spring in service layer.
+37. @Service is used in spring in Spring service layer.
+38. Hibernate, IBatis is typically used in dao layer.
+39. JSON Formats are used in REST-based web services.
+40. Best way to include jar files by using a tool like maven or ant.
+41. When a JSP page is compiled, then it is turned into Servlet.
+42. <% sum = sum + j; %> is the correct syntax.
+43. Spring framework is a lightweight framework. Here applications are loosely coupled because of dependency injection. Also it provides declarative support for caching, validation, transaction and formatting.
+44. The Statement interface cannot accept parameters. It is used for general-purpose access to database. It is useful when you are using static SQL statements at runtime.
+45. To define Bean Lifecycle methods we have three ways i.e. Using Annotation, Using XML configuration, Implementing Interfaces provided by Spring framework.
+46. An ApplicationContext is a complete superset of a BeanFactory.
+47. @Scope("request"), @Scope("session"), @SessionScope is used to declare the scope of a bean by using annotations.
+48. We cannot use if-else block inside JSP expression.
+49. Call method execute() on a CallableStatement object is used to execute a stored procedure in the database.
+50. <jsp:setProperty name="fruit" property="color" value="white"/> statement may be used to set the color property of the bean.
+51. @SpringBootConfiguration is the annotation of Spring Boot that is an alternative to Spring's standard @Configuration annotation.
+52. BeanFactory provides the configuration framework and basic functionality.
+53. java.sql and javax.sql packages contain the JDBC classes.
+54. @Component annotation scans our application for classes annotated with @Component. It also instantiates classes whenever required. It supports Spring's auto-detection mechanism and injects any specified dependencies.
+55. doGet method will be invoked when the hyperlink is clicked.
+56. select c from Car c where c.model=:param1 is a valid JPA query.
+57. @Id, @Entity are the minimum required annotations we must use at the class to create a table in the database.
+58. doPost(HttpServletRequest, HttpServletResponse) method in the HttpServlet class services the http post request.
+59. The key difference between using a <jsp:forward> and HttpServletResponse.sendRedirect() is that forward executes on the server while sendRedirect() executes on the client.
+60. @PathVariable annotation is used to map value to the method argument in http://localhost/factorial/{value}.
+61. JDBC architecture decouples an abstraction from its implementation and it follows a bridge design pattern.
+62. Sql operates on relations whereas Hql operates on objects. Hql supports polymorphic queries and is ultimately generated into underlying Sql. Hql is case sensitive for class names and properties.
+63. Hibernate Criteria API allows to fetch only selected columns of result, can add conditions while fetching results and allows to use aggregate functions. But it cannot order the result set.
+64. getConnection() method is static and synchronized in JDBC API.
+65. A relation where one student can have multiple addresses and one address can accomodate multiple students in a bidirectional relationship can be done using @OneToMany and MappedBy annotation and its attribute.
+66. The @Embedded annotation is used to specify that an attribute within an entity should be treated as an embedded object. It is applied to a field or property that represents a value type that should be embedded within the owning entity.
+67. Open a connection using the DriverManager.getConnection() method establishes a connection with a database.
+68. @Param annotation binds a JPA Query parameter to a method argument.
+69. The purpose of @SpringBootConfiguration annotation is that it enables Spring Boot's auto-configuration mechanism.
+70. Session tracking can be achieved using cookies, url rewriting, hidden form fields and http session (user authorisation).
+71. BeanFactory holds bean definitions. It also instantiates beans whenever asked by the client application. BeanFactory is capable of creating associations between dependent objects while instantiating them. Also it does not support annotation based dependency injection.
+72. Jackson is the built-in library in Spring Boot used to serialize objects to JSON format.
+73. Interservlet communication can be achieved using ServletContext.
+74. server.port=9090 is the property used to change the port to 9090 in a Spring Boot application.
+75. \doc-root\WEB-INF\web.xml is the correct name and location of deployment descriptor of a web application.
+76. In JPA, @Temporal annotation converts the date and time values from Java object to compatible database type and retrieves back to the application.
+77. @PutMapping annotation is used to map a method for PUT request.
+78. After EntityManager is closed, entity is an a detatched state.
+79. HttpServletRequest is the class that includes the getSession method that is used to get the HttpSession object. 
+80. <context:annotation-config/> to bean configuration is a correct syntax for annotation wiring.
+81. Beans can be created by its own constructor properties.
+82. A bean can have more than one name using multiple id attributes.
+83. The annotations must be added to the implementation class but not the interface.
+84. servlet-mapping attribute is used to handle web flow requests.
+85. post http method is not considered as idempotent.
+86. HttpServlet.doPost() method is used by servlet to handle form data from a client.
+87. ServletRequest types define the methods getAttribute() and setAttribute().
+88. Entity bean can have persistent relationship with other entity beans.
+89. SessionFactory is a thread-safe object.
+90. get() method always hits the database.
+91. Spring Hibernate Template can simplify your DAO implementation by managing sessions and transactions for you.
+92. SessionFactory can manage contextual sessions for you and allows you to retrive them by the getCurrentSession() method.
+93. Spring JPA Template provides to simplify your DAO implementation by managing entity managers and transactions.
+94. We can assign a component name in this annotation and have the session factory autowired by the Spring IoC container with @Autowired.
+95. JPA is a set of persistent annotations to define mapping metadata.
+96. In each entity class to be persisted by an ORM frameword, a default constructor with no argument is required.
+97. DriverManager, Driver, Connection, Statement and ResultSet are the major components of the JDBC.
+98. registerDriver() and forName() are required to load a database driver in JDBC.
+99. JDBC api supports two-tier and three-tier architecture model for accessing the database.
+100. scriptlet is not a jsp directive.
+101. Sun defines 4 types of JDBC drivers.
+102. The difference between Servlets and JSP is the syntax.
+103. Objects are accessible only from the pages which are in same session.
+104. The method forward(req, res) will return back to the same method from where the forward was invoked.
+105. JSP includes a mechanism for defining dynamic attributes or custom tags.
+106. DB connections are not written directly in JSPs as it is not a standard J2EE architecture and load balanding is not possible.
+107. 9 jsp implicit objects are there and these objects are created by the web container that are available to all the jsp pages.
+108. The RequestDispatcher does not require a round trip to the client and thus is more efficient and allows the server to maintain request state.
+109. The ErrorPage attribute specifies a JSP page that should process any exceptions thrown but not caught in the current page.
+110. JDBC is a low-level interface, which means that it is used to invoke SQL commands directly.
+111. JDBC is a Java API.
+112. Dynamic interception of requests and response to transform the information is done by servlet filter.
+113. Software as a Service is a software distribution model in which applications are hosted by a vendor or service provider and made available to customers over a network, typically the internet.
+114. JSP Page is the initial contact point for handling a web request in a page-centric architecture.
+115. We send data in get method through url.
+
+----- CCEE : Operating Systems and SDM -----
+
+1. The time of submission of a process to the time of completion, interval is termed as turnaround time.
+2. The command used to compare the files in known as cmp.
+3. If a process or thread is preempted then it is added to ready state.
+4. do statement executes the code of a loop at least once.
+5. To access the services of the operating system, the interface is provided by the system calls.
+6. The process can be classified into many groups in multilevel queue scheduling algorithms.
+7. pwd command displays present working directory.
+8. Aging is increasing the priority of jobs to ensure termination in a finite time.
+9. Each partition may contain exactly one process when memory is divided into several fixed sized partitions.
+10. Swapping allows each program in turn to use the memory.
+11. Preemptive Shortest Job First scheduling is sometimes called SRTN (Shortest Remaining Time Next).
+12. In unix, the status of the process may be running, orphan, sleeping, zombie.
+13. SRTF scheduling may cause starvation. Preemptive scheduling may cause starvation. Also Round Robin is better than FCFS in terms of response time.
+14. A program that is bound by CPU might have cpu bursts a few longer.
+15. .next().charAt() is used while taking character input through scanner class in java.
+16. As a part of paging technique, a physical memory is broken into fixed size blocks called as frames.
+17. getpid calls never returns an error.
+18. Palm Os is not a real time operating system.
+19. Interpreter read high level code and execute them.
+20. uname command is used to display the os name.
+21. Under multiprogramming, turnaround time for short jobs is usually shortened and that for long jobs is slightly lengthened.
+22. grep command is used for searching for a pattern in one or more files.
+23. touch command creates an empty file if file does not exist.
+24. true and false are non numeric values in java.
+25. Kernel remains in the memory during the entire computer session. It is the first part of the operating system to load into memory during booting. Kernel is the program that constitutes the central core of the os.
+26. IO, Memory and CPU resources must be protected by the Operating System.
+27. Mutual Exclusion can be provided by both mutex locks and binary semaphores.
+28. HPUX threads are not part of the main thread libraries in use.
+29. Secondary method is divided into equal size partitions called pages and main memory is divided into small fixed-sized blocks of physical memory called frames.
+30. Signal delivery in a process model takes place in the context of the kernel.
+31. The section of code, which is accessed by the shared variable is known as critical section.
+32. echo $(uname -r) is an example of parameter expansion.
+33. Shared Memory is the fastest form of Inter-process Communincation (IPC.)
+34. The command used to display long listing of file is ls -l.
+35. Memory management technique in which operating system stores and retrieves data from secondary storage for use in main memory is called paging.
+36. If the virtual address space is 4mb and page size is 4kb. Then the number of pages of process here is 1024 or 2^10 pages.
+37. 0 is the value returned by the fork() system call on a successful creation of the child process to the child.
+38. SIGKILL SIGSTOP signal cannot be blocked, ignored and caught.
+39. A graphical operating system uses Hybrid type of kernel.
+40. A Process Control Block is a data structure maintained by the operating system for every process and identified by an integer process id (pid).
+41. Scheduling of threads by OS.
+42. Logical extension of multiprogramming operating system in time sharing and multi-tasking operating system.
+43. Kernel generate signals to notify processes of events.
+44. Another type of multiple cpu system is the clustered system.
+45. Each process in a process model has a signal action activity, single pending field and signal mask field.
+46. Context Switching involves storing the context or state of process so that it can be reloaded when required and execution can be resumes from the same point as earlier.
+47. Swap space is located at secondary memory.
+48. PS1 environment variable contains the value of default shell prompt.
+49. Translation Lookaside Buffer (TLB) is used as a special cache to keep track of recently used page table entries.
+50. When the dirty bit is switched on, the page is modified and can be replaced in memory. If it is off, no replacement is necessary since no updates have been made.
+51. Largest time is spend on enhancement phase of software development phase.
+52. RAD (Rapid Application Development) Model is high speed implementation of spiral model.
+53. Round Robin scheduling is the preemptive version of FIFO.
+54. ls and ps are regular system utilities.
+55. In FIFO page replacement algorithm, oldest page chosen must be replaced.
+56. A General Purpose OS design uses high-level applications / frame-works are compiled and linked, with the system libraries.
+57. System libraries are linked to applications.
+58. Dispatcher does the job of allocating a process to the processor.
+59. If a user's process does not have sufficient execute permissions, for a directory, then it cannot access the files, under the directory.
+60. Major changes made to software after long periods is also called software reengineering or regressive maintainence.
+61. Acceptance testing is clients need. System testing is done as per requirements. Integration Testing is done through design and unit testing is done in the code.
+62. SRS, Code and User Manual are examples of Software Configuration Items (SCI).
+63. Core components of the kernel of a GPOS manage hardware resources.
+64. Bar charts and activity networks are graphical notations which are used to illustrate the Project Schedule.
+65. The requirement phase consist of problem analysis, requirement specification, requirement validation, problem validation.
+66. The LOC (Lines of Code) size do not include comments.
+67. In a modern GPOS each active application is managed using a single process or multiple processes.
+68. Loader must reside in the main memory under all situations in a resident - os computer.
+69. Disk scheduling includes deciding order in which disk access requests must be serviced.
+70. SDLC stands for Software Development Life Cycle.
+71. Barry Boehm proposed the spiral model.
+72. Customer collaboration, individuals and interactions with working software suits the manifesto for agile software development.
+73. git add command is used to push the code into git staging area.
+74. Kubernetes is a portable, extensible and open-source platform.
+75. git init command creates an empty git repository or reinitialize an existing one.
+76. Client architectural layer is used as front-end in cloud computing.
+77. Virtualization provide complete isolation from the host operating system and the other virtual machines.
+78. Initiate phase, Plan and Estimate phase and Implement phase are the three phases of scrum.
+79. Feature Driven Development agile methodology advocates the use of problem domain.
+80. In yaml, explicit tags are denoted using the exclaimation point (!) symbol.
+81. In development and documentation step of SDLC actual programming of software code is done.
+82. AN increment of done software is delivered at the end of the sprint.
+83. Software Validation is not fundamental to software engineering.
+84. Black box is the technique applied for usability testing.
+85. White box testing is also classified as structural testing.
+86. Statement Testing, Decision Testing and Condition Coverage are white box techniques.
+70. Boundary value analysis belong to black box testing.
+71. Amazon SimpleDB is a structured data store that support indexing and data queries to both EC2 and S3.
+72. Selenium WebDriver component support all os.
+73. TestNG stands for TestNextGeneration.
+74. Selenium tests browser-based applications.
+75. The Web Driver is used to execute tests on the HtmlUnit browser.
+76. The model which has a major disadvantage in terms of coding phase of software life cycle model is 4GT Model.
+77. Agile software development is bsed on both incremental and iterative development.
+78. Waterfall model is not suitable for accomodating any changes.
+79. Horizontal, Vertical and Domain prototype are some of the prototypes of Prototying Mode.
+80. In RAD Model, user is involved in all the phases of SDLC.
+81. Process Pipeline is applicable on software radio.
+82. The user system requirements are the parts of SRS document.
+83. Layer view cannot be captured using uml diagram.
+84. The process of transforming a model into source code is called forward engineering.
+85. Level 2 of ERD models all entities and relationships.
+86. Designing the tests is not a part of test implementation and execution phase.
+87. Alpha and Beta are forms of Acceptance testing.
+88. In Evolutionary Development Model the requirements are implemented by its category.
+89. The tools that support different stages of sdlc are called case tools.
+90. Risk management is the most important feature of spiral model.
+
+----- CCEE : Dot Net Technologies -----
+
+1. operator keyword is used to overload user defined types by defining static member functions.
+2. Operator that can be overloaded is +.
+3. Data type is the vector in operator overloading.
+4. Operator overloading enables user-defined operator implementations for various operators such as true, false.
+5. IComparer, IEnumerable, IEnumerator, IDictionaryEnumerator are some of the interfaces declared in System.Collections namespace.
+6. The Capacity property of ArrayList Collection gets doubled when already the capacity is exhausted.
+7. arr.Count is the correct way to find out the number of elements currently present in an ArrayList Collection called arr.
+8. The public virtual object Dequeue() method removes and returns the object at the beginning of the queue.
+9. Capacity property can be used to get or set the number of elements that the ArrayList can contain.
+10. ArrayList and BitArray are the collections which are IO index based.
+11. Indexers are location indicators and are used to access class objects. Indexer is a form of property and works in the same way as a property.
+12. this keyword is used to declare the indexer.
+13. get and set are the operators used to access the subscript [] operator in indexers. access is not used.
+14. Indexers are used to use collection of items at a large scale we make use of indexers as they utilize objects of class that represent the collection as an array. They are also convenient as they can also make use of different types of indexers like int, string etc. Additionally, an indexer allows an object to be indexed such as an array.
+15. There is no need to use the name of the property while using an indexed property. An indexer property should accept at least one argument and also indexers can be overloaded.
+16. A class indexer allows to index in same way as an array.
+17. private, public, protected and internal modifiers can be used with the properties.
+18. To use the .net framework data provider for sql server, an application must reference the System.Data.SqlClient namespace.
+19. System.Threading namespace supports multithreading programming.
+20. public Thread(ThreadStart start) code snippet specify only defining a thread and declaration of a thread constructor.
+21. Thread class is used to make thread.
+23. The new created thread will not start executing until Start() method is called.
+24. sleep() method of Thread class is used to suspend a thread for a period of time.
+25. lock keyword is used for using the synchronization features defined by the Monitor class.
+26. synchronized keyword is used to implement synchronization.
+27. wait() method is called when a thread is blocked from running temporarily.
+28. Delegates are type safe and they provide wrappers for function pointers.
+29. The infrastructure that supports dynamic operations at runtime is commonly referred to as the Dynamic Language Runtime (DLR). The dynamic keyword is often used in conjunction with the DLR to indicate that the type of variable or object will bw determined at runtime.
+30. In C#, having unreachable code always an error.
+31. C# treats the multiple catch statements like cases in a switch statement.
+32. ViewBag["DateTime"] = DateTime.Now.ToString() component in Asp.Net MVC can be used to pass data between controller to view.
+33. The MSIL code includes instructions to load, initialize and invoke methods on objects. The MSIL code is collected and assembled in the form of byte codes and is converted to a .NET assembly.
+34. virtual function modifier can be put on a method in a base class to allow the child to override it.
+35. CLS (Common Language Specification) ensures complete interoperability among applications, regardless of the language used to create the application.
+36. We can manage states in an asp.net application using viewstate, application objects or session objects.
+37. The ILDASM (IL Disassembler) utility allows us to see the contents of an assembly including the metadata of an assembly and its compiled code.
+38. An Application Domain is a logical isolation boundary created around .NET programs so that they do not access or affect each other and more than one programs can be run in a single process.
+39. The CTS (Common Type System) is a standard that specifies how data types are represented in computer memory. It is intended to allow programs written in different programming languages to easily share information.
+40. public int P { get; } is a readonly automatic property.
+41. FirstClass obj = new FirstClass { a = 100 } is the right syntax for an object initializer.
+42. Instead of writing a destructor one must implement IDisposable interface.
+43. The static constructor does not have parameters or any access specifier. Also the static constructor cannot be called explicitly. The static constructor in not called when the first object of the class is created.
+44. When creating an object of the derived class, the base class constructor is executed first followed by the derived class constructor.
+45. An abstract method must exist in an abstract class.
+46. A sealed class cannot have a derived class and it can be instantiated. Moreover, for a sealed method, the sealed keyword must compulsorily be given with the override keyword. Note that sealed class cannot have virtual methods.
+47. int is not a reference type.
+48. ref keyword is used to pass variable as reference.
+49. A struct is a value type data that represents data structures. It can contain a parameterized constructor, static constructor, constants, field, methods, properties, indexers, operators, events and nested types.
+50. IDictionary<Tkey,TValue> directly inherits from ICollection<T>
+51. Capacity gets doubled when the SortedList get exhausted.
+52. The Action delegate is used when there is not need to return a result from the method. It can take zero or more input parameters but does not return anything. The Func delegate is used when a method needs to return a value. It can take zero or more input parameters and return a value. The Predicate delegate takes one input parameter and returns a boolean value (true or false).
+53. TargetSite property of the Exception class gives the name of the function that caused the Exception to occur.
+54. To get the return value of a function called asynchronously using a delegate use - var value = DelegateObject.EndInvoke().
+55. CLS (Common Language Specifications) is a common set of rules that all .net languages must follow.
+56. var x = y.AsParallel(); is a valid PLINQ query.
+57. public event DelegateName EventName; is the correct syntax to declare an event.
+58. Monitor class, Interlocked class and lock provides for thread synchronization.
+59. async keyword is used for methods that return a Task object. await is used to wait for the asynchronous methods to finish execution and any method that has an await call must be marked async.
+60. While calling a method with the ThreadPool, call ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc));
+61. To call a method that takes 2 string parameters and returns a string as a new task use Task.Run method to execute the method with the specified parameters like await Task.Run(() => Method(param1, param2));
+62. _ViewStart.cshtml file is used to specify a common layout for all views in asp.net mvc.
+63. The Session_Start, Session_End, Application_Start and Application_End events are written in Global.asax file.
+64. TempData variable is available from the Controller to the View and also in redirects.
+65. ViewBag is a wrapper for ViewData and it is comparatively slower. ViewBag allows us to add properties to it at runtime as it is a dynamic property of the ControllerBase class.
+66. [Key] Data Annotations allow us to specify a primary key for the model.
+67. ViewResult, PartialViewResult, FileResult, ContentResult, EmptyResult, JsonResult, JavaScriptResult, RedirectResult, RedirectToRouteResult, RedirectToActionResult, HttpStatusCodeResult, HttpUnauthorizedResult, HttpNotFoundResult are some of the types of ActionResult. LayoutResult is not a type of ActionResult.
+68. [AllowAnonymous] ensure that a user need not be logged in to call a particular Action method.
+69. In the Entity Framework the DataContext class contains collections of entities in the system and is responsible for database updates.
+70. A SqlDataReader is a connected, readonly and forward only set of records. Also it can contain multiple set of records.
+71. To populate a DataTable with records from the Database, use DataAdapterObject.Fill(...).
+72. A DataView is based on only a single DataTable. Changes made in the DataTable reflect in the DataView. A DataView can perform sorting and filtering of records from a DataTable.
+73. BasicHttpBinding is the WCF (Windows Communication Foundation) bindings that is used to create a web service.
+74. For Web Api, post method is used to perform an insert.
+75. In EntityFramework Core DbFirst approach, Scaffold-DbContext is the command used to generate models from the database.
+76. [Authorize] ensures that a user must be logged in to call a particular Action method.
+77. Session variable is available from in subsequent requests for the current user only. It is designed to store user-specific data that persists across multiple requests for the same user. It remains available until the user's session ends.
+78. In CodeFirst Entity Framework technique, the class is written first and the database is generated from the classes.
+79. GacUtil (Global Assembly Cache) command given at the command line is used to register an assembly as a shared assembly.
+80. An interface can be explicitly implemented using - public class MyClass : IMyInterface { void IMyInterface.interfaceMethod() {} }
+81. You should not write cleanup code in a Destructor in .Net because .Net follows nondeterministic finalization.
+82. All controllers in asp.net mvc inherit from the Controller class.
+83. var emps = emps.Select().Where() will generate a compilation error because we should first filter and then select the items needed.
+84. In asp.net mvc, bundling and minification can be turned on by setting the debug attribute to false in the compilation section in web.config file.
+85. If a broader exception is caught before inner exception then C# compiler will throw an error on compilation because Rosyln compiler does not tolerate unreachable code.
+86. ViewData variable is available from the Controller to the View only and not in subsequent requests or redirects.
+87. A SqlDataReader, SqlCommand and SqlTransaction requires an open connection but DataSet does not require an open connection.
+88. For web api, put method is used to perform an update.
+89. The .Net equivalent of a float in C# is System.Single.
+90. The static constructor is called when the class is loaded into memory.
+91. In asp.net mvc core, HttpContext.Session.SetString("key","value") is used to store a string in a session variable.
+92. To asynchronously call a method which takes a string parameter and does not have a return value using a delegate is - DelegateObjectName.BeginInvoke("Hello", null, null)
+93. In Reflection, the Type class is used to represent the details of a class.
+94. To use a thread that is already created and maintained by the CLR, we use ThreadPool class from System.Threading namespace.
+95. protected int MyProperty { private get; private set; } is the right syntax for a property accessor.
+96. In linq, methods can be categorized into two main types based on their execution behaviour : deferred execution and immediate execution. Immediate execution means that the query is executed immediately and the result is returned as a concrete collection or a single value. Methods like ToList(), ToArray(), ToDictionary() and Single() trigger immediate execution.
+97. WebHttpBinding is designed for building services that follow restful principles. BasicHttpBinding is designed for interoperability with older asmx-based web services and non-wcf clients. WsHttpBinding is designed for building secure and reliable services using WS standards. This WebHttpBinding is used to create a rest service.
+98. FileMode.CreateNew overwrites a file if file already present otherwise throws an IOException if file is not present. That's why it is more appropriate to use the FileMode.Create which will create a new file if the file is already not present.
+99. To iterate through a SortedList<int,string> using a foreach loop, we use KeyValuePair<int,string> class.
+100. RegularExpression data annotations allow us to specify pattern matching.
+101. ICollection<T> directly inherits from IEnumerable<T>.
+102. To create a Task and start it immediately, we call Task.Run() method.
+103. The Garbage Collector runs when the system has low physical memory.
+104. To call a method that has a void return value, use the inbuilt Action delegate.
+105. All structs are value types, they can contain property and private members but a struct does not contain a constructor with no parameters.
+106. Jit compilation converts IL to native code at application run time.
+107. An abstract class need not have an abstract method. All abstract methods are late bound and they must exist in an abstract class. An abstract method can be implemented in the derived class by using the override keyword.
+108. To create a SqlDataReader in a function and to return the SqlDataReader from the function, ideally the SqlDataReader should be opended in this manner : SqlDataReader dr = cmd.ExecuteReader(CommandBehaviour.CloseConnection);
+109. Command.ExecuteScaler() returns a single value.
+110. Enum is not a reference type.
+111. int [,,] arr = new int [5,3,4] - Rank is 3 and GetLength(1) is 3.
+112. All models in asp.net mvc inherit from the Object class.
+113. The derived class method must have the same signature as the base class method to override it. The derived class method must have the override keyword to override a base class method. Late binding occurs when you call a method that has been overridden. Also base method should be virtual, abstract or overrideable.
+
+----- CCEE : Database Technologies -----
+
+1. In a correlated query the inner query fires for every row returned by outer query.
+2. The query associated with a cursor is executed in Open Phase.
+3. 1 column is presented after executing this query - select addressA||','||addressB||','||addressB "Address" from employee;
+4. Repeat loop if used properly can be used to ensure that the 
+statements within the loop are executed iteratively but once.
+5. Counter variables are required in while loops.
+6. When we combine multiple columns in a single index, it is known as a composite index.
+7. LPAD makes a string of certain length by adding a certain set of characters to the left.
+8. The Open step actually executes the SELECT query associated with an explicit cursor.
+9. decode() function can be categorized as similar in function to an if-then-else statement.
+10. Data dictionary holds the definition of all the data tables.
+11. Omitting the where clause from a delete statement will remove all records from the table.
+12. To lock the rows of a table manually, you can use a select statement with the for update clause.
+13. subtract is not a set operator.
+14. To find information about trigger status, ALL_TRIGGERS views is appropriate.
+15. SQLERRM returns the message associated with an error code in plsql.
+16. A group of MongoDB instances that maintain the same data set is called as replica set in MongoDB.
+17. When a database trigger causes a second one to fire, which in turn causes a third one to fire, the concept is know as cascading triggers.
+18. When a char datatype is converted to varchar datatype of same width then all the blank spaces associated with that column value will remain.
+19. In terms of processing speed, Informix is the fastest RDBMS.
+20. upper and lower functions can be used to make your queries case insensitive.
+21. In Oracle, the upper limit for nested functions is upto 255 levels.
+22. A cursor is opened and populated by executing the sql statement defined by the cursor. After data manipulation, we should close the cursor explicitly. A cursor is declared by defining the sql statement that returns a result set.
+23. The fetch statement retrieves the current row and advances the cursor to the next row.
+24. select round(truncate(mod(1600,10),-1),2) from dual; -> 0
+25. Sql views can be used to hide rows, columns and complicated sql syntax.
+26. where, group by, having is the correct order of precedence of sql clauses.
+27. on-delete-cascade option with foreign key constraint does removes all the transaction entries along with master.
+28. Date is the BSON (Binary JSON) data type used to store dates in MongoDB.
+29. sin(), round() and sqrt() are some number functions but to_number() is not a number function.
+30. Mysql stored procedures does not support out or return parameters.
+31. explain() method in mongodb is used to analyze query performance and create execution plans.
+32. If five tables are given and three join conditions are given and select query is applied then three joins make relation between four tables and keep the fifth independent.
+33. Wildcards used for pattern matching are % and _.
+34. REPLACE function will not automatically return NULL if passed a NULL argument.
+35. The transaction control that prevents more than one user from updating data in a table is called Locks.
+36. Entity integrity ensures that every row is unique.
+37. A table can contain only one individual primary keys.
+38. Rollback and Commit affect only DML statements.
+39. By default, views are created as read-only, meaning that you can use them to retrieve data through select statements but cannot perform direct modifications using dml.
+40. Data Redundancy refers to the copies of the same data occupying the memory space at multiple places.
+41. Physical level of data abstraction describes exactly how the data is actually stored.
+42. Data mining can be used to extract or filter the data and information from the data warehouse.
+43. remove() method can be used to remove document from a collection in MongoDB.
+44. One teacher can have many classes is a one to many relationships.
+45. Commit commands is used to save any transaction permanently into the database.
+46. The term Data refers to raw facts and figures.
+47. Cardinality refers to the number of tuples in a relation.
+48. select * from instructor order by salary desc name asc; -> to display the salary from highest to lowest amount and sorting the employs name alphabetically.
+49. Document is the primary storage unit in MongoDB.
+50. $eq operator is used for equality in MongoDB queries.
+51. DML (Data Manipulation Language) provides the ability to query information from the database and insert tuples into, delete tuples from, and modify tuples in the database.
+52. show dbs command can be used in mongo shell to show all the databases in your MongoDB instance.
+53. Maximum cardinality indicates the maximum number of entities that can be involved in a relationship.
+54. In general, a file is basically a collection of all related records.
+55. MongoDB supports geospatial indexes, compound indexes, multikey indexes, etc.
+56. A huge collection of the information or data accumulated from several different sources is known as data warehouse.
+57. The Database Management Query language is generally designed for specifying the structure of the database, support end-users who use English like commands and support in the development of the complex applications software.
+58. db.posts.createIndex({"author":1}, {"unique":true}) command is used to create a unique index on author field of the posts collection.
+59. DDL (Data Definition Language) is generally used for performing tasks like creating the structure of the relations, deleting relation.
+60. Relational calculus is a non-procedural language.
+61. The database management system can be considered as the collection of Programs that enables us to create and maintain the database.
+62. In mongodb, find() method is used to retrieve documents from a collection.
+63. In second normal form the partial dependency is removed.
+64. The problem caused by independent multivalued dependencies is eliminated in 4NF.
+65. Set difference is not the relational algebra operator.
+66. 27017 is the default port number for MongoDB.
+67. In Generalization, the multiple lower entities are grouped (or combined) together to form a single higher-level entity.
+68. select name, course_id from instructor, teaches where instructor_id = teaches_id;  is equal to select name, course_id from instructor natural join teaches;
+69. There is not command to create a new database in mongodb. Database is automatically created before first insertion.
+70. A database management system is a type of system software.
+71. When a primary key is define in the table, DBMS automatically creates a unique index on a primary key column.
+72. Metadata refers to the data about data.
+73. The instance of the database refers collection of the information stored in a database at a specific time.
+74. Conceptual view refers to the total view of the database content.
+75. MongoDB is a document-based NoSql database.
+76. Specialization is a top-down approach in which entity's higher level can be divided into two lower sub-entities.
+77. An attribute or combination of attributes in one table whose values must either match the primary key in another table or be null is called foreign key.
+78. A transaction state changes from active to aborted, after the transaction has been rolled back and the database restored to its state prior to the start of the transaction.
+79. Specialization is denoted by triangle labeled is a in an er diagram.
+80. Data dictionary stores the metadata about the structure of the database, in particular the schema of the database.
+81. Schedule for a set of transactions consists of all instructions of the transactions and it preserve the order in which the instructions appear in each individual transaction.
+82. Alter table Employee add constraint pk-empid primary key (empid); used to add constraint to an existing table.
+83. Size of storage disk is not provided by a data dictionary.
+84. Tuples can be divided in a relational schema using domains.
+85. A relation is in fourth normal form if it is in BCNF and has no multivalued dependencies.
+86. Key is a group of one or more attributes that uniquely identifies a row.
+87. In the relational model, relationships between relations or tables are created by using foreign keys.
+88. The cells of the table must contain a single value. All of the entries in any column must be of the same kind. No two rows in a table may be identical.
+89. A relation in Domain/Key normal form is free of all modification anomalies.
+90. A tuple is a row of a table.
+91. A weak entity cannot exist in the database unless another type of entity also exists in the database, but does not require that the identifier of that other entity be included as part of its own identifier.
+92. Entity refers to something that can be identified in the user's work environment, something that the users want to track.
+93. The DBMS acts as an interface between database application and the database of an enterprise class database system.
+94. A DBMS that combines a DBMS and an application generator is Microsoft Access.
+95. A unique key column can have multiple null values in mysql.
+96. Union is the set operator supported by mysql.
+97. 4NF is designed to cope with multi-valued dependency.
+98. In a relational database a referential integrity constraint can be specified with the help of foreign key.
+99. A function that has not partial dependencies is in 2NF.
+100. If every non-key attribute is functionally dependent on the entire primary key, then the relation will be in 2NF.
+101. Third normal form is based on the concept of Transitive Dependency.
+102. Where clause is used to restrict the rows returned by the query.
+103. use command should be used to choose the database you want to use once you've connected to MySql.
+104. A subquery in a sql select statement is enclosed in parenthesis.
+105. select name from customer where state = "VA"; equals select name from customer where state in ("VA");
+106. The exists keyword will be true if any row in the subquery meets the condition only.
+107. Information on customer must be known before anything can be sold to that customer can be addressed by enforcing a referential integrity constraint.
+108. The relationship between department and employee is one-to-many relationship.
+109. select sname, coursename from studentinfo where age>50 and age<80; is the right syntax for using comparision operators.
+110. delete from studentinfo where sname="Hari Prasad";
+111. Repeatable Read is the isolation levels that doesn't allow non-repeatable reads.
+112. Serializable is the isolation level that doesn't allow phantom reads.
+113. NTFS stands for New Technologies File System.
+114. The term Data Independence term refers to programs that are not dependent on the logical and physical attributes of the data.
+115. The architecture of a database can be viewed as the three-level.
+116. A computer security protocol for logging in can be considered as the example of the Procedure component of an information system.
+117. Schema is commonly used to define the overall design of the database.
+118. Rebuild index maintenance task discards the entire index and recreates it.
+119. When compared to relational databases, nosql databases are more scalable and provide superior performance.
+120. The names of columns can be altered in a query's result by using the as keyword.
+
+----- CCEE : Web Programming Technologies -----
+
+1. PUT method is idempotent, while PATCH is not.
+2. GET and HEAD are the HTTP methods to be considered safe.
+3. 502 Bad Gateway is the http status code that indicates that the server is unable to fulfill the request because it is dependent on another resource that has failed.
+4. 0 is the default value of the 'cellspacing' attribute in a html file.
+5. <element class="class1 class2"> is the correct way to specify multiple css classes to be applied to an html element.
+6. .box { width:50%; height:300px; margin:auto; position:absolute; top:0; left:0; right:0; bottom:0; } -> set the width of an element with class "box" to 50% and height to 300px, and center it vertically and horizontally.
+7. #header { background:url("header-bg.jpg") repeat; background-color:lightgrap; }
+8. <iframe src="url" style="overflow:scroll;"></frame> sets the scrolling behaviour of an <iframe> tag.
+9. .detach() keeps the data and events of the removed element, where .remove() does not.
+10. Yes, multiple animation effects can be combined in a single call to the animate() method in jQuery.
+11. server.listen(3000, function(){}) is the right way to listen for incoming requests on a specified port for the http server in node js.
+12. var server = http.createServer(function(req, res){}); is the correct way to create an http server in node js using the http module.
+13. fs.writeFileSync("file.txt", data) is the correct way to write to a file asynchronously in node js.
+14. Using the app.get() method, we can define a route in an ExpressJS application.
+15. Props are used to pass data from parent to child component, State is used to store component-specific data and Context is used to pass data through the component tree without having to pass props down manually at every level.
+16. In a React component, this.setState(previousState => {...}); is the recommended way to update state based on the previous state.
+17. Functional component are stateless while class components can have state.
+18. {message: 'Hello World', onClick: [Function]} -> logged to the console.
+19. .container class provides a responsive fixed width container.
+20. p { font-weight:bold; } is the correct css syntax for making all the <p> elements bold.
+21. /^\d{6}$/ is the regex pattern to check for exactly 6 digit zip code in the text field.
+22. var colors = ['red','green','blue'] is used to write a js array.
+23. === operator defines is equal to and is of the same type.
+24. To include the http server in the node module, we use require() function.
+25. The advantages of using node modules are providing means of dividing up tasks, reuse of program code and testing individual parts of program.
+26. Any time you include js code in html document, you must enclose those lines inside a <script> and </script> tag pair.
+27. The values GET, POST, HEAD etc are specified in Request line of HTTP message.
+28. Using document.write() you write into HTML output using js.
+29. The return value for typeof(null) in js is object.
+30. 4 is the value of XMLHttpRequest.readyState in ajax is checked for response readiness.
+31. Math.max(x,y) is used to find the highest value of x and y.
+32. text-transform:capitalize; is used to make each word in a text start with a capital letter.
+33. document.getElementById("demo").innerHTML = "Hello World!"; is used to change the content of the HTML element.
+34. Division by zero is not considered an error in JS.
+35. The bootstrap grid system is based upon 12 columns.
+36. The default port on which node js runs is 3000.
+37. text/Javascript is a language of js.
+38. Using let we can create block scoped variable.
+39. Math.round(7.25) to the nearest integers.
+40. response.write("Hi There") is the correct syntax to write "Hi There".
+41. Local is the default scope in the node js application.
+42. /* comment */ is used in css file to add comment.
+43. static is the default value of the position property.
+44. JS is case sensitive.
+45. navigator.appName is used to detect the client's browser name.
+46. With promise, we can defer the execution of a code block until an async request is completed. Promises have three states: Resolved, Reject, Pending. JS has two possible outcomes: it can either be fulfilled or rejected.
+47. $ is used as a shortcut for jQuery.
+48. Float is not a datatype in js.
+49. $("h3").css("background-color","blue") is the jQuery code to apply a background color of blue to all the h3 elements.
+50. node command is used to run a repl session in node.
+51. Web Browser is a software application used for accessing the information on the www.
+52. <a href="http://www.someserver.com">SomeServer.com</a> is the way to create a hyperlink in html.
+53. When you modify the state of a react component, the component automatically re-renders.
+54. <textarea> is a valid html syntax for creating multi-line text input control.
+55. Cross Site Request Frogery (CSIRF) allows an attacker to induce a victim user to perform actions that they do not intend to.
+56. this.setState() is the name of the function that is used to change the state of a class-based React component.
+57. 307 http status code indicates redirection.
+58. fs.readFile("test.txt", function(err, data) => {...}) is the way to read the contents of a file asynchoronously and display the content in console in node using fs module.
+59. In jQuery, $.hide() is equivalent to jQuery.hide().
+60. module.exports can be used to make properties and methods available outside the module file in node js.
+61. $("p").each(function() {...}) -> is the right way in jQuery to iterate through all the paragraphs and display their contents.
+62. In React, the common use case for "ref" in an uncontrolled component is to directly access the underlying DOM.
+63. package.json file in nodejs application contains information about project dependencies.
+64. setTimeout() function is used to register a function to be invoked after the specified number of milliseconds.
+65. isNaN() method will return true if its argument is not a number.
+66. State can be managed with both class and functional components.
+67. html, head, title, body are the correct sequence of html tags for starting a webpage.
+68. <marquee bg-color="red"> is used to add background color in html.
+69. id attribute is used to provide a unique name to an element.
+70. <marquee> tag is used to display the text with scrolling effect.
+71. <a href="mailto:abc@xyz"> is used to send mail in html.
+72. padding property is used as the shorthand property for the padding properties.
+73. The css property used to specify the transparency of an element is opacity.
+74. The css property used to specify whether the text is written in the horizontal or vertical direction is writing-mode.
+75. The css property used to draw a line around the elements outside the border is outline.
+76. .jumbotron class in bootstrap is used to create a big box for calling extra attention.
+77. <nav class="nav navbar"> is used to create standard navigation bar.
+78. <nav class="nav nav-tabs"> is used to create standard navigation tab.
+79. .navbar-inverse is used to create a black navigation bar.
+80. Carousel is used to create a cycle through elements as a slideshow.
+81. .list-group class is used to create a basic list group.
+82. .table-stripped class is used to add a zebra-stripe to a table.
+83. .btn-lg is used to create a large button.
+84. modal is used to create a modal window.
+85. .collapse class is used to specify the collapsible elements.
+86. <span class="glyphicon glyphicon-search"></span> is used to insert search icon.
+87. The class "xs" in Bootstrap is used for phones.
+88. .active is used to create an animated progress bar.
+89. The element object simply groups items within an enclosed dd tag, though it may associate them with a caption defined by a dt tag.
+90. The canvas element is used to render simple graphics such as line art, graphs and other custom graphical elements on the client side.
+91. In html audio/video dom, preload sets or returns whether the audio/video should be loaded when the page loads.
+92. <slider> is not an html5 tag.
+93. Ogg media type is not supported in IE.
+94. In html audio/video dom, buffered returns a TimeRanges object representing the buffered parts of the audio/video.
+95. Extension methods are not supported for dynamic types.
+96. The reason that C# does not support multiple inheritance is because of Name collision.
+97. Current.Session["LoginId"] = 7;
+
+----- CCEE : Algorithms and Data Structures with Java -----
+
+----- CCEE : Object Oriented Programming with Java -----
+
+1. Non-static variables are defined in classes.
+2. Runnable is a interface.
+3. Integer objects are immutable.
+4. A TreeMap is both class and map implementation in Java.
+5. toString function is a non final function of Object class.
+6. Wrapper to Primitives and vice versa is called as autoboxing.
+7. try and catch is used within function.
+8. super constructor call should always be first line in subclass constructors only.
+9. Local variables take part in serialization.
+10. equals and hashcode is used by set, map and list in some way.
+11. If we use this in static functions, it will result in compile time error.
+12. final keyword for a variable in java means variable cannot be reassigned.
+13. Scope specifier like private, protected can be used in class.
+14. Static variables are unique for objects.
+15. The source code in Java is platform-independent and depends on the JVM) implementation.
+16. abstract functions have to be overridden.
+17. The start() method in Java does puts the thread in the execution queue and tells the job of the thread.
+18. The default return type in a function in Java is void.
+19. Garbage collection works on the heap.
+20. Logical conditions in Java need to be evaluated to boolean values.
+22. By default, the priority of the main thread is set to 5.
+24. class Z extends A, here A is class.
+25. The class used for serialization in text mode of writing in Java is Writers.
+26. The InterruptedException is a non-runtime exception in Java.
+27. When exception happens in the finally block it should depends on scenario.
+28. PreparedStatement in jdbc is used during insert, update or delete operation.
+29. IOException is generally recoverable in the program.
+30. Subclass ref = new Subclass, cannot access typically final functions of super class.
+34. Attempting to compile and run the program when a primary key violation occurs during executeUpdate in JDBC throws SQLException.
+35. The code FileReader fw = new FileReader("a.xyz") is using Text based IO.
+36. A non final function which is not abstract, in a class may be overridden.
+37. To limit the methods visibility to all other classes in the same package but only to subclasses in other packages protected.
+39. Constructors in Java are non-static.
+40. To determine whether two objects obj1 and obj2 are equal, the best way is to use the equals() function.
+41. Keywords cannot be used for a variable name in Java.
+42. Class is a blueprint of an object.
+43. JDK is used to compile, debug and execute the java programs.
+45. When more than one method with same name, same number of parameters and same type of parameters but return type is different then overloading does not happen.
+46. Encapsulation concept of Java is achieved by combining methods and attribute into a class.
+48. super keyword can be used in a subclass to call the constructor of superclass.
+49. Object class is superclass of every class in Java.
+50. Upcasting is casting subtype to supertype.
+52. Integer is a wrapper for data type int.
+53. main method can be defined only once in a program.
+54. Both StringBuffer and StringBuilder class represents mutable character sequence.
+55. equals() method of class String is used to compare two String objects for their equality.
+56. Serialization, Garbage Collection and File Filtering processes occur automatically by the java runtime system.
+57. FileReader can be used to read the data in the form of character from text file.
+59. We cannot instantiate generic types with primitive types, create instances of type parameters and cannot overload a method where the formal parameter types of each overload erase to the same raw type.
+60. Function is the return type of lambda expression.
+61. While iteration is on and some other thread tries to modify the collection then iterator throws ConcurrentModificationException.
+62. toArray() method can be used to obtain an array from an ArrayList 
+object.
+63. The accuracy and efficiency of a HashMap can be guaranteed with overriding equals and hashCode method.
+64. Instant.now(); is used to get UTC time.
+65. Compiler will throw an error because base class exception is caught before derived class.
+66. Errors are abnormal conditions in application. They  indicates some serious problems that our application should not try to catch. Error is a subclass of Throwable.
+67. catch(X x) can catch subclasses of X where X is a subclass of Exception.
+68. Externalizable is an interface for control over serialization and 
+deserialization.
+69. Thread consumes cpu in best possible manner. It enables multi-processing and it can execute any part of process. And same part of process can be executed by multiple Threads.
+70. Threads can be created by extending Thread class, implementing Runnable interface and by using Executor framework.
+71. The synchronized keyword is applicable for methods and blocks.
+72. Green threads are user-level threads.
+73. Java 8 introduced two types of streams which are sequential and parallel streams.
+74. EMPTY_LIST, EMPTY_SET and EMPTY_MAP are static variables defined in Collections.
+75. Exceptions in Java arises in code sequence at runtime.
+76. -Xms and -Xmx are initial memory and maximum memory respectively.
+77. Only the garbage collection system can destroy an object.
+78. Abstract class relies upon its subclasses for complete implementation of its methods.
+79. Interfaces specifies what class must do but not how it does. They are specified public if they are to be accessed by any code in the program. All variables in interface are implicitly final and static.
+80. The interfaceName.variableName needs to be defined when we access the same variable defined in two interfaces implemented by the same class.
+81. int val = Integer.parseInt() will successfully read an integer value from console.
+82. Stream<String> lines = Files.lines(path); will successfully read the file.txt and print "hello" on the console.
+83. boolean result = Stream.of(1,2,3,4).parallel().map(Function.identity()).isParallel(); will print true.
+84. Iterable<T> interface declares a single abstract method named iterator().
+85. private Point() { this(0,0); } can be used as default constructor.
+86. while((ch = inputFile.read()) != VALUE) {}. Here the VALUE would be -1 for end-of-stream.
+87. int years = Period.between(joiningData, now).getYears(); is used to get all the years.
+89. First super class and then derived class constructors are called.
+90. return DriverManager.getConnection(url + database, userName, password) is used to create Connection object.
+91. ints.replaceAll(i -> i * i); can be used to square a list.
+92. java.util.concurrent.ThreadLocalRandom is best for generating random numbers in a multi-threaded application.
+93. class X <T extends DI> {} specified class X with a type parameter whose upper bound declares DI to be the super type from which all type arguments must be derived.
+95. while((ch = inputFile.read()) != -1) should be used to read the content of file.
+96. Integer max = integers.stream().max((i,j) -> i-j).get(); is used to return the maximum value.
+99. After creating an iterator, if new elements are added then iterator does not change for old elements and new elements would be ignored.
+100. Local locale = Locale.US is used to set the Locale.
+101. Outer.Inner inner = new Outer().new Inner();
+102. System.out.print(Pets.Parrot.ordinal());
+103. String boxedString = words.collect(Collectors.joining(",","[","]")) prints [eeny, meeny]
+104. Two friends are waiting for some more friends to come so that they can go to a restaurant for dinner together. java.util.concurrent.CyclicBarrier construct could be used to programatically simulate this situation.
+108. A factory class may use singleton pattern.
+109. An enum can have private constructor, public methods and fields.
+111. java.lang.Cloneable interface is empty (does not declare any methods).
+115. AtomicInteger class in the java.util.concurrent.atomic package inherit from java.lang.Number?
+116. LocalDate firstOct2015 = LocalDate.parse("01/10/2015", fromDateFormat);
+117. System.of("ace","jack","queen","king","joker").mapToInt(card -> card.length()).filter(len -> len > 3).peek(System.out::print).limit(2); does not print anything on the console.
+120. Lock starvation, Livelock and Deadlock are problem associated with thread synchronization using mutexes. Not Type Erasure.
+
+----- CCEE : Cpp Programming Language -----
+
+1. Composition concept provides facility of using object of one class inside another class.
+2. cout is an operator.
+3. << operator is overloaded for object cout.
+4. All function calls are resolved at compile-time in Procedural Programming.
+5. Inheritance provides reuse mechanism.
+6. Structures can have functions as members.
+7. The default arguments are given in the function prototype but should not be repeated in the function definition.
+8. A union that has no contructor can be initialized with another union of same type.
+9. It is a syntax error to pass arguments to a destructor.
+10. Copy constructor used to make a copy of one class object from another class object of the same class type.
+11. If the programmer does not explicitly provide a destructor, then compiler creates an empty destructor.
+12. A destructor takes no arguments.
+13. We catch an exception using the catch block.
+14. const var_type var_name; is used to declare constant variable.
+15. int (*ptr)(); is a function pointer declaration.
+16. We can iterate through elements of a vector using while loop, for loop or using an iterator.
+17. file.open("example.txt", ios::out) is used to open a file for writing.
+18. We can pass the array as a pointer, as a sized array or as an unsized array.
+19. file.getline(stringVar, length); is used to read a string from a file.
+20. vec.pop_back() is used to remove an element from the end of the cpp vector.
+21. throw Exception("Error message") is used to throw an exception in cpp.
+22. int* arr = new int[10] is used to allocate memory using the new operator.
+23. new int; is used to dynamically allocate memory for an integer.
+24. The purpose of the 'this' pointer is to reference the current instance of the class.
+25. The const keyword in a function declaration indicates that the function cannot modify the input parameters.
+26. The 'nullptr' keyword represents a null pointer constant.
+27. Memory leak is when a program fails to release memory that is no longer needed.
+28. Virtual function is a function that is declared in the base class and can be overridden by a derived class.
+29. An exception is an error that occurs during runtime.
+30. Encapsulation is the process of wrapping data and the methods that operate on the data into a single unit.
+31. Private is the default access specifier for members of a class in cpp.
+32. break statement in a switch statement is used to exit the switch statement.
+33. continue statement is used to skip the rest of the code in the loop and move to the next iteration.
+34. delete operator is used to deallocate memory that was allocated using the new operator.
+35. eof() function is used to check if the end-of-file has been reached.
+36. friend keyword is used to allow access to private and protected members of a class by another class or function.
+37. fstream class is used to handle file input and output operations.
+38. malloc function is used to allocate memory for a variable.
+39. map container in the stl is used to store key-value pairs.
+40. return statement is used to return a value from the function to the caller and to terminate the function and return a value.
+41. seekg function is used to move the file pointer to a specified position in the file for reading.
+42. std::exception class is used to define custom exceptions and to handle standard errors in cpp.
+43. The main purpose of typeid operator is to identify the type of an object at runtime.
+44. vector container in stl is used to represent a dynamic array.
+45. The purpose of the inline keyword in cpp is to declare the function as an inline function, to indicate that the function should be inlined and to provide the hint to the compiler to optimize the function.
+46. iostream is used for input and output operations in cpp.
+47. typedef is used to define an alias for a data type in cpp.
+48. string is not a fundamental data type in cpp.
+49. Using file.read(reinterpret_cast<char*>(dataArray), arraySize* sizeof(int)) is used to reaad data from a binary file into a cpp array.
+50. We can write the contents of a cpp vector to a file using a loop and file.
+51. If an exception is thrown inside a try block and is not caught then the program terminates.
+52. An rvalue reference is used to reference an rvalue.
+53. constexpr is used to specify constant expressions at compile time.
+54. The purpose of variadic templates in C++ is to enable type-safe variable arguments in functions.
+55. The largest element is dequeued first in a max-heap-based priority queue.
+56. XOR Hashing is commonly used for hashing integers.
+57. The purpose of decorators in the Decorator design pattern is to add new functionality to an existing object without altering its structure.
+58. In the Factory Method design pattern, the purpose of the factory method is to define an interface for creating an object but allow subclasses to alter the type of objects that will be created.
+59. Coroutines are used to enable asynchronous programming.
+60. A template template parameter is the way by which a template takes another template as a parameter.
+61. Template metaprogramming is a method for generating code at compile time.
+62. Template specialization is used to override default template behaviour for specific data types.
+63. The main purpose of singleton design pattern is to create a single instance of a class.
+64. The observer design pattern is used to define a one-to-many dependency between objects.
+65. auto square = [&x]() {return x * x;}; is a lambda function in cpp.
+66. RAII (Resource Acquisition Is Initialization) is useful in automatic resource deallocation.
+67. Primary goal of Cpp Reflection is to enable the inspection of program structures at runtime.
+68. The primary purose of cpp 20 concepts is to provide a mechanism for defining constraints on template parameters.
+69. THe purpose of a mutex in multithreading is to prevent data races and ensure thread safety.
+70. The purpose of cpp type traits is to provide information about the properties of types at compile time.
+71. The primary purpose of std::move in C++ is to enable move semantics.
+72. The purpose of std::ios::binary flag in file IO us to indicate that the file is in binary mode.
+73. the purpose of std::ios::failbit flag in file IO is to indicate a formatting error in input operations.
+74. The Strategy design pattern is used to define a family of algorithms, encapsulate each algorithm and make them interchangeable.
+75. Templates allows us to write generic functions that can work with different data types.
+76. <thread> header is used for multi-threading.
+77. Feature that simplifies the initialization of class members is aggregate initialization.
+78. The smart pointer in C++ that is used to manage arrays is std::unique_ptr.
+79. std::deque is commonly used to implement a queue in cpp.
+
+----- CCEE : All Subjects -----
