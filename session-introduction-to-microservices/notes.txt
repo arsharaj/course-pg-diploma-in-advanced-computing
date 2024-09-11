@@ -1,0 +1,83 @@
+----- Introduction to Microservices -----
+1. What is monolithic application ?
+- There are many layers in monolithic application.
+	a) Different types of clients ranging from mobiles to servers.
+	b) Underneath it is the load balancer to send these clients request to the monolithic application.
+	c) Monolithic application contains different components :
+		 *) Account Component
+		 *) Catalog Component
+		 *) Recommendation Component
+		 *) Customer Service Component
+	d) Last one is the Database layer managing all the data.
+- Characteristics of monolithic application : 
+	a) Large codebase
+	b) Many components and have no clear ownership
+	c) Long deployment cycles
+
+2. What are advantages and disadvantages of monolithic applications ?
+- Single codebase - easy to develop / debug / deploy.
+- Good IDE support.
+- A central ops team can efficiently handle.
+- All components have to be coded in the same language.
+- Deployment is time consuming.
+- Failure in one module will impact overall application.
+- As codebase increases it tends to increase "tight coupling" between components.
+
+3. What is micro service ?
+- It is a seperate single purpose service and there could be many of them in single application.
+- There are many layers in microservices architecture :
+	a) First comes the different types of clients.
+	b) Underneath it is the load balancer to redirect the request.
+	c) The API Gateway takes the request and give it to the specific microservices.
+	d) There are many microservices loosly coupled together to form the overall application.
+	e) Different microservices could have database underneath them for persistent storage.
+	f) The databases are distributed in nature.
+
+4. Advantages of micro service ?
+- Why microservices :
+	a) Faster and simple deployments and rollbacks.
+	b) Flexible Technology Stack.
+	c) Good Resiliency (If circuit breakers implemented well)
+	d) Better availability (on autoscaling)
+- Service Discovery : When there are 100s of microservices then we would need something like Service Metadata Registry (Discovery Service)
+- Load Balancing :
+	a) Client side load balancers
+	b) Server side load balancers
+	- Load balancing logic should be on client side only.
+- Auto Scaling : 
+	a) Use AWS auto scaling groups to automatically scale your microservices.
+	b) RPS or CPU / Load Average via CloudWatch are typical metrics.
+	
+5. Disadvantages of micro service ?
+- Can lead to chaos if not designed right.
+- Debugging is hard.
+
+6. Micro service design patterns.
+- Some of the micro service design patterns are :
+	a) Service Discovery Pattern - To register services.
+	b) Circuit Breaker Pattern - Resilience4J for fault tolerant
+	c) Spring Cloud Load Balancer - Load balancing
+	d) Database per Service - Creating individual databases
+	e) SAGA Pattern - For distributed transactions
+	f) CQRS Pattern - Different database, service for read and write
+	
+7. Micro service best coding.
+- Best Practices :
+	a) Isolate your services (Loosely Coupled)
+	b) Use client side smart load balancers
+	c) Dependency calls
+		 - Guard your dependency calls
+		 - Cache your dependency call results
+		 - Consider Batching your dependency calls
+		 - Increase throughput via Async/ReactiveX patterns
+	d) Test services for resiliency
+		 - Latency/Error tests dependency service unavailability
+		 - Network Errors
+
+8. Takeaways.
+- Monolithic applications are good for small organizations.
+- Microservices have challenges but their are many benefits.
+	a) Consider adopting when your organization scales
+	b) Leverage best practices
+		 - An Elastic Cloud provides the ideal environment (auto scaling etc.)
+		 - NetflixOSS has many libraries/samples to aid you
