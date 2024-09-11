@@ -16,6 +16,12 @@ lecture-videos/
 .classpath
 .project
 
+account_information.txt
+presentation.pptx
+project_ideas.pdf
+project_report.docx
+project_report.pdf
+
 mvn*
 *.exe
 *.out
