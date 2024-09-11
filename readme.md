@@ -29,6 +29,7 @@
 - Practice : Algorithms And Data Structures Using Java
 - Practice : Course End Examination
 - Practice : Cpp Programming Language
+- Practice : Database Technologies
 
 ### License
 
