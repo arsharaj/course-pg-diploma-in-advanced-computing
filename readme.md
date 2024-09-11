@@ -34,6 +34,7 @@
 - Project : Software Development
 - Session : Introduction To Microservices
 - Utilities : Common
+- Utilities : Teaching Guidelines
 
 ### License
 
