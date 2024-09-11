@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- add jquery library file in the page -->
+    <script src="./scripts/jquery.js"></script>
+    
+    <script>
+        //calculate factorial of the given number
+        function factorial(x){
+           var f=1;
+           for(var i=1;i<=x;i++){
+              f=f*i;
+           } 
+           return f;    
+        }
+        //jquery code is always writen inside ready event of the document
+        $(document).ready(function(){
+            //assign click event to add button
+            $('#add').click(function(){
+                //retrieve the data in the value property
+               var x=parseInt($('#num1').val()); 
+               var y=parseInt($('#num2').val());
+               //asign the data to value property
+               $('#result').val(x+y);
+               $('#mydiv').html(x+y)
+            })
+            $('#factorial').click(function(){
+                var x=parseInt($('#num1').val());
+                var ans=factorial(x); 
+               //asign the data to value property
+               $('#result').val(ans);
+               $('#mydiv').html(ans)
+            })
+        })
+    </script>
+</head>
+<body>
+   <form>
+       <label for="num1">Number 1 : </label>
+       <input type="number" id="num1"  name="n1"><br>
+       <label for="num2">Number 2 : </label>
+       <input type="number" id="num2"  name="n2"><br>
+       <label for="result">Result : </label>
+       <input type="number" id="result"  name="result" readonly><br>
+       <button type="button" name="btn" id="add" value="add" >Addition</button>
+       <button type="button" name="btn" id="factorial" value="factorial">Factorial</button>
+       <button type="reset" name="btn" id="Cancel" value="Cancel">Cancel</button>
+   </form> 
+   <p id="answer">Display answer here</p>
+</body>
+</html>

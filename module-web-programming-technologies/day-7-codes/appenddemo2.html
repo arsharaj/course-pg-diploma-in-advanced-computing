@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var cnt=2;
+            //delegate will assign the event to a selector, and the event
+            //will be assigned to all elements whose selctor matches
+            //hence all clones will aslso get the click event
+            $('body').delegate('#btn',"click",function(){
+                var element=$('div:first-child').clone();
+                $(element).attr("id","div"+cnt);
+                cnt++;
+                $('body').append(element)
+
+            })
+        })
+    </script>
+</head>
+<body>
+    
+    <div id="div1">
+        <label>Name:</label>
+        <input type="text" name="name" id="nm1">
+        <button type="button" name="btn" id="btn">Add new</button>
+    </div>
+
+    
+</body>
+</html>

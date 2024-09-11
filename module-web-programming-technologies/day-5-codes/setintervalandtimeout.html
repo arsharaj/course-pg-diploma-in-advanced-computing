@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+    <script>
+        function f2(){
+            console.log("in f2 function")
+            var dt=new Date();
+            document.getElementById("mydiv").innerHTML=dt;
+        }
+        function f1(){
+            console.log("in f1")
+        }
+        function f3(){
+            clearInterval(s1);
+        }
+    
+        console.log("before f1")
+        setTimeout(f1,2000);
+        console.log("after f1");
+        var s1=setInterval(f2,1000);
+        var s2=setTimeout(f3,3010);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position:absolute;
+            top:30px;
+            z-index: 3;
+        }
+        img{
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+   <img src="./images/clock.jpg" width="300px" height="300px"/>
+   <div width="200px">
+    <table border="2" bgcolor="cyan" width="80%" cellpadding="4px" cellspacing="5px">
+        <caption align="bottom">this is table caption</caption>
+        <tr>
+            <th colspan="4">Product Details</th>
+        </tr>
+        <tr><th>product id</th>
+            <th>product name</th>
+            <th>product qty</th>
+            <th>product price</th>
+        </tr>
+        <tr bgcolor="#FF00FF">
+            <td rowspan="2" valign="top" align="center">1</td>
+            <td>Chair</td>
+            <td>3</td>
+            <td>4000.00</td>
+        </tr>
+        <tr>
+            
+            <td>table</td>
+            <td>3</td>
+            <td>10000.00</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><b>Shelf</b></td>
+            <td>30</td>
+            <td>3000.00</td>
+        </tr>
+    </table>
+   </div>
+</body>
+</html>

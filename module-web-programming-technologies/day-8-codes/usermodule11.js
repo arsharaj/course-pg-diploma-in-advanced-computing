@@ -1,0 +1,1 @@
+users=[{name:'user1',passwd:'user1'},{name:'user2',passwd:'user2'},{name:'user3',passwd:'user3'}]

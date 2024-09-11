@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Add CSS Border on Mouse Hover without Pushing Content</title>
+<style>
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    ul li { 
+        float: left;
+        margin: 10px;
+        background: aliceblue;
+        width: 200px;
+        height: 200px;
+        border: 5px solid transparent /*// (2)*/
+    }
+    ul li span {
+        font-size: 34px;
+        line-height: 36px;
+        text-align: center;
+    }
+    ul li:hover {
+        border: 5px solid #333333; /*//(1)*/
+        overflow: hidden;        
+    }
+</style>
+</head>
+<body>
+    <ul>
+        <li><span>1</span></li>
+        <li><span>2</span></li>
+        <li><span>3</span></li>
+        <li><span>4</span></li>
+    </ul>
+</body>
+</html>

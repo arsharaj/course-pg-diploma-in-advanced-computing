@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        function displaydropdown(data){
+            var str="<select>";
+            for(var ob of data){
+                str+=`<option value='${ob.id}'>${ob.title}</option>`
+            }
+            str+="</select>";
+            $('#div1').html(str);
+        }
+    function displaytable(data){
+        str="<table border='2'><tr><th>userId</th><th>id</th><th>title</th><th>body</th></tr>"
+        for(var ob of data){
+            str+=`<tr><td>${ob.userId}</td><td>${ob.id}</td><td>${ob.title}</td><td>${ob.body}</td></tr>`
+        }
+        str+="</table>"
+        $('#div2').html(str);
+}
+        $(document).ready(function(){
+            $("#get").click(function(){
+                $.ajax({
+                    async:true,
+                    url:"https://jsonplaceholder.typicode.com/posts",
+                    type:"GET",
+                    success:function(result){
+                        displaytable(result);
+                        displaydropdown(result);
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="get">get data</button>
+    <div id="div1"></div>
+    <div id="div3"></div>
+    <div id="div2"></div>
+
+</body>
+</html>

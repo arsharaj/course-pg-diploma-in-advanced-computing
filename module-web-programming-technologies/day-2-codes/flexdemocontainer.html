@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fcontainer{
+            display:flex;
+            height:500px;
+            
+            border:2px solid red;
+            /* to display block horizontally in the reverse direction */
+            /*flex-direction: row-reverse;*/
+            /* wraps the element without changing the size of child items,when the screen size changes */
+            /*flex-wrap: wrap-reverse;*/
+            /* shorthand for flex-direction and flex-wrap */
+            flex-flow: row wrap;
+            justify-content: center;
+
+        }
+        .fitem{
+            background-color: blue;
+            border:2px solid green;
+            color:white;
+            height:100px;
+            width:200px;
+            font-size:30px;
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fcontainer">
+        <div class="fitem">1</div>
+        <div class="fitem">2</div>
+        <div class="fitem">3</div>
+        <div class="fitem">4</div>
+        <div class="fitem">5</div>
+        
+    </div>
+</body>
+</html>

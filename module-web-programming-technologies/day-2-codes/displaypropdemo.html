@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* To apply style to all div tags*/
+    div{
+        background-color: cyan;
+        /*it is shortcut for border-width, border-style, border-color*/
+        border:2px solid red;
+        /*to make corners rounded*/
+        border-radius:6px;
+        width:300px;
+        height:200px;
+        /*To arrange th divs one beside the other horizontally*/
+        float:left;
+        /*margin is outside border*/
+        margin:10px;
+       /* padding is inside border*/
+        padding:10px
+    }
+    .myclass{
+        /*to hide the element, and shift remaining elements up*/
+        display:none;
+        /*to hide the element and also keep the space as it is*/
+        /*visibility:hidden;*/
+    }
+    .myc{
+        display:block;
+    }
+</style>
+</head>
+<body>
+   <div>
+    This is div11111
+   </div>
+   <div id="mydiv" class="myclass">
+    This is div22222
+   </div>
+   <div>
+    This is div33333
+   </div>
+</body>
+</html>

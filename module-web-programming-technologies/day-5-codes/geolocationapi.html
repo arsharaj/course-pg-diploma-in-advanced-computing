@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            function findLocation(){
+                if(navigator.geolocation){
+                    //getCurrentposition will display current location only once
+                    //watchPosition will display live location
+                    navigator.geolocation.getCurrentPosition(showposition,showerror);
+                    
+
+                }else{
+                   document.getElementById("mydiv").innerHTML="geolocation is not supported by browser";
+                }
+            }
+            function showposition(position){
+                document.getElementById("mydiv").innerHTML="Lattitude: "+position.coords.latitude+" Longitude: "+ position.coords.longitude;
+
+            }
+            function showerror(error){
+                console.log("error occured",error);
+            }
+        </script>
+    </head>
+<body>
+    <button type="button" name="btn" id="btn" onclick="findLocation()">Get Location</button>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

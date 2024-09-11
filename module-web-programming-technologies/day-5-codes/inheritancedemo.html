@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+    class Person{
+        constructor(id,name,mobile){
+            this.id=id;
+            this.name=name;
+            this.mobile=mobile;
+        }
+        display(){
+            //console.log("id: "+this.id+" name : "+this.name+" Mobile: "+this.mobile)
+            //template operator
+            console.log(`id: ${this.id}  name : ${this.name} Mobile: ${this.mobile}`)
+        }
+    }
+
+    class Employee extends Person{
+        constructor(id,name,mobile,dept,desg){
+            super(id,name,mobile);
+            this.dept=dept;
+            this.desg=desg;
+        }
+        display(){
+            //calls person's display function
+            super.display();
+            console.log(`Department : ${this.dept}  Designamtion :${this.desg}`)
+        }
+    }
+    p1=new Person(12,'yyy',3456);
+    p1.email='yy@gmail.com'
+    e1=new Employee(12,'xxxxx',22222,'hr','mgr');
+    e1.display();
+    //adding new property after creating a object
+    e1.sal=3456;
+
+</script>
+</body>
+</html>

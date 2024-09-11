@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function getcount(){
+            //to check whether Stirage API is supported or not
+            if(typeof(Storage)!==undefined){
+                   if(localStorage.count!==undefined){
+                     // localStorage.count=parseInt(localStorage.count)+1;
+                     localStorage.setItem(parseInt(localStorage.getItem('count'))+1)
+                   }else{
+                       //localStorage.count=1;
+                       localStorage.setItem("count",1);
+                   }
+                   document.getElementById("mydiv").innerHTML="You clicked"+localStorage.count+"times";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn" onclick="getcount()">Click me</button>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

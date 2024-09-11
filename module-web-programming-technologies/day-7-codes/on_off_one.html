@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#one').one("click",function(){
+                $('body').append("<p>This is para</p>")
+            })
+            $('#assign').click(function(){
+                $('input[type="text"]').on("focus",function(){
+                    $(this).css("background-color","yellow");
+                })
+                $('input[type="text"]').on("blur",function(){
+                    $(this).css("background-color","white");
+                })
+            })
+            $('#remove').click(function(){
+                $('input[type="text"]').off("focus");
+                $('input[type="text"]').off("blur");
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="one">Assign only once</button>
+    <button type="button" name="btn" id="assign">Assign</button>
+    <button type="button" name="btn" id="remove">remove</button>
+    Name: <input type="text" name="nm" id="nm">
+    Address: <input type="text" name="addr" id="addr">
+</body>
+</html>

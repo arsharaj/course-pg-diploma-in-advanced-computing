@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        function displaylist(searcharr){
+            str="<ul>";
+            for(var n of searcharr){
+                str+=`<li>${n}</li>`
+            }
+            str+="</ul>"
+            $("#mydiv").html(str);
+        }
+        $(document).ready(function(){
+            names=['Rahul','Rashmi','jaya','shruti'];
+            searcharr=[...names];
+            displaylist(searcharr);
+            $('#search').keyup(function(e){
+                console.log(e);
+                //e.key will display alphabet , e.which will display 
+                //ascii value
+                console.log(e.key+","+e.which+","+e.target.value)
+                //if(e.which===13){
+                    //search data
+                    var searchtxt=$("#search").val();
+                    //if the search textbox is blank then assign searcharr to original array
+                    if(searchtxt===""){
+                        searcharr=[...names];
+                    }
+                    else{
+                        //filter the array based on searchtext
+                        searcharr=names.filter(nm=>nm.includes(searchtxt));
+
+                    }
+                    displaylist(searcharr);
+                    //alert("enter key pressed")
+               // }
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+    Search text: <input type="text" name="search" id="search">
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

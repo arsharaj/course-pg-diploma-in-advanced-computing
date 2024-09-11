@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        function displaytickets(num){
+            //designing the checkbox
+            var check='<input type="checkbox" name="ticket" id="test">'
+            //add num check boxes
+            for(var i=1;i<=num;i++){
+                $('#mydiv').append(check);
+                $('#test').attr({"id":i,"value":i});
+                $('#mydiv').append("<label for='"+i+"'>"+i+"</label>");
+                if(i%4==0){
+                    $('#mydiv').append("<br>")
+                }
+            }
+
+
+
+
+
+
+
+        }
+        $(document).ready(function(){
+            var tickets=[];
+            displaytickets(20);
+            //assign change event to all checkboxes
+            $('input[name="ticket"]').change(function(){
+                //check whether the checkbox is checked
+                //if(($(this).prop("name","xxxx")))
+                //if(($(this).prop("checked","true")))
+                if($(this).is(":checked")){
+                    tickets.push($(this).val());
+                }else{
+                    //if check box is there find the position
+                    var val=$(this).val();
+                    var pos=tickets.findIndex(num=>num===val);
+                    //delete the number if chekbox is unchecked
+                    if(pos!==-1)
+                        tickets.splice(pos,1);
+                }
+                console.log(tickets);
+            });
+            //display all selected tickets
+            $("#show").click(function(){
+                $('#myp').html("tickets: "+tickets);
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+    <button type="button" name="show" id="show">show booking</button>
+    <p id="myp"></p>
+</body>
+</html>

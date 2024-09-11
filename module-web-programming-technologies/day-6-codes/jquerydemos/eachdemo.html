@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(()=>{
+            //each function internally generates loop,the 
+            //function inside each will get called once 
+            //for each selected p tag
+            $('p').each(function(index,element){
+                alert(index+":"+$(element).html())
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>This is para 1</p>
+    <p>This is para 2</p>
+    <p>This is para 3</p>
+    <p>This is para 4</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            width:200px;
+            height:200px;
+            border: 2px solid red;
+            border-radius: 6px;
+            margin:5px;
+        }
+    </style>
+    <script src="./scripts/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-color-animation@1.5.1/jquery.animate-colors-min.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#animate').click(function(){
+               $('#div1').animate({"backgroundColor":"#400100",
+            "color":"#E4D8B8","marginLeft":"100px"},2000)
+
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    
+    <button type="button" name="btn" id="animate">animate</button>
+    
+    <div id="div1">
+        <img src="../images/flowers.png" width="200" height="200">
+    </div>
+    <div id="div2">
+        This is para
+    </div>
+</body>
+</html>

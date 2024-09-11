@@ -1,0 +1,144 @@
+flex container
+
+The flex container properties are:
+
+flex-direction --->The flex-direction property defines in which direction the container wants to stack 
+the flex items.
+column-reverse , row-->default, column, row-reverse
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+flex-wrap--->The flex-wrap property specifies whether the flex items should wrap or not.
+
+The examples below have 12 flex items, to better demonstrate the flex-wrap property.
+wrap,   nowrap,  wrap-reverse
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+flex-flow--->The flex-flow property is a shorthand property for setting 
+both the flex-direction and flex-wrap properties.
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+
+justify-content---->The justify-content property is used to align the flex items:
+
+flex-start, flex-end, space-between, space-around, center
+center----> horizontally center
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+align-items---> The align-items property is used to align the flex items, 
+center value will align it vertically center.
+flex-start, flex-end, center, baseline
+cnter---> verticly center
+
+
+The baseline value aligns the flex items such as their baselines aligns:
+use items with different height and width to undestand better
+
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: baseline;
+}
+Note: the example uses different font-size to demonstrate that the items gets aligned by the text baseline:
+use items with different height and width to undestand better
+
+  display: flex;
+  height: 200px;
+  align-items: center;
+}
+
+align-content--->The align-content property is used to align the flex lines. 
+space-between, space-around, strech, flex-start
+
+Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered:
+---------------------------------------------------------------------------------------------------------------
+flex item
+The flex item properties are:
+
+order  --order decides the sequence in which items will be displayed. the default value for order is 0
+-ve values are allowed
+
+
+flex-grow
+The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items.
+
+<div class="flex-container">
+  <div style="flex-grow: 1">1</div>
+  <div style="flex-grow: 1">2</div>
+  <div style="flex-grow: 8">3</div>
+</div>
+
+
+flex-shrink--->The flex-shrink property specifies how much a flex item 
+will shrink relative to the rest of the flex items.
+
+The value must be a number, default value is 1.
+
+Example
+Do not let the third flex item shrink as much as the other flex items:
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex-shrink: 0">3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+</div>
+
+
+flex-basis---> The flex-basis property specifies the initial length of a 
+flex item.
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex-basis: 200px">3</div>
+  <div>4</div>
+</div>
+
+
+flex--->The flex property is a shorthand property for the 
+flex-grow, flex-shrink, and flex-basis properties.
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex: 0 0 200px">3</div>
+  <div>4</div>
+</div>
+
+
+
+align-self----->The align-self property specifies the alignment for the selected item inside the 
+flexible container.
+
+The align-self property overrides the default alignment set by the container's align-items property.
+
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="align-self: center">3</div>
+  <div>4</div>
+</div>

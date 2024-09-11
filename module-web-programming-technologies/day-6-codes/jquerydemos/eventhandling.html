@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //assign focus event on all input text box
+            $(':input[type="text"]').focus(function(){
+                
+                $(this).css("background-color","yellow")
+            })
+            //assign blur event on all input text box
+            $(':input[type="text"]').blur(function(){
+                $(this).css("background-color","white")
+            })
+            //hover accept 2 functions , mouseover and mouseout
+            $('p').hover(function(){
+                console.log("in hover 1")
+                $(this).css({"background-color":"blue","color":"white"})
+            },function(){
+                console.log("in hover 2")
+                $(this).css({"background-color":"white","color":"black"})
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <p>This is p</p>
+    <form>
+        Name: <input type="text" name="nm" id="nm">
+        Mobile: <input type="text" name="mob" id="mob">
+        data: <input type="text" name="data" id="data">
+
+    </form>
+</body>
+</html>

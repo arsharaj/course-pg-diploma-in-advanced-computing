@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+    <script>
+        //to check whetehr name is not only spaces
+        function validatename(){
+            var name=document.getElementById("uname").value;
+            //trim() function will delete leading and trailing spaces
+            if(name.trim().length>=3){
+                //clear the message
+                document.getElementById("erruname").innerHTML="";
+                return true;
+            }
+            else{
+                //display the error message beside uname text box
+                document.getElementById("erruname").innerHTML="name cannot be spaces"
+                return false;
+            }
+        }
+        function validatePassword(){
+            var pass1=document.getElementById("pass").value;
+            var pass2=document.getElementById("cpass").value;
+            if(pass1.trim().length>0  && pass1===pass2){
+                //clear the message
+                document.getElementById("errpass").innerHTML="";
+                return true;
+            }
+            else{
+                //display message
+                document.getElementById("errpass").innerHTML="password doesnot match";
+                return false;
+            }
+        }
+        //if the data is valid validate function should return true, otherwise return false
+        //if the function returns false, then the form will not get submmited
+        //if the function returns true , then the form will get submitted
+        function validate(){
+            //validate name
+            var flag=validatename();
+            console.log("flag: ",flag)
+            var flag1=validatePassword();
+            console.log("flag1: ",flag1)
+            return  flag && flag1;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <!--
+            when the button type is submit then use onsubmit event in the form tag
+            when the button type is button the use obclick ebvent on the button
+            onsubmit event occurs only on form,
+            only for on sub mit event use return keyword
+            onsubmit="return validate()
+        -->
+    <form action="file1" method="post" onsubmit="return validate()">
+       <tr><td><label for="uname">user  name :</label></td><td> <input type="text" name="uname" id="uname" placeholder="enetr username" required minlength="3" maxlength="8"  autofocus /></td><td id="erruname" class="error"></td></tr>
+        <tr><td><label for="pass">password :</label> </td><td><input type="password" placeholder="enetr password" name="pass" id="pass" required
+            minlength="3" maxlength="8" pattern="^[A-Za-z].*"></td></tr>
+            <tr><td><label for="cpass">Confirm password :</label> </td><td><input type="password" placeholder="enetr password" name="cpass" id="cpass" required
+                minlength="3" maxlength="8" pattern="^[A-Za-z].*"></td>
+                <td id="errpass" class="error"></td></tr>
+        <tr>
+            <td></td><td>
+       <!-- <input type="submit" name="btn" id="btn" value="Login"/>-->
+        <button type="submit" name="btn" id="btn" value="Login">Login</button>&nbsp;&nbsp;&nbsp;
+        <button type="reset" name="btn" id="btn1" value="clear">clear</button></td></tr>
+    </form>
+</table>
+</body>
+</html>

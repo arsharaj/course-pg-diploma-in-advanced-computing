@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* these are the keyframes used in the animation */
+        @keyframes animation1 {
+            from{
+                background-color: green;
+                width:500px;
+                left:200px;
+            }
+            to{
+                background-color: pink;
+                width:200px;
+            }
+            
+        }
+        @keyframes animation2 {
+            10%{
+                background-color: red;
+                color:blue;
+                width:300px;
+                margin-left:20px;
+            }
+            25%{
+                background-color: green;
+                color:white;
+                width:300px;
+                margin-left:50px;
+                margin-top:200px;
+            }
+            50%{
+                background-color: yellow;
+                color:blue;
+                width:300px;
+                margin-left:20px;
+                margin-top:200px;
+            }
+            70%{
+                background-color: cyan;
+                color:blue;
+                width:300px;
+                margin-left:200px;
+                margin-top:200px;
+            }
+            100%{
+                background-color: pink;
+                color:blue;
+                width:300px;
+                margin-left:200px;
+                margin-top:10px;
+            }
+            
+        }
+        div{
+            /*position:relative;*/
+            background-color: aqua;
+            border:2px solid blue;
+            border-radius:6px;
+            width:300px;
+            height:200px; 
+            /* which animation to use */
+            animation:animation2;
+            /* the time in which all the keuframes should run */
+            animation-duration: 4s;
+            /* after how mauch time animation should start */
+            animation-delay: 2s;
+            /* number of times animation works */
+            animation-iteration-count: 2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        this is div which is animated
+    </div>
+</body>
+</html>

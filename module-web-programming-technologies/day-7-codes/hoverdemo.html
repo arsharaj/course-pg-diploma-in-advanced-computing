@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            background-color: blue;
+            color:white;
+            font-size: 40px;
+        }
+        .myc{
+            background-color: white;
+            color:black;
+            font-size: 10px;
+        }
+    </style>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //hover accepts 2 function the first function gets 
+            //executed for mouseover event, second function will get
+            //executed for mouseout event
+            $('p').hover(function(){
+                 $(this).addClass("myclass");
+                 $(this).removeClass("myc");
+            },function(){
+                $(this).removeClass("myclass");
+                 $(this).addClass("myc");
+            })
+        })
+    </script>
+</head>
+<body>
+    <p class="myc">This is para 1</p>
+    <p class="myc">This is para 2</p>
+    <p class="myc">This is para 3</p>
+</body>
+</html>

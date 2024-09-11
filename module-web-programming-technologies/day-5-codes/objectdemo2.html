@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+    //constructor function 
+    var Person=function(id,name,mobile){
+           this.id=id;
+           this.name=name;
+           this.mobile=mobile;
+    }
+    var Employee=function(dept,desg){
+           this.dept=dept;
+           this.desg=desg;
+    }
+    var p1=new Person(12,'xxx',222222);
+    var e1=new Employee('HR','mgr');
+    e1.__proto__=p1
+    for(var p in e1){
+        //hasOwnProperty function will return true if the property 
+        //is its own property
+        if (e1.hasOwnProperty(p)){
+            console.log("Own property : "+p+"===>"+e1[p]);
+
+        }else{
+            console.log("Parent property : "+p+"===>"+e1[p]);
+        }
+    }
+</script>
+    
+</body>
+</html>

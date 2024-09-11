@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!--<script src="./scripts/jquery.js"></script>-->
+    <script>
+        /*function assignstyle(){
+            arr=document.getElementsByTagName('p');
+            for(var ob of arr){
+                ob.style="background-color:yellow"
+            }
+        }*/
+        jQuery(document).ready(function(){
+            //alert("testing")
+            $('#mydiv').html("this is the data in the div");
+            $('#btn').click(function(){
+               // $('p,h1').css("background-color","yellow");
+              // $('p:contains("xxxx"),h1[name^="m"]').css({"background-color":"yellow",
+               //"color":"blue"});
+               $('p:first-child,h1:odd').css({"background-color":"yellow",
+               "color":"blue"});
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn">click me</button>
+    <h1 name="m123">This is h1 1111</h1>
+    <h1 name="h11">This is h1 2222</h1>
+    <h1 name="m222">This is h1 333</h1>
+    <div>
+        <p>This is para1111 in div first child</p>
+        <h1 name="m123">This is h1 1111  in div</h1>
+        <p>This is para1111 in div</p>
+         <p>This is para1 in div</p>
+    </div>
+   <p>This is para1111</p>
+   <p>This is para1</p>
+   <p>xxxxx This is para2</p>
+   <div id="mydiv">
+
+   </div> 
+</body>
+</html>

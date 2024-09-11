@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            background-color: blue;
+            color:white;
+            display:block;
+        }
+
+        .myc{
+            display:none;
+        }
+    </style>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //function chaining
+            $('#show').click(function(){
+               $('h1').addClass("myclass")
+               .removeClass("myc");
+            });
+            $('#hide').click(function(){
+                $('h1').removeClass("myclass")
+               .addClass("myc");
+            });
+            $('#toggle').click(function(){
+                $('h1').toggleClass("myclass")
+               .toggleClass("myc");
+            });
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" value="btn" id="show">show</button>
+    <button type="button" name="btn" value="btn" id="hide">hide</button>
+    <button type="button" name="btn" value="btn" id="toggle">toggle</button>
+    <h1 class="myclass">This is header</h1>
+</body>
+</html>

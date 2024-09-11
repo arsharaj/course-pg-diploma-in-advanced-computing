@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeString(){
+            var str=document.getElementById("str").value;
+            var op=document.getElementById("op");
+            var pos=op.selectedIndex
+            var choice=op.options[pos].value;
+            switch(choice){
+                case "upper":
+                    //convert string in uppercase
+                      var result=str.toUpperCase();
+                    break;
+                case "lower":
+                     //convert string in lowercase
+                    result=str.toLowerCase();
+                    break;
+                case 'replace':
+                    //then string enclosed in /.. / then it is aregexp, g indicates global flag
+                    //it will replace all occurances, i---indicates ignore case 
+                    //if g flag is not used then it will replace only first occurence
+                    result=str.replace(/s.*?e/,'xxxxxxx')
+                    break; 
+                case "split":
+                    var delim=prompt("enetr delimiter");
+                    result=str.split(delim);
+                case "slice":
+                    var start=2;
+                    var end=6;
+                    //end index is excluded, so will give the portion of the string
+                    //starting from 2 index to 5th index
+                    result=str.slice(start,end);
+                case "match":
+                    result=str.match(/s.*?e/)
+                case "search":
+                    result=str.search(/s.*?e/);
+                case "includes":
+                    result=str.includes("ain");
+                    console.log(result);
+
+            }
+            document.getElementById("result").value=result;
+            document.getElementById("mydiv").innerHTML=result;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Enter String: <input type="text" name="str" id="str"><br>
+        Result: <input type="text" name="result" id="result"><br>
+        Operations: <select name="op" id="op">
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+              <option value="replace">replace</option>
+              <option value="slice">slice</option>
+              <option value="split">split</option>
+              <option value="match">match</option>
+              <option value="includes">includes</option>
+              <option value="upper">Upper</option>
+              <option value="search">search</option>
+              
+        </select>
+        <button type="button" name="btn" id="btn" onclick="
+        ">String Operation</button>
+    </form>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

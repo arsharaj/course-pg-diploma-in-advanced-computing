@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //validate both the numbers should be +ve
+        function validatenumbers(n1,n2){
+            if((n1>0) && (n2>0)){
+                
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+        //validate number in range 1 to 5
+        function validatefirstnumber(num1){
+            if(num1> 0 && num1<6){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function calculate(choice){
+            //retrieve the value of num1 textbox, and convert to integer
+            var num1=parseInt(document.getElementById("num1").value);
+            //=== will check value+type, hence it is called as strict comparison
+            //== will check only value and not type
+            if(choice==="a")     // 1==1 (true), 1===1 (true) , 1=='1' (true),  1==='1'(false)
+            {
+                //retrieve the value of num2 textbox, and convert to integer
+                var num2=parseInt(document.getElementById("num2").value);
+                flag=validatenumbers(num1,num2);
+                //add numbers
+                if(flag){
+                    var result=num1+num2;
+                
+                    //display result in popup box
+                    //alert("Addition : "+addition);
+                    //display result in new window
+                    //document.write("Addition : "+addition);
+                    //display message in the p tag below form
+                    document.getElementById("answer").innerHTML="Addition : "+result;
+                }
+                else{
+                    //display error message
+                    console.log("error");
+                }
+            }else{
+                flag=validatefirstnumber(num1);
+                if(flag){
+                result=1;
+                for(var i=1;i<=num1;i++){
+                    result=result*i;
+                }
+                document.getElementById("answer").innerHTML="Factorial : "+result;
+               }
+               else{
+                  //display error message
+               }
+            }
+            //display result in the result text box
+            document.getElementById("result").value=result;
+        }
+    </script>
+</head>
+<body>
+   <form>
+       <label for="num1">Number 1 : </label>
+       <input type="number" id="num1"  name="n1"><br>
+       <label for="num2">Number 2 : </label>
+       <input type="number" id="num2"  name="n2"><br>
+       <label for="result">Result : </label>
+       <input type="number" id="result"  name="result" readonly><br>
+       <button type="button" name="btn" id="add" value="add" onclick="calculate('a')">Addition</button>
+       <button type="button" name="btn" id="factorial" value="factorial" onclick="calculate('f')">Factorial</button>
+       <button type="reset" name="btn" id="Cancel" value="Cancel">Cancel</button>
+   </form> 
+   <p id="answer">Display answer here</p>
+</body>
+</html>

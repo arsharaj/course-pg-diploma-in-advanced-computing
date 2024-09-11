@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:200px;
+            background-color: aqua;
+            border:2px solid blue;
+            
+        }
+        #div1{
+            position:relative;
+        }
+        #div2fixed{
+            background-color: cyan;
+            /* always remain at constatnt position even if you scroll the contents, the position will be decided by using right, left, top, bottom*/
+            position:fixed;
+            border:2px solid red;
+            width:600px;
+            height:30px;
+            left:200px;
+            bottom:0;
+        }
+        #div3sticky{
+            background-color: yellow;
+            /*contents move along with page but the moment it reaches to top 0, the position will be changed to fixed, otherwise behaves like relative position*/
+            position:sticky;
+            top:0;
+        }
+        #div3relative{
+            background-color: aquamarine;
+            border:2px solid red;
+            /* if position is relative then the page flow will maintained and left,right, top, bottom properties will be used */
+            position:relative;
+            left:200px
+        }
+        #div1child{
+            background-color: bisque;
+            border:2px solid blueviolet;
+            width:250px;
+            height:150px;
+            position:relative;
+           
+        }
+        #div1grandchild{
+            background-color: blue;
+            border:2px solid green;
+            width:100px;
+            height:50px;
+            color:white;
+            /* it will place grand child at rightmost position of div1child, if its position is relative, otherwise it will be place at rightmost position of #div1 if its position is relative, otherwise it will be place at the rightmost positiion of the browser window */
+            position:absolute;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        This is div 11111 parent
+        <div id="div1child">
+            this is child div 44444
+            <div id="div1grandchild">
+                this is grand-child div
+            </div>
+        </div>
+    </div>
+    <div id="div3relative">
+        This is relative div , and left, right top bottom will
+        be applied only if position is other than static
+    </div>
+    <div id="div2fixed">
+        This is div122222 this is fixed div
+    </div>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </ul>
+    <div id="div3sticky">
+        This is div122222 this is sticky div
+    </div>
+    <h1>Lists demo</h1>
+    <ul type="circle">
+        <li>mobile
+          <ul type="square">
+            <li>iPhone 14</li>
+            <li>Samsung notes</li>
+            <li>google pixel</li>
+          </ul>
+
+        </li>
+        <li>books</li>
+        <li>fruits</li>
+    </ul>
+    <hr/>
+    <ol type="I">
+        <li>java
+            <ul>
+                <li>spring</li>
+                <li>Spring security</li>
+                <li>Spring boot</li>
+            </ul>
+        </li>
+        <li>Python</li>
+        <li>Perl</li>
+    </ol>
+    <dl>
+        <dt>term1</dt>
+        <dd>This is definition for term1</dd>
+        <dt>term2</dt>
+        <dd>This is definition for term2</dd>
+        <dt>term3</dt>
+        <dd>This is definition for term3</dd>
+    </dl>
+    <ul>
+        <li>one
+        <li>two
+        <li>three
+    </ul>
+</body>
+</html>

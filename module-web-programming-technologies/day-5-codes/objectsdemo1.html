@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        var a=23;
+        var x="Kishori";
+        //it is a object
+        var emp={empid:12,ename:'Rajan',dept:'gaming'}
+        console.log(emp.empid,emp['empid']);
+        alert(emp.empid+" "+emp.ename+" "+emp.dept);
+        emp.mobile=234565;
+        emp1={id:12,name:'Revati',dept:'UX',display:function(){
+            console.log("Id: "+this.id+" Name: "+this.name+" Department: "+this.dept)
+        }}
+
+        //another way of declaring object is constructor functions
+        const Employee=function(id,nm,dept){
+            this.id=id;
+            this.name=nm;
+            this.dept=dept;
+            this.display=function(){
+            console.log("Id: "+this.id+" Name: "+this.name+" Department: "+this.dept);
+        }
+
+        }
+
+        e1=new Employee(12,'xxx','HR');
+        e1.email='xx@gmail.com';
+        e1['mobile']=56789;
+        e2=new Employee(1,'ddd','purchase');
+        //display data
+        e1.display();
+        e2.display();
+        //object loop
+        for(var p in e1){
+            //p is name of the property, e1[p] value of the property
+            p='name'
+            console.log(p+"----->"+e1[p])
+        }
+
+    </script>
+    
+</body>
+</html>

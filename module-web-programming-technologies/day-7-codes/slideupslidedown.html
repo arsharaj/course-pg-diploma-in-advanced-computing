@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            width:200px;
+            height:200px;
+            border: 2px solid red;
+            border-radius: 6px;
+            margin:5px;
+        }
+    </style>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#slideup').click(function(){
+                $('#div1').slideUp(2000,function(){
+                    $('#div3').html("show complete")
+                }); 
+                $('#div2').slideDown(2000,function(){
+                    $('#div3').html("hide complete")
+                });
+
+            })
+            $('#slidedown').click(function(){
+                $('#div1').slideDown(2000,function(){
+                    $('#div3').html("show complete")
+                }); 
+                $('#div2').slideUp(2000,function(){
+                    $('#div3').html("hide complete")
+                });
+            })
+            $('#slidetoggle').click(function(){
+                $('#div1').slideToggle(2000,function(){
+                    $('#div3').html("show complete")
+                }); 
+                $('#div2').slideToggle(2000,function(){
+                    $('#div3').html("hide complete")
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="div3"></div>
+    <button type="button" name="btn" id="slideup">slideup</button>
+    <button type="button" name="btn" id="slidedown">slidedown</button>
+    <button type="button" name="btn" id="slidetoggle">slidetoggle</button>
+    <div id="div1">
+        <img src="../images/flowers.png" width="200" height="200">
+    </div>
+    <div id="div2">
+        This is para
+    </div>
+</body>
+</html>
