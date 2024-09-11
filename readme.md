@@ -26,6 +26,7 @@
 - Module : Software Development Methodologies
 - Module : Web Based Java Programming
 - Module : Web Programming Technologies
+- Practice : Algorithms And Data Structures Using Java
 
 ### License
 
