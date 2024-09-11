@@ -1,0 +1,322 @@
+A#Q1. How can a Servlet call a JSP error page ?
+A. This capability is not supported.
+B. When the servlet throws the exception, it will automatically
+ be caught by the calling JSP page.
+C. The servlet needs to forward the request to the specific
+ error page URL. The exception is passed along as an attribute 
+named “javax.servlet.jsp.jspException”.
+D. The servlet needs to redirect the response to the specific
+ error page, saving the exception off in a cookie.
+A#Q1ANS=C
+
+A#Q2. What is default value of isELIgnored Attribute?
+A. True
+B. False
+C. 
+D.
+A#Q2ANS=A
+
+A#Q3. which one of the follwing is a vaild argument for a 
+jsp page directive?
+A.caching ="sizeKb|none"
+B.isThreadeSafe="yes|no"
+C.impororter="package.class"
+D.contentType="text/html"
+A#Q3ANS=B
+
+A#Q4. Servlet are used to program which component in a web application?
+A. client
+B. server
+C.tomcat
+D.appletA#Q4ANS=B
+
+A#Q5.How many ServletContext objects are available for an 
+entire web application?
+A. One each per servlet
+B. One each per request
+C. One each per response
+D. Only oneA#Q5ANS=D
+
+A#Q6.You want to use URL rewriting to support client
+ browsers, which do not usecookies. Which method will 
+you use to attach the session id to a URL that is to be
+used for the sendRedirect() method of the HttpServletResponse?
+A. encodeURL
+B. encodeRedirectURL
+C. encodeSessionRedirectURL
+D. None of these
+A#Q6ANS=B
+
+A#Q7.The life cycle of a servlet is managed by
+A. servlet context
+B. servlet container
+C. the supporting protocol (such as http or https)
+D. all of the above
+A#Q7ANS=B
+
+A#Q8.The session tracking in the JSP can be done by
+A. URL rewriting
+B. Cookies
+C. User-Authorization
+D. Hidden value
+A#Q8ANS=C
+
+A#Q9.Java code is embedded under which tag in JSP?
+A. Declaration
+B. Scriptlet
+C. Expression
+D. Comment
+A#Q9ANS=B
+
+A#Q10.Which of below is not a dependency management tool?
+A. Ant
+B. Maven
+C. Gradle
+D.Jenkins
+A#Q10ANS=D
+
+A#Q11.Which file is used to specify the packaging cycle?
+A. build.xml
+B. pom.xml
+C. dependency.xml
+D. version.xml
+A#Q11ANS=A
+
+A#Q12.Which maven plugin creates the project structure?
+A. dependency
+B. properties
+C. archetype
+D. execution
+A#Q12ANS=C
+
+A#Q13. In the Model View Controller architecture of an enterprise 
+application, which of the following can be 'best suited' as the Controller?
+A.  Servlets 
+B.  Java Server Page 
+C.  Session Bean 
+D.  Option A and Option C 
+A#Q13ANS=D
+
+A#Q14.Which of the following is an advantage of the
+ statement – Separation of business logic from JSP ? 
+A. Custom Tags in JSP
+B. JSP Standard Tag Library
+C. All the above
+D. None of the above
+A#Q14ANS=A
+
+A#Q15.How many jsp implicit objects are there and these 
+objects are created by the web container that are available to all the jsp pages?
+A. 8
+B. 9
+C. 10
+D. 7
+A#Q15ANS=B
+
+A#Q16.How is the dynamic interception of requests and
+ responses to transform the information done?
+A. servlet container
+B. servlet config
+C. servlet context
+D. servlet filter
+A#Q16ANS=D
+
+A#Q17.Which type of ServletEngine is a server that includes
+ built-in support for servlets?
+A. Add-on ServletEngine
+B. Embedded ServletEngine
+C. Standalone ServletEngine
+D. None of the above
+A#Q17ANS=C
+
+A#Q18.Which are the examples of Application Server? 
+A. Apache
+B. Tomcat
+C. JBoss
+D. Both C & D
+A#Q18ANS=D
+
+A#Q19.init(),service() and destroy()methods are define in
+1.javax.servlet.Servlet interface
+2.javax.servlet.ServletHttp class
+3.javax.servlet.ServletRequest interface
+4.javax.servlet.ServletResponse interface
+
+A.1,2,3,4
+B.1
+C.3,4
+D.1,4
+A#Q19ANS=B
+
+A#Q20. Which tag should be used to pass information from
+ JSP to included JSP?
+A. Using <%jsp:page> tag
+B. Using <%jsp:param> tag
+C. Using <%jsp:import> tag
+D. Using <%jsp:useBean> tag
+A#Q20ANS=A
+
+A#Q21.Which of the following is not a core interface of Hibernate?
+A. Configuration
+B. Criteria
+C. SessionManagement
+D. Session
+A#Q21ANS=C
+
+
+A#Q22.Which of the following methods hits database always?
+A. load()
+B. loadDatabase()
+C. getDatabase()
+D. get()
+A#Q22ANS=D
+
+A#Q23. Which of the following method is used inside session only?
+A. merge()
+B. update()
+C. end()
+D. kill()
+A#Q23ANS=B
+
+A#Q24.SessionFactory is a thread-safe object.
+A. True
+B. False
+C.
+D.
+A#Q24ANS=B
+
+A#Q25.Second Level Cache implementations are provided by
+ different vendors such as?
+A. EH Cache
+B. Swarm Cache
+C. OS Cache and Jboss Cache
+D. All mentioned above
+A#Q25ANS=D
+
+A#Q26.Which of the following is NOT a mapping association
+ used in Hibernate?
+A.Many-to-Many Association
+B.One-to-Many Association
+C.One-to-One Association
+D.All
+A#Q26ANS=B
+
+A#Q27.Select the inheritance model which is NOT avilable in Hibernate.
+A.Tables Per Concrete Class
+B.Table per class hierarchy
+C.Table per sub-class
+D.Table per object
+A#Q27ANS=D
+
+A#Q28. the elements of Hibernate architecture is a factory 
+of session and client of ConnectionProvider,It holds second
+ level cache (optional) of data?
+A. Connection Provider
+B. Session
+C. Session Factory
+D. Transaction
+A#Q28ANS=B
+
+
+A#Q29.Log4j and Logback frameworks can be used in hibernate 
+framework to support logging which ways are used?
+A. By log4j.xml file
+B. By log4j.properties
+C. Both A & B
+D. None of the above
+A#Q29ANS=C
+
+
+A#Q30.The Spring framework provides HibernateTemplate class, 
+so you don't need to follow steps like?
+A. create Configuration
+B. BuildSessionFactory  and Session
+C. beginning and committing transaction 
+D. All mentioned above
+A#Q30ANS=D
+
+A#Q31.What are the main	advantages of using interfaces when
+ designing business services? Select one or more answer choices.
+A. Mocking or stubbing the service
+B. Be able to use the Spring auto-injection
+C. Can do dependency checking
+D. Loosely coupled code
+A#Q31ANS=A,D
+
+A#Q32.DAO methods require access to the session factory,
+ which can be injected:-
+A. a setter method
+B. constructor argument
+C. none of the mentioned
+D. all of the mentioned
+A#Q32ANS=D
+
+A#Q33. In the bean configuration file for Hibernate 
+(i.e., beans-hibernate.xml), you have to declare a 
+HibernateTransactionManager instance for this application
+ and enable declarative transaction via:-
+A.tx:annotation
+B.tx:annotationdriven
+C.tx:annotation-driven
+D.none of the mentioned
+A#Q33ANS=C
+
+A#Q34.AOP is the part of Core Container in Spring Framework.
+A. True
+B. False
+C.
+D.
+A#Q34ANS=B
+
+A#Q35.Which is the part of Data Access layer in Spring Framework?
+A.Aspects
+B.JMS
+C.none of above
+D.all of the above
+A#Q35ANS=B
+
+
+A#Q36.Which class represents the IoC container?
+A.ApplicationContext
+B.ServletContext
+C.none of above
+D.all of above
+A#Q36ANS=A
+
+A#Q37.Endpoint Classes for SAX:-
+A. AbstractDomPayloadEndpoint
+B. AbstractSaxPayloadEndpoint
+C. AbstractDom4jPayloadEndpoint
+D. AbstractXomPayloadEndpoint
+A#Q37ANS=B
+
+A#Q38. Annotation to find a transaction and then fail,
+ complaining that no Hibernate session been bound to the thread.
+A. @Transaction
+B. @Transactional
+C. @Transactions
+D. None of the mentioned
+A#Q38ANS=B
+
+A#Q39.Which advice is executed only when joint point 
+returns or throws an exception?
+A. @Before
+B. @After
+C. @AfterReturning 
+D. @AfterThrowing
+A#Q39ANS=C
+
+A#Q40.Which statements are true about DispatcherServlet ?
+A.DispatcherServlet is an expression of the "Front Controller"
+ design pattern .
+B.The DispatcherServlet is the actual Servlet .
+C.DispatcherServlet is declared in the web.xml of your web application.
+The Spring DispatcherServlet has a couple of special beans it uses 
+in order to be able to process requests and render the 
+appropriate views. These beans can be configured in WebApplicationContext.
+D.All the above
+A#Q40ANS=D
+
+
+
+

@@ -1,0 +1,505 @@
+A#Q1. getPathInfo() method of HttpServletRequest Interface
+A. Returns extra path info 
+(String following servlet path but preceding query string).
+B. Returns query string
+C. Returns servlet path and name
+D. None of the above
+A#Q1ANS=A
+
+A#Q2. What are valid methods for HttpSessionListener interface?
+A. sessionRemoved
+B. sessionDestroyed
+C. sessionReplaced
+D. None of the above
+A#Q2ANS=B
+
+A#Q3. A session is created in a servlet and that 
+servlet has a form, which has a button. On clicking 
+the button a new window pops up, what happens next?
+A. The session is invalidated as soon as a
+  new window pops up
+B. Any attempt to access objects present in
+ session throws a Exception
+C. The session is available to the new window also
+D. None of the above.
+A#Q3ANS=C
+
+A#Q4. The ServletContext interface provides direct 
+access to the hierarchy of static content documents 
+that are part of the web application, including HTML,
+ GIF and JPEG files through following methods
+A. getSource
+B. getResource
+C. getResourceStream
+D. getSourceStream
+A#Q4ANS=B
+
+A#Q5. _______ exception indicates to the web container
+ that the servlet is either temporarily or 
+  permanently unavailable
+A. ServletException
+B. IllegalArguementException
+C. UnavailableException
+D. ServletContextException
+A#Q5ANS=C
+
+A#Q6. What is the result of compiling and deploying 
+the exhibited JSP?
+<%
+public void jspInit(){
+application.setAttribute(“prefix”, “W06”);
+}
+%>
+A. The application-scoped attribute called prefix is
+ set to the value ‘W06’.
+B. The page does nothing and returns a blank response.
+C. A translation error occurs.
+D. A compilation error occurs.
+A#Q6ANS=D
+
+A#Q7. What possible effects will the code
+      have in a JSP page?
+Line 1: <% pageContext.setAttribute
+(“connection”,newcom.mybeans. ConcreteConnection()); %>
+Line 2: <jsp:useBean id=”connection” 
+class=”com.mybeans.ConcreteConnection” 
+type=”com.mybeans.AbstractConnection” scope=”page” /> 
+A. The scripting variable called connection is declared,
+ of type ConcreteConnection and initialized to 
+the value of the page-scoped attribute called connection.
+B. The scripting variable called connection is declared, 
+of type AbstractConnection, and initialized to the 
+value of the page-scoped attribute called connection.
+C. The scripting variable called connection is 
+declared, a new ConcreteConnection instantiated 
+and assigned to both the scripting variable and 
+page-scoped attribute called connection.
+D. A compilation error occurs on line B
+A#Q7ANS=C
+
+A#Q8. Which of the following can be inserted into
+ this JSP page to output the current value to the response?
+<% application.setAttribute(“hitcount”,newInteger(10)); %> 
+  //insert here
+A. <%=hitcount %>
+B. <%=application.getAttribute(“hitcount”); %>
+C. <%=application.hitcount%>
+D. <%=pageContext.getservletContext().getAttribute
+   (“hitcount”) %>
+A#Q8ANS=D
+
+A#Q9.  How you will make available any Message 
+Resources Definitions file to the Struts Framework
+Environment?
+A. <message-resources parameter=\”MessageResources\” />
+B. <message-resource parameter=\”MessageResources\” />
+C. <message-resources=\”MessageResources\” />
+D. <message-resources=\”MessageResourcesparameter\”/>
+A#Q9ANS=A
+A#Q10. Which attribute specifies a JSP page that
+ should process any exceptions thrown but not
+ caught in the current page?
+
+A. The ErrorPage Attribute
+B. The IsErrorPage Attribute
+C. Both A & B
+D. None of the above
+A#Q10ANS=A
+
+A#Q11. Which statement is true regarding struts?
+A. Model components correspond to web pages.
+B. Vie components provide the business logic or 
+data behind a struts program.
+C. One of the major contributions of controller 
+components is that they allow the developer to
+ remove much of the error handling logic from the
+ JSP pages in their application.
+D. Struts framework does not allow your code to
+ be highly platform independent.
+A#Q11ANS=C
+
+A#Q12. Controller components in struts are 
+java classes and must be built using specific rules. 
+They are usuallyreferred as:
+A. Actions
+B. Action
+C. Action classes
+D. Action controller
+A#Q12ANS=C
+
+A#Q13. Which statement is true regarding action 
+class of struts?
+A. An action class cannot acts as wrapper class
+B. An action class extends struts 
+“org.apache.struts.action.Action” class
+C. Action class cannot transfer data from view
+ layer to process layer
+D. None of the above
+A#Q13ANS=B
+
+A#Q14. Identify the most appropriate definition
+ of getEJBMetaData()
+A. This method allows the clients to obtain extra 
+information about the EJb. This method throws 
+  a java.rmi.RemoteException.
+B. This method is used to get a handle 
+  for the home object. This obtained handle can be used
+ later to get the handle to the home object.
+C. This method is used to remove an EJB object. 
+It has two forms. The first Form takes a Handle object
+ a parameter and the other takes the primary 
+  key as a parameter.
+D. This method returns an instance of the entity’s primary
+  key class. With this method, you can set bean attributes.
+A#Q14ANS=A
+
+A#Q15.  EJB technology uses Java Remote method Invocation
+A. For communication between an enterprise bean and a client.
+B. For communication between two enterprise beans
+C. Both A and B
+D. For binding a name with an enterprise bean
+A#Q15ANS=C
+
+A#Q16. An online retailer uses various EJBs to 
+construct their catalogue and maintain stock counts,
+ retrieving the item codes, prices and stock levels singularly.
+ They have recently been delivered a custom-built website,
+but the developers forgot to ask what data storage
+ mechanism they were using and therefore supplied
+them only with a set of helper beans and some 
+database drivers. What combination of patterns 
+would you use to interface the helper beans with their
+ EJB application?
+A. Model-View-Controller
+B. Business Delegate
+C. Intercepting Filter
+D. Transfer Object
+A#Q16ANS=B
+
+A#Q17. Identify the statement that best describes
+ the persistence use tag required for a CMP ejb.
+A. The persistence use tag defines the options that 
+determine the persistence type, transaction behavior,
+ and ejbLoad() and ejbStore() behavior for entity
+ EJB in WebLogic Server.
+B. The persistence use tag contains text
+ that identifies an entity EJB persistence type.
+C. The persistence use tag defines the full path of 
+the file that stores data for this persistence type.
+D. The persistence use tag stores the identifier of 
+the persistence type to be used for this particular bean.
+A#Q17ANS=D
+
+A#Q18. Which of the following is true about Entity beans
+ and Hibernate?
+1.X in Entity Bean at a time we can interact with 
+only one database. Where as in Hibernate we can able
+ to establish the connections to more than one database. 
+ Only thing we need to write one more configuration file.X x
+2.  Entity Beans does not support OOPS concepts where 
+    as Hibernate does.
+3.  Hibernate supports multi level caching, where as 
+     Entity Beans doesn’t.
+A. Only 1
+B. Only 1 and 2
+C. All 1, 2 and 3
+D. Only 3
+A#Q18ANS=C
+
+A#Q19. How does Hibernate distinguish between
+   transient (i.e. newly instantiated) and detached objects?
+    correct answer from following?
+A. Hibernate uses the “version” property, if there is one.
+
+B. If not uses the identifier value. No identifier value 
+means a new object. This does work only for Hibernate
+ managed surrogate keys. Does not work for natural keys
+ and assigned (i.e. not managed by Hibernate) surrogate keys)
+C. Write your own strategy with Interceptor.is
+Unsaved().
+D. All of the above
+A#Q19ANS=D
+
+A#Q20. Mapping files (*.hbm.xml) is used __________.
+A. to map persistent objects to a relational database.
+B. to configure the hibernate services 
+(connection driver class, connection URL)
+C. to configure the hibernate services 
+(connection username, connection password, dialect etc)
+D. All the above
+A#Q20ANS=A
+A#Q21. When does Exceptions in Java arises 
+       in code sequence?
+A. Run Time
+B. Compilation Time
+C. Can Occur Any Time
+D. None of the mentioned
+A#Q21ANS=A
+A#Q22. Which of these keywords is not a part of 
+       exception handling?
+A. try
+B. finally
+C. thrown
+D. catch
+A#Q22ANS=C
+A#Q23. Which of these keywords must be used to 
+       monitor for exceptions?
+A. try
+B. finally
+C. throw
+D. catch
+A#Q23ANS=A
+A#Q24. Which of these keywords must be used to handle
+ the exception thrown by try block in some rational manner?
+A. try
+B. finally
+C. throw
+D. catch
+A#Q24ANS=D
+A#Q25. Which of these keywords is used to manually
+ throw an exception?
+A. try
+B. finally
+C. throw
+D. catch
+A#Q25ANS=C
+A#Q26. What is the output of this program?
+1.	    class exception_handling {
+2.	        public static void main(String args[]) {
+3.	            try {
+4.	                System.out.print("Hello" + " " + 1 / 0);
+5.	            }
+6.	            catch(ArithmeticException e) {
+7.	        	System.out.print("World");        	
+8.	            }
+9.	        }
+10.	    }
+A. Hello
+B. World
+C. HelloWorld
+D. Hello World
+A#Q26ANS=B
+A#Q27. What is the output of this program?
+1.	    class exception_handling {
+2.	        public static void main(String args[]) {
+3.	            try {
+4.	                int a, b;
+5.	                b = 0;
+6.	                a = 5 / b;
+7.	                System.out.print("A");
+8.	            }
+9.	            catch(ArithmeticException e) {
+10.	        	System.out.print("B");        	
+11.	            }
+12.	        }
+13.	    }
+A. A
+B. B
+C. Compilation Error
+D. Runtime Error
+A#Q27ANS=B
+A#Q28. What is the output of this program?
+1.	    class exception_handling {
+2.	        public static void main(String args[]) {
+3.	            try {
+4.	                int a, b;
+5.	                b = 0;
+6.	                a = 5 / b;
+7.	                System.out.print("A");
+8.	            }
+9.	            catch(ArithmeticException e) {
+10.	        	System.out.print("B");        	
+11.	            }
+12.	            finally {
+13.	    	        System.out.print("C");
+14.	            }
+15.	        }
+16.	    }
+A. A
+B. B
+C. AC
+D. BC
+A#Q28ANS=D
+A#Q29. What is the output of this program?
+1.	    class exception_handling {
+2.	        public static void main(String args[]) {
+3.	            try {
+4.	                int i, sum;
+5.	                sum = 10;
+6.	                for (i = -1; i < 3 ;++i)
+7.	                    sum = (sum / i);
+8.	            }
+9.	            catch(ArithmeticException e) {
+10.	        	System.out.print("0");        	
+11.	            } 
+12.	            System.out.print(sum);
+13.	        }
+14.	    }
+A. 0
+B. 05
+C. Compilation Error
+D. Runtime Error
+A#Q29ANS=C
+ A#Q30. What is the output of this program?
+1.	    class exception_handling {
+2.	        public static void main(String args[]) {
+3.	            try {
+4.	                int i, sum;
+5.	                sum = 10;
+6.	                for (i = -1; i < 3 ;++i) {
+7.	                    sum = (sum / i);
+8.	                System.out.print(i);
+9.	                }
+10.	            }
+11.	            catch(ArithmeticException e) {     	
+12.	                System.out.print("0");
+13.	            }
+14.	        }
+15.	    }
+A. -1
+B. 0
+C. -10
+D. -101
+A#Q30ANS=C
+A#Q31.Which of these keywords is used to define 
+    interfaces in Java?
+A. interface
+B. Interface
+C. intf
+D. Intf
+A#Q31ANS=A
+A#Q32. Which of these can be used to fully abstract 
+      a class from its implementation?
+A. Objects
+B. Packages
+C. Interfaces
+D. None of the Mentioned.
+A#Q32ANS=C
+A#Q33. Which of these access specifiers can be
+   used for an interface?
+A. Public
+B. Protected
+C. private
+D. All of the mentioned
+A#Q33ANS=A
+A#Q34. Which of these keywords is used by a class 
+to use an interface defined previously?
+A. import
+B. Import
+C. implements
+D. Implements
+A#Q34ANS=C
+A#Q35. Which of the following is correct way of 
+implementing an interface salary by class manager?
+A. class manager extends salary {}
+B. class manager implements salary {}
+C. class manager imports salary {}
+D. None of the mentioned.
+A#Q35ANS=B
+A#Q36. Which of the following is incorrect 
+     statement about packages?
+A. Interfaces specifies what class must do
+    but not how it does.
+B. Interfaces are specified public if they are
+ to be accessed by any code in the program.
+C. All variables in interface are implicitly 
+    final and static.
+D. All variables are static and methods are public 
+if interface is defined pubic.
+A#Q36ANS=D
+A#Q37. Which of the following package stores all 
+    the standard java classes?
+A. lang
+B. java
+C. util
+D. java.packages
+A#Q37ANS=B
+A#Q38. What is the output of this program?
+1.	    interface calculate {
+2.	        void cal(int item);
+3.	    }
+4.	    class display implements calculate {
+5.	        int x;
+6.	        public void cal(int item) {
+7.	            x = item * item;            
+8.	        }
+9.	    }
+10.	    class interfaces {
+11.	        public static void main(String args[]) {
+12.	            display arr = new display;
+13.	            arr.x = 0;      
+14.	            arr.cal(2);
+15.	            System.out.print(arr.x);
+16.	        }
+17.	    }
+A. 0
+B. 2
+C. 4
+D. None of the mentioned
+A#Q38ANS=C
+A#Q39. What is the output of this program?
+1.	    interface calculate {
+2.	        void cal(int item);
+3.	    }
+4.	    class displayA implements calculate {
+5.	        int x;
+6.	        public void cal(int item) {
+7.	            x = item * item;            
+8.	        }
+9.	    }
+10.	    class displayB implements calculate {
+11.	        int x;
+12.	        public void cal(int item) {
+13.	            x = item / item;            
+14.	        }
+15.	    }
+16.	    class interfaces {
+17.	        public static void main(String args[]) {
+18.	            displayA arr1 = new displayA;
+19.	            displayB arr2 = new displayB;
+20.	            arr1.x = 0;
+21.	            arr2.x = 0;      
+22.	            arr1.cal(2);
+23.	            arr2.cal(2);
+24.	            System.out.print(arr1.x + " " + arr2.x);
+25.	        }
+26.	    }
+A. 0 0
+B. 2 2
+C. 4 1
+D. 1 4
+A#Q39ANS=C
+A#Q40. What is the output of this program?
+1.	interface calculate {
+2.	            int VAR = 0;
+3.	            void cal(int item);
+4.	        }
+5.	        class display implements calculate {
+6.	            int x;
+7.	          public  void cal(int item) {
+8.	                if (item<2)
+9.	                    x = VAR;
+10.	                else
+11.	                    x = item * item;            
+12.	            }
+13.	        }
+14.	 class interfaces {
+15.	 
+16.	            public static void main(String args[]) {
+17.	                display[] arr=new display[3];
+18.	 
+19.	               for(int i=0;i<3;i++)
+20.	               arr[i]=new display();
+21.	               arr[0].cal(0);    
+22.	               arr[1].cal(1);
+23.	               arr[2].cal(2);
+24.	               System.out.print(arr[0].x+" " + arr[1].x + " " +
+ arr[2].x);
+25.	            }
+26.	        }
+A. 0 1 2
+B. 0 2 4
+C. 0 0 4
+D. 0 1 4
+A#Q40ANS=C
+

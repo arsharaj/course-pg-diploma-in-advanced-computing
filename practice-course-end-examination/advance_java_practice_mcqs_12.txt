@@ -1,0 +1,343 @@
+A#Q1.
+The java archive file deployed in a web application server has which of 
+the following extension?
+A.jar			
+B.  ear
+C.war				
+D.  tar
+A#Q1ANS=C
+A#Q2.
+Which of the following is not a JEE compliant server?
+A.tomcat				
+B. IIS
+C.glassfish				
+D. weblogic
+A#Q2ANS=B
+A#Q3.
+Which of the following JDBC driver is platform independent?
+A.type1					
+B. type4
+C.both A and B				
+D. none
+A#Q3ANS=B
+A#Q4.
+Which of the following JDBC component converts java code to database understandable form?
+A.Driver					
+B.DriverManager
+C.ResultSet				
+D. Connection
+A#Q4ANS=A
+A#Q5.
+Which of the following JDBC statement is used to call stored procedures from java program?
+A.Statement				
+B. PreparedStatement
+C.CallableStatement			
+D.  none
+A#Q5ANS=C
+
+A#Q6.
+Which of the following is used to mark the end of transaction scope in simple jdbc transaction?
+A.connection.commit()		
+B. connection.rollback()
+C.both A and B				
+D.  none
+A#Q6ANS=C
+A#Q7.
+Servlet component is deployed in which JEE container?
+A.web container  			
+B.ejb container
+C.hibernate container		
+D.applet container
+A#Q7ANS=A
+A#Q8.
+Which of the following must be done while deploying a servlet?
+A. add applet tag to web.xml 		
+B. add servlet tag to web.xml 
+C. add servlet-mapping tag to web.xml	
+D. both B and C
+A#Q8ANS=D
+A#Q9.
+When the servlet object is created which of the following method is called by the 
+servlet container?
+A.  init		
+B. doGet 
+C. doPost	
+D. both A and B
+A#Q9ANS=A
+A#Q10.
+The values in the http request can be retrieved within the servlet using which of
+ the following method?
+A.  get	
+B. getParameter 
+C. doGet
+D. both A and B
+A#Q10ANS=B
+A#Q11.
+Which class is used to share an attribute between all servlets in a web application?
+A.  ServletContext
+B. ServletConfig
+C. HttpSession
+D. All the above
+A#Q11ANS=A
+A#Q12.
+ In RequestDispacher which method is used to sends the same request and response 
+objects to another servlet? 
+A.  sendRedirect
+B. forward
+C. both A and B
+D. none
+A#Q12ANS=B
+A#Q13.
+ A JSP Engine converts a JSP to which of the following? 
+A.  another jsp
+B. html
+C. servlet
+D. none
+A#Q13ANS=C
+A#Q14.
+ The code written in which of the following notations, is copied directly into
+ the internal servlet class by the JSP Engine? 
+A.  <% %>  
+B. <%= %>
+C. <%!   %>
+D.  none
+A#Q14ANS=C
+A#Q15.
+ Which of the following is true for include directive in JSP? 
+A.the included page is copied in the place of the directive at the time of JSP compilation
+B. the control jumps to the included page at the time of execution
+C. the included page is copied in the place of directive at every request to the JSP
+D.  none
+A#Q15ANS=A
+A#Q16.
+ Which directive is used to include custom directives in jsp?
+A.  taglib
+B. include
+C. page
+D. useBean
+A#Q16ANS=A
+A#Q17.
+Which of the following is/are true for JSP technology?        
+I. It is persistent.
+II. Platform independent.
+III. Browser executes the code.
+
+A. only I
+B. only II
+C. I and II
+D. III
+A#Q17ANS=C
+A#Q18.
+Which of the following is an approach for state maintenance in Web applications?     
+A. URL Rewritting
+B. Cookies
+C. both A and B
+D. none
+A#Q18ANS=C
+A#Q19.
+Which of the following is a not valid output expression in JSP?   
+A. <%= System.out.println(“hello”); %>
+B. <%= new Integer(10); %>
+C. <%= new String(“hello”); %>
+D. <%= Thread.currentThread().getName(); %>
+A#Q19ANS=A
+A#Q20.
+Which of the following is a used to get the attribute values of a jsp bean?   
+A. <jsp:getProperty>
+B. <jsp:useBean>
+C.<jsp:setProperty>
+D. All the above
+A#Q20ANS=A
+A#Q21.
+Hibernate transaction can be started by which of the following statement? 
+A. connection.setAutocommit(true);
+B. session.beginTransaction();
+C.startTx
+D. All the above
+A#Q21ANS=B
+A#Q22.
+The faces-config.xml contains which of the following?
+A. servlet tag
+B. url mapping tag
+C. navigation rule
+D. All the above
+A#Q22ANS=C
+A#Q23.
+The full form of EJB is
+A. Express Java Beans
+B. Enterprise Java Beans
+C. Entity Java Beans
+D. All the above
+A#Q23ANS=B
+A#Q24.
+Which of the following are not a container for EJB?       
+
+I. Internet Information Server.
+II. Java System Application Server. 
+III. Tomcat.	
+IV. WebLogic.
+
+A. I and II
+B. I
+C.I and III 
+D. III and IV
+A#Q24ANS=B
+A#Q25.
+Which EJB usually represents persistent data?
+A. session
+B. entity
+C.MDB 
+D. All the above
+A#Q25ANS=B
+A#Q26.
+Which is true for MDB?
+A. MDB is a JMS Sender
+B. MDB is a JMS Receiver
+C. Both A and B
+D. none of the above
+A#Q26ANS=B
+A#Q27.
+Which is true for stateful session bean?
+A. pool is maintained
+B. Activation and Passivation takes place
+C. one bean instance is shared by multiple clients
+D. none of the above
+
+A#Q27ANS=B
+A#Q28.
+EJB3 supports annotations as well as deployment descriptors?
+
+A. true
+B. false
+C. cant say
+D. unknown
+A#Q28ANS=A
+A#Q29.
+EJB3 provides which of the following features?
+
+A. pooling
+B. JMS receiver
+C. RMI
+D. All the above
+A#Q29ANS=D
+A#Q30.
+The persistence feature is provided by which of the following in EJB 3?
+A. CMP Entity beans
+B. BMP Entity beans
+C. JPA Entities
+D. All the above
+A#Q30ANS=C
+A#Q31.
+Which of the following can be used to instantiate beans?
+A. Using bean constructor
+B. Using static factory method
+C. Using instance factory method
+D. All the above
+
+A#Q31ANS=D
+A#Q32.
+Which statements are true about the dependency injection in spring?
+A. DI means that components and services are tightly coupled
+B. DI means that we should not directly connect your components and 
+  services together in code but describe which services are needed 
+  by which components in a configuration file
+C. BOTH A and B
+D. None
+
+A#Q32ANS=D
+A#Q33.
+Which of the following are techniques to implement inversion of control in spring?
+A. Using factory pattern
+B. Using Service locator pattern
+C. Using Dependency Injection
+D. All the above
+A#Q33ANS=D
+A#Q34.
+What is the default scope of a bean in spring?
+A. singleton
+B. prototype
+C. session
+D. none of these
+A#Q34ANS=A
+A#Q35.
+Which of the following is NOT a type of spring advice? 
+ A. Before
+B. After
+C. Around
+D. Inside
+A#Q35ANS=D
+A#Q36.
+In which life cycle state the JPA entity class is synchronized with the database?  
+A. New
+B. Managed
+C. Synchronized
+D. Detached
+A#Q36ANS=B
+A#Q37.
+What causes the entity manager to move an Entity instance from the managed to the 
+detached state? 
+A. detach
+B. remove
+C. unsynchronized
+D. PersistenceContext closes at the end of transaction boundry
+A#Q37ANS=D
+A#Q38.
+The struts framework is based on which of the following? 
+A. Applets and HTML
+B. Servlet and JSP
+C. ORM
+D. All the above
+A#Q38ANS=B
+A#Q39.
+In struts the dispatch from controller to the action class is based on the 
+configurations that is provided by which of the following xml file?
+A. struts-config.xml
+B. struts-action-config.xml
+C. struts-processor-config.xml
+D. struts.xml
+A#Q39ANS=D
+A#Q40.
+In struts which of the following acts as a bridge between user invoked URI and 
+business method. 
+A. RequestProcessor
+B. ActionServlet
+C. Action class
+D.HttpRequest
+A#Q40ANS=C
+
+A#Q41.
+In struts which of the following method is overridden by the Action class 
+A. run()
+B. doGet()
+C. execute()
+D.service()
+A#Q41ANS=C
+A#Q42.
+Struts framework is based on which of the following architectures?
+A. client-server
+B. Observer
+C. MVC
+D.all the above
+A#Q42ANS=C
+A#Q43.
+Which of the following is true about struts2 interceptors? 
+A. interceptors may be invoked before execute method
+B. interceptors may be invoked after execute method returns a result
+C. both A and B
+D. none of the above 
+A#Q43ANS=C
+A#Q44.
+Which of the following are core components of struts 2? 
+A. Action class
+B. interceptors 
+C. Result pages
+D. all  the above
+A#Q44ANS=D
+A#Q45.
+Which of the following is not done by struts 2 interceptors?
+A. passing request  params to action classes
+B. validation
+C. passing servlet API request, response to Action classes
+D. none of the above
+
+A#Q45ANS=D
